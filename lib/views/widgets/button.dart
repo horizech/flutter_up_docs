@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up_docs/codes/buttons/elevated_button_example.dart';
 import 'package:flutter_up_docs/codes/buttons/floating_button_example.dart';
 import 'package:flutter_up_docs/codes/buttons/icon_button_example.dart';
+import 'package:flutter_up_docs/codes/buttons/loading_button_example.dart';
 import 'package:flutter_up_docs/codes/buttons/outlined_button_example.dart';
-import 'package:flutter_up_docs/codes/buttons/text_button_Example.dart';
-import 'package:flutter_up_docs/widgets/up_code.dart';
+import 'package:flutter_up_docs/codes/buttons/text_button_example.dart';
+
 import 'package:flutter_up_docs/widgets/widget_box.dart';
 
-class ButtonPage extends StatelessWidget {
-  const ButtonPage({Key? key}) : super(key: key);
+class ButtonView extends StatelessWidget {
+  const ButtonView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,9 @@ class ButtonPage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                  "Flutter up buttons are elements enhanced with styling and ink ripples."),
+                "Flutter up buttons are elements enhanced with styling and ink ripples.",
+                style: TextStyle(fontSize: 25),
+              ),
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -32,21 +36,26 @@ class ButtonPage extends StatelessWidget {
               ),
             ),
             widgetBox(
-              example: elevatedButtons(),
-              code: const UpCode(
-                assetCode: 'elevated_button_example.dart',
-                codeHeight: 1140,
-              ),
+              widgets: [
+                elevatedButtons(),
+                const UpCode(
+                  assetCode: 'elevated_button_example.dart',
+                  codeHeight: 1300,
+                ),
+              ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                top: 50.0,
-              ),
-              child: Divider(
-                color: Colors.black,
-                height: 10,
-                thickness: 1.0,
-              ),
+            // const Padding(
+            //   padding: EdgeInsets.only(
+            //     top: 50.0,
+            //   ),
+            //   child: Divider(
+            //     color: Colors.black,
+            //     height: 10,
+            //     thickness: 1.0,
+            //   ),
+            // ),
+            const SizedBox(
+              height: 50,
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -56,21 +65,16 @@ class ButtonPage extends StatelessWidget {
               ),
             ),
             widgetBox(
-              example: outlinedButtons(),
-              code: const UpCode(
-                assetCode: 'outlined_button_example.dart',
-                codeHeight: 1140,
-              ),
+              widgets: [
+                outlinedButtons(),
+                const UpCode(
+                  assetCode: 'outlined_button_example.dart',
+                  codeHeight: 1300,
+                ),
+              ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                top: 50.0,
-              ),
-              child: Divider(
-                color: Colors.black,
-                height: 10,
-                thickness: 1.0,
-              ),
+            const SizedBox(
+              height: 50,
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -80,21 +84,16 @@ class ButtonPage extends StatelessWidget {
               ),
             ),
             widgetBox(
-              example: textButtons(),
-              code: const UpCode(
-                assetCode: 'text_button_example.dart',
-                codeHeight: 1140,
-              ),
+              widgets: [
+                textButtons(),
+                const UpCode(
+                  assetCode: 'text_button_example.dart',
+                  codeHeight: 1300,
+                ),
+              ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                top: 50.0,
-              ),
-              child: Divider(
-                color: Colors.black,
-                height: 10,
-                thickness: 1.0,
-              ),
+            const SizedBox(
+              height: 50,
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -104,21 +103,16 @@ class ButtonPage extends StatelessWidget {
               ),
             ),
             widgetBox(
-              example: iconButtons(),
-              code: const UpCode(
-                assetCode: 'icon_button_example.dart',
-                codeHeight: 1280,
-              ),
+              widgets: [
+                iconButtons(),
+                const UpCode(
+                  assetCode: 'icon_button_example.dart',
+                  codeHeight: 1420,
+                ),
+              ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                top: 50.0,
-              ),
-              child: Divider(
-                color: Colors.black,
-                height: 10,
-                thickness: 1.0,
-              ),
+            const SizedBox(
+              height: 50,
             ),
             const Padding(
               padding: EdgeInsets.all(8.0),
@@ -128,11 +122,32 @@ class ButtonPage extends StatelessWidget {
               ),
             ),
             widgetBox(
-              example: floatingButtons(),
-              code: const UpCode(
-                assetCode: 'floating_button_example.dart',
-                codeHeight: 1250,
+              widgets: [
+                floatingButtons(),
+                const UpCode(
+                  assetCode: 'floating_button_example.dart',
+                  codeHeight: 1400,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                "Loading Button",
+                style: TextStyle(fontSize: 20),
               ),
+            ),
+            widgetBox(
+              widgets: [
+                loadingButton(),
+                const UpCode(
+                  assetCode: 'loading_button_example.dart',
+                  codeHeight: 1000,
+                ),
+              ],
             ),
           ],
         ),

@@ -2,24 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/enums/up_text_direction.dart';
 import 'package:flutter_up/widgets/up_checkbox.dart';
 
-Widget checkBoxes() {
-  bool isCheck = true;
+Widget customCheckboxes() {
   return Wrap(
     children: [
-      Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: UpCheckbox(
-          isRounded: true,
-          roundedBorderRadius: 5,
-          borderWidth: 1.5,
-          initialValue: true,
-          label: "Check me",
-          onChange: (bool? newcheck) {
-            isCheck = newcheck ?? false;
-            debugPrint("new value: $isCheck");
-          },
-        ),
-      ),
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpCheckbox(
@@ -40,11 +25,13 @@ Widget checkBoxes() {
       const Padding(
         padding: EdgeInsets.all(5.0),
         child: UpCheckbox(
+          labelDirection: UpTextDirection.left,
           isDisable: true,
           isRounded: true,
           roundedBorderRadius: 5,
+          initialValue: true,
           borderWidth: 1.5,
-          label: "Disabled",
+          label: "Custom Disabled Checkbox",
         ),
       ),
     ],

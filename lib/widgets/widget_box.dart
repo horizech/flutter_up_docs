@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget widgetBox({Widget? example, Widget? code}) {
+Widget widgetBox({List<Widget>? widgets}) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Container(
@@ -16,10 +16,12 @@ Widget widgetBox({Widget? example, Widget? code}) {
           padding: const EdgeInsets.only(top: 10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              example ?? const Text(""),
-              code ?? const Text(""),
-            ],
+            children: widgets!.map((e) => e).toList(),
+            //  [
+            //   example ?? const Text(""),
+            //   code ?? const Text(""),
+
+            // ],
           ),
         ),
       ),

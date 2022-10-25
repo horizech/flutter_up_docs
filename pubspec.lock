@@ -72,7 +72,7 @@ packages:
     source: hosted
     version: "1.0.5"
   dart_code_viewer2:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dart_code_viewer2
       url: "https://pub.dartlang.org"

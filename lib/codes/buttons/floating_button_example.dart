@@ -17,7 +17,6 @@ Widget floatingButtons() {
           },
           child: const Icon(
             Icons.more_vert,
-            color: Colors.black,
           ),
         ),
       ),
@@ -71,7 +70,7 @@ Widget floatingButtons() {
         child: UpButton(
           isRounded: true,
           buttonType: UpButtonType.floating,
-          roundedBorderRadius: 3.0,
+          roundedBorderRadius: 50.0,
           isButtonDisable: true,
           onPress: () {
             //Do some code
