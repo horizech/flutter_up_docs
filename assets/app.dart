@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_up/flutter_up_app.dart';
+import 'package:flutter_up/models/up_route.dart';
+import 'package:flutter_up/models/up_router_state.dart';
 import 'package:flutter_up/themes/up_themes.dart';
 import 'package:flutter_up_docs/pages/home/home.dart';
 
@@ -13,11 +15,25 @@ class MyApp extends StatelessWidget {
       //Define theme collection and default theme id
       themeCollection: UpThemes.predefinedThemesCollection,
       defaultThemeId: UpThemes.lightBlue.id,
-      title: 'Flutter_up_docs',
-      routes: {
-        HomePage.routeName: (context) => const HomePage(),
-      },
-      home: const HomePage(),
+      title: 'FlutterUp docs',
+      initialRoute: HomePage.routeName,
+
+      //initailize upRoutes
+      upRoutes: [
+        UpRoute(
+          path: HomePage.routeName,
+          name: HomePage.routeName,
+          pageBuilder: (BuildContext context, UpRouterState state) {
+            //If you want to use query params pass it to your page
+            return HomePage(
+              queryParms: state.queryParams,
+            );
+          },
+          // Define redirect Function and redirect route
+          // shouldRedirect: () {},
+          // redirectRoute: '/'
+        ),
+      ],
     );
   }
 }

@@ -22,8 +22,8 @@ Widget customCheckboxes() {
           },
         ),
       ),
-      const Padding(
-        padding: EdgeInsets.all(5.0),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
         child: UpCheckbox(
           labelDirection: UpTextDirection.left,
           isDisable: true,

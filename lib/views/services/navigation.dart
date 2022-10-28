@@ -22,7 +22,7 @@ class NavigationServiceView extends StatelessWidget {
             ),
             UpCode(
               assetCode: 'navigation_service_example.dart',
-              codeHeight: 330,
+              codeHeight: 400,
             ),
           ],
         ),

@@ -94,11 +94,12 @@ class StartingView extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text("Now initalize you app by using FlutterUpApp"),
+            child: Text(
+                "Now initalize you app by using FlutterUpApp, initialize routes by providing path and pagebuider to upRoute."),
           ),
           UpCode(
             assetCode: "app.dart",
-            codeHeight: 400,
+            codeHeight: 700,
           ),
           SizedBox(
             height: 20,

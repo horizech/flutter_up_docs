@@ -22,7 +22,7 @@ Widget customCheckboxes() {
           },
         ),
       ),
-      const Padding(
+       Padding(
         padding: EdgeInsets.all(5.0),
         child: UpCheckbox(
           labelDirection: UpTextDirection.left,

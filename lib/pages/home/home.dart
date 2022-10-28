@@ -26,7 +26,8 @@ import 'package:flutter_up_docs/views/widgets/toast.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home';
-  const HomePage({Key? key}) : super(key: key);
+  final Map<String, String>? queryParms;
+  const HomePage({Key? key, this.queryParms}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();

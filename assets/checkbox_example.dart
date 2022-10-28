@@ -16,7 +16,7 @@ Widget checkboxes() {
           },
         ),
       ),
-      const Padding(
+       Padding(
         padding: EdgeInsets.all(5.0),
         child: UpCheckbox(
           isDisable: true,
