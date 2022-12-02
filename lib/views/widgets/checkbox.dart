@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/widgets/up_code.dart';
-import 'package:flutter_up_docs/codes/checkboxes/checkbox_example.dart';
-import 'package:flutter_up_docs/codes/checkboxes/custom_checkbox_example.dart';
-import 'package:flutter_up_docs/codes/checkboxes/rounded_checkbox_example.dart';
+import 'package:flutter_up_docs/codes/widgets/checkboxes/checkbox_example.dart';
+import 'package:flutter_up_docs/codes/widgets/checkboxes/custom_checkbox_example.dart';
+import 'package:flutter_up_docs/codes/widgets/checkboxes/rounded_checkbox_example.dart';
 
 import 'package:flutter_up_docs/widgets/widget_box.dart';
 

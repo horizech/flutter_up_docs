@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/widgets/up_code.dart';
-import 'package:flutter_up_docs/codes/toast/toast_example.dart';
+import 'package:flutter_up_docs/codes/widgets/toast/toast_example.dart';
 
 import 'package:flutter_up_docs/widgets/widget_box.dart';
 

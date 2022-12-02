@@ -38,7 +38,7 @@ class _ThemesPageState extends State<ThemeView> {
         ),
         UpCode(
           assetCode: "app.dart",
-          codeHeight: 400,
+          codeHeight: 600,
         ),
         SizedBox(
           height: 20,

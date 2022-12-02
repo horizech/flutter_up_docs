@@ -49,7 +49,7 @@ class CustomDialogView extends StatelessWidget {
               widgets: [
                 const UpCode(
                   assetCode: 'custom_dialog.dart',
-                  codeHeight: 400,
+                  codeHeight: 300,
                 ),
               ],
             ),

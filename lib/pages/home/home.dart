@@ -7,12 +7,14 @@ import 'package:flutter_up_docs/views/dialogs/info_dialog.dart';
 import 'package:flutter_up_docs/views/helpers/console.dart';
 import 'package:flutter_up_docs/views/helpers/copy_to_clipboard.dart';
 import 'package:flutter_up_docs/views/helpers/date_time.dart';
+import 'package:flutter_up_docs/views/helpers/layout.dart';
 import 'package:flutter_up_docs/views/helpers/security.dart';
 import 'package:flutter_up_docs/views/helpers/toast.dart';
 import 'package:flutter_up_docs/views/services/dialog.dart';
 import 'package:flutter_up_docs/views/services/navigation.dart';
 import 'package:flutter_up_docs/views/services/search.dart';
 import 'package:flutter_up_docs/views/services/url.dart';
+import 'package:flutter_up_docs/views/widgets/circular_progress.dart';
 import 'package:flutter_up_docs/views/widgets/orientational_column_row.dart';
 import 'package:flutter_up_docs/views/starting/starting.dart';
 import 'package:flutter_up_docs/views/theme/theme.dart';
@@ -53,7 +55,8 @@ class _HomePageState extends State<HomePage> {
         return const RadioView();
       case MenuOption.dropDownMenu:
         return const DropDownMenuView();
-
+      case MenuOption.circularProgress:
+        return const CircularProgressView();
       case MenuOption.drawer:
         return const DrawerItemCardView();
       case MenuOption.toast:
@@ -71,6 +74,8 @@ class _HomePageState extends State<HomePage> {
         return const DateTimeView();
       case MenuOption.security:
         return const SecurityView();
+      case MenuOption.layout:
+        return const LayoutView();
 
       //Dialog views
       case MenuOption.customDialog:
@@ -259,16 +264,15 @@ class _HomePageState extends State<HomePage> {
                           });
                         },
                       ),
-                      // _listTileContainer(
-                      //   currentSelection: currentSelection,
-                      //   menuOption: MenuOption.card,
-                      //   text: "Cards",
-                      //   onTap: () {
-                      //     setState(() {
-                      //       currentSelection = MenuOption.card;
-                      //     });
-                      //   },
-                      // ),
+                      _listTileContainer(
+                        menuOption: MenuOption.circularProgress,
+                        text: "Circular Progress",
+                        onTap: () {
+                          setState(() {
+                            currentSelection = MenuOption.circularProgress;
+                          });
+                        },
+                      ),
                       _listTileContainer(
                         menuOption: MenuOption.radio,
                         text: "Radio Buttons",
@@ -415,6 +419,17 @@ class _HomePageState extends State<HomePage> {
                           setState(
                             () {
                               currentSelection = MenuOption.security;
+                            },
+                          );
+                        },
+                      ),
+                      _listTileContainer(
+                        menuOption: MenuOption.layout,
+                        text: "Layout",
+                        onTap: () {
+                          setState(
+                            () {
+                              currentSelection = MenuOption.layout;
                             },
                           );
                         },

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/widgets/up_code.dart';
-import 'package:flutter_up_docs/codes/buttons/elevated_button_example.dart';
-import 'package:flutter_up_docs/codes/buttons/floating_button_example.dart';
-import 'package:flutter_up_docs/codes/buttons/icon_button_example.dart';
-import 'package:flutter_up_docs/codes/buttons/loading_button_example.dart';
-import 'package:flutter_up_docs/codes/buttons/outlined_button_example.dart';
-import 'package:flutter_up_docs/codes/buttons/text_button_example.dart';
+import 'package:flutter_up_docs/codes/widgets/buttons/elevated_button_example.dart';
+import 'package:flutter_up_docs/codes/widgets/buttons/floating_button_example.dart';
+import 'package:flutter_up_docs/codes/widgets/buttons/icon_button_example.dart';
+import 'package:flutter_up_docs/codes/widgets/buttons/loading_button_example.dart';
+import 'package:flutter_up_docs/codes/widgets/buttons/outlined_button_example.dart';
+import 'package:flutter_up_docs/codes/widgets/buttons/text_button_example.dart';
 
 import 'package:flutter_up_docs/widgets/widget_box.dart';
 

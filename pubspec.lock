@@ -150,7 +150,7 @@ packages:
       name: flutter_up
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.1"
+    version: "0.6.2"
   flutter_web_plugins:
     dependency: transitive
     description: flutter

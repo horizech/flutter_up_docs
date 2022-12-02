@@ -16,8 +16,8 @@ Widget checkboxes() {
           },
         ),
       ),
-       Padding(
-        padding: EdgeInsets.all(5.0),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
         child: UpCheckbox(
           isDisable: true,
           label: "Disabled",

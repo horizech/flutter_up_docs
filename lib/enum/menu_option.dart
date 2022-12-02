@@ -23,4 +23,6 @@ enum MenuOption {
   urlService,
   dialogService,
   searchService,
+  layout,
+  circularProgress
 }

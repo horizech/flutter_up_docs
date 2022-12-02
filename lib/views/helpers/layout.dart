@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/widgets/up_code.dart';
-import 'package:flutter_up_docs/codes/widgets/radio/radio_example.dart';
+import 'package:flutter_up_docs/codes/helpers/layout_example.dart';
+
 import 'package:flutter_up_docs/widgets/widget_box.dart';
 
-class RadioView extends StatelessWidget {
-  const RadioView({Key? key}) : super(key: key);
+class LayoutView extends StatelessWidget {
+  const LayoutView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +19,23 @@ class RadioView extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "Flutter Up Radio Buttons",
+                "Layout",
                 style: TextStyle(fontSize: 25),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                "Try resizing the window then you will see change from landscape to portrait",
+                style: TextStyle(fontSize: 16),
               ),
             ),
             widgetBox(
               widgets: [
-                const Radios(),
+                const LayoutExample(),
                 const UpCode(
-                  assetCode: 'radio_example.dart',
-                  codeHeight: 850,
+                  assetCode: 'layout_example.dart',
+                  codeHeight: 500,
                 ),
               ],
             ),

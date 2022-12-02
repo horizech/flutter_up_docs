@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/widgets/up_code.dart';
-import 'package:flutter_up_docs/codes/textfields/custom_textfield_example.dart';
-import 'package:flutter_up_docs/codes/textfields/key_textfield_example.dart';
-import 'package:flutter_up_docs/codes/textfields/search_textfield_example.dart';
-import 'package:flutter_up_docs/codes/textfields/textfield_example.dart';
+import 'package:flutter_up_docs/codes/widgets/textfields/custom_textfield_example.dart';
+import 'package:flutter_up_docs/codes/widgets/textfields/key_textfield_example.dart';
+import 'package:flutter_up_docs/codes/widgets/textfields/search_textfield_example.dart';
+import 'package:flutter_up_docs/codes/widgets/textfields/textfield_example.dart';
 import 'package:flutter_up_docs/widgets/widget_box.dart';
 
 class TextFieldView extends StatelessWidget {
@@ -47,7 +47,7 @@ class TextFieldView extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "Key Textfield",
+                "Password Textfield",
                 style: TextStyle(fontSize: 20),
               ),
             ),

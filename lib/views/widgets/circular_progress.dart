@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/widgets/up_code.dart';
-import 'package:flutter_up_docs/codes/widgets/orientational_column_row/orientational_column_row_example.dart';
+import 'package:flutter_up_docs/codes/widgets/circular_progress/circular_progress_example.dart';
+import 'package:flutter_up_docs/codes/widgets/circular_progress/custom_circular_progress_example.dart';
 
 import 'package:flutter_up_docs/widgets/widget_box.dart';
 
-class OrientationalColumnRowView extends StatelessWidget {
-  const OrientationalColumnRowView({Key? key}) : super(key: key);
+class CircularProgressView extends StatelessWidget {
+  const CircularProgressView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,25 +20,32 @@ class OrientationalColumnRowView extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "Flutter up orientational_column_row",
+                "Flutter Up  Circular Progress",
                 style: TextStyle(fontSize: 25),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                "Here in this example we are using container to show portrait and landscape view",
-                style: TextStyle(
-                  fontSize: 20,
-                ),
               ),
             ),
             widgetBox(
               widgets: [
-                orientationalColumnRow(),
+                circularProgress(),
                 const UpCode(
-                  assetCode: 'orientational_column_row_example.dart',
-                  codeHeight: 900,
+                  assetCode: 'circular_progress_example.dart',
+                  codeHeight: 200,
+                ),
+              ],
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                "Custom Flutter Up Circular Progress",
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
+            widgetBox(
+              widgets: [
+                customCircularProgress(),
+                const UpCode(
+                  assetCode: 'custom_circular_progress_example.dart',
+                  codeHeight: 550,
                 ),
               ],
             ),
