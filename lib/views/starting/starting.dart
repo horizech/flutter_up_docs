@@ -76,19 +76,6 @@ class StartingView extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-                "To use Security Service, create credentials file and initialize it with a 16 characters key"),
-          ),
-          UpCode(
-            code: '''class Credentials {
-              //Your 16 character key
-  static const String kAesIV = '';
-}
-''',
-            codeHeight: 100,
-          ),
           SizedBox(
             height: 20,
           ),

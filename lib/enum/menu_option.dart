@@ -1,5 +1,6 @@
 enum MenuOption {
   start,
+  home,
   theme,
   button,
   textfield,

@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   # flutter_up: ^0.3.0
   expandable: ^5.0.1
-  flutter_up: ^0.6.2
+  flutter_up: ^0.6.3
 
   # flutter_up:
   #   path: ../flutter_up

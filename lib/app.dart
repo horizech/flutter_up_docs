@@ -4,6 +4,8 @@ import 'package:flutter_up/flutter_up_app.dart';
 import 'package:flutter_up/models/up_route.dart';
 import 'package:flutter_up/models/up_router_state.dart';
 import 'package:flutter_up/themes/up_themes.dart';
+import 'package:flutter_up_docs/pages/docs/docs.dart';
+
 import 'package:flutter_up_docs/pages/home/home.dart';
 
 class MyApp extends StatelessWidget {
@@ -25,7 +27,18 @@ class MyApp extends StatelessWidget {
           name: HomePage.routeName,
           pageBuilder: (BuildContext context, UpRouterState state) {
             //If you want to use query params pass it to your page
-            return HomePage(
+            return const HomePage();
+          },
+          // Define redirect Function and redirect route
+          // shouldRedirect: () {},
+          // redirectRoute: '/'
+        ),
+        UpRoute(
+          path: DocsPage.routeName,
+          name: DocsPage.routeName,
+          pageBuilder: (BuildContext context, UpRouterState state) {
+            //If you want to use query params pass it to your page
+            return DocsPage(
               queryParms: state.queryParams,
             );
           },
