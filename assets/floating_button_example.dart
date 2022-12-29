@@ -13,7 +13,7 @@ Widget floatingButtons() {
           roundedBorderRadius: 50.0,
           buttonType: UpButtonType.floating,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Icon(
             Icons.more_vert,
@@ -28,7 +28,7 @@ Widget floatingButtons() {
           buttonType: UpButtonType.floating,
           colorType: UpColorType.basic,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Icon(
             Icons.home,
@@ -43,7 +43,7 @@ Widget floatingButtons() {
           roundedBorderRadius: 50.0,
           colorType: UpColorType.accent,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Icon(
             Icons.face,
@@ -58,7 +58,7 @@ Widget floatingButtons() {
           roundedBorderRadius: 50.0,
           colorType: UpColorType.warn,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Icon(
             Icons.warning,
@@ -73,7 +73,7 @@ Widget floatingButtons() {
           roundedBorderRadius: 50.0,
           isButtonDisable: true,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Icon(Icons.menu),
         ),

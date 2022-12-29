@@ -13,7 +13,7 @@ Widget iconButtons() {
           roundedBorderRadius: 3.0,
           buttonType: UpButtonType.icon,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Icon(
             Icons.more_vert,
@@ -28,7 +28,7 @@ Widget iconButtons() {
           buttonType: UpButtonType.icon,
           colorType: UpColorType.basic,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Icon(
             Icons.home,
@@ -44,7 +44,7 @@ Widget iconButtons() {
           buttonType: UpButtonType.icon,
           colorType: UpColorType.accent,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Icon(
             Icons.face,
@@ -60,7 +60,7 @@ Widget iconButtons() {
           buttonType: UpButtonType.icon,
           colorType: UpColorType.warn,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Icon(
             Icons.warning,
@@ -76,7 +76,7 @@ Widget iconButtons() {
           roundedBorderRadius: 3.0,
           isButtonDisable: true,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Icon(Icons.menu),
         ),

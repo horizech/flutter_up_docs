@@ -13,7 +13,7 @@ Widget outlinedButtons() {
           roundedBorderRadius: 3.0,
           buttonType: UpButtonType.outlined,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Text(
             "Primary",
@@ -29,7 +29,7 @@ Widget outlinedButtons() {
           buttonType: UpButtonType.outlined,
           colorType: UpColorType.basic,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Text("Basic"),
         ),
@@ -42,7 +42,7 @@ Widget outlinedButtons() {
           buttonType: UpButtonType.outlined,
           colorType: UpColorType.accent,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Text("Accent"),
         ),
@@ -55,7 +55,7 @@ Widget outlinedButtons() {
           buttonType: UpButtonType.outlined,
           colorType: UpColorType.warn,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Text("Warn"),
         ),
@@ -68,7 +68,7 @@ Widget outlinedButtons() {
           roundedBorderRadius: 3.0,
           isButtonDisable: true,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Text("Disabled"),
         ),

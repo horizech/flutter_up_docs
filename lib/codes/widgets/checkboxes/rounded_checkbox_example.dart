@@ -16,7 +16,7 @@ Widget roundedCheckboxes() {
           initialValue: true,
           label: "Rounded Checkbox",
           onChange: (bool? newcheck) {
-            //Do some code
+            // Perform action
           },
         ),
       ),

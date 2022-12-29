@@ -36,7 +36,7 @@ class StartingView extends StatelessWidget {
           ),
           UpCode(
             code: '''dependencies:
-  flutter_up: ^0.3.0''',
+  flutter_up: ^0.6.5''',
             codeHeight: 80,
           ),
           SizedBox(

@@ -13,7 +13,7 @@ Widget textfields() {
             controller: emailController,
             minLength: 6,
             onSaved: (input) {
-              //do some code
+              // Perform action
             },
             decoration: const InputDecoration(
               labelText: "Username",
@@ -42,7 +42,7 @@ Widget textfields() {
             controller: TextEditingController(),
             minLength: 6,
             onSaved: (input) => {
-              //do some code
+              // Perform action
             },
             obscureText: true,
             decoration: const InputDecoration(

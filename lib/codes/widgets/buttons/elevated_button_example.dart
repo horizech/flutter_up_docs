@@ -14,7 +14,7 @@ Widget elevatedButtons() {
           roundedBorderRadius: 3.0,
           buttonType: UpButtonType.elevated,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Text(
             "Primary",
@@ -30,7 +30,7 @@ Widget elevatedButtons() {
           buttonType: UpButtonType.elevated,
           colorType: UpColorType.basic,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Text("Basic"),
         ),
@@ -43,7 +43,7 @@ Widget elevatedButtons() {
           buttonType: UpButtonType.elevated,
           colorType: UpColorType.accent,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Text("Accent"),
         ),
@@ -56,7 +56,7 @@ Widget elevatedButtons() {
           buttonType: UpButtonType.elevated,
           colorType: UpColorType.warn,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Text("Warn"),
         ),
@@ -69,7 +69,7 @@ Widget elevatedButtons() {
           roundedBorderRadius: 3.0,
           isButtonDisable: true,
           onPress: () {
-            //Do some code
+            // Perform action
           },
           child: const Text("Disabled"),
         ),

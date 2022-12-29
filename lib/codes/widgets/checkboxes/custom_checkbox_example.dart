@@ -18,7 +18,7 @@ Widget customCheckboxes() {
           label: "Custom Checkbox",
           labelDirection: UpTextDirection.left,
           onChange: (bool? newcheck) {
-            //Do some code
+            // Perform action
           },
         ),
       ),
