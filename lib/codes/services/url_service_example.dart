@@ -13,12 +13,10 @@ class URLService extends StatelessWidget {
     }
 
     return UpButton(
-      isRounded: true,
-      roundedBorderRadius: 8,
-      onPress: () {
+      onPressed: () {
         urlServiceExample();
       },
-      child: const Text("Open google"),
+      text: "Open google",
     );
   }
 }

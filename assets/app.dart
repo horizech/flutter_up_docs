@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_up/flutter_up_app.dart';
 import 'package:flutter_up/models/up_route.dart';
 import 'package:flutter_up/models/up_router_state.dart';
 import 'package:flutter_up/themes/up_themes.dart';
+import 'package:flutter_up/up_app.dart';
 import 'package:flutter_up_docs/pages/docs/docs.dart';
 
 import 'package:flutter_up_docs/pages/home/home.dart';
@@ -13,12 +13,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterUpApp(
-      //Define theme collection and default theme id
-      themeCollection: UpThemes.predefinedThemesCollection,
-      defaultThemeId: UpThemes.lightBlue.id,
+    return UpApp(
+      //Define theme
+      theme: UpThemes.generateThemeByColor(
+        primaryColor: Colors.blue,
+        secondaryColor: Colors.blueGrey,
+        tertiaryColor: Colors.amber,
+        linkColor: Colors.black,
+        successColor: Colors.green,
+        warnColor: Colors.red,
+      ),
       title: 'FlutterUp docs',
-      initialRoute: DocsPage.routeName,
+      initialRoute: HomePage.routeName,
 
       //initailize upRoutes
       upRoutes: [

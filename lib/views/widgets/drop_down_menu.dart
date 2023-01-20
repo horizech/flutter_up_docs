@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/codes/widgets/drop_down_menu/custom_drop_down_menu_example.dart';
 import 'package:flutter_up_docs/codes/widgets/drop_down_menu/drop_down_menu_example.dart';
 import 'package:flutter_up_docs/widgets/widget_box.dart';
@@ -16,18 +18,18 @@ class DropDownMenuView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Flutter up drop down menu",
-                style: TextStyle(fontSize: 25),
+                style: UpStyle(textFontSize: 25),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "To use dropdown menu first you need to create UpLabelValuePair like ",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             const UpCode(
@@ -37,11 +39,11 @@ class DropDownMenuView extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
+                style: UpStyle(textFontSize: 20),
                 "Now initialize dropdown menu ",
-                style: TextStyle(fontSize: 20),
               ),
             ),
             widgetBox(
@@ -56,11 +58,11 @@ class DropDownMenuView extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Customize dropdown menu",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(

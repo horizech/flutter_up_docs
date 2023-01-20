@@ -8,11 +8,11 @@ Widget copyToClipboard(BuildContext context) {
   return Row(
     children: [
       UpButton(
-        buttonType: UpButtonType.icon,
+        type: UpButtonType.icon,
         child: const Icon(
           Icons.content_copy,
         ),
-        onPress: () {
+        onPressed: () {
           upCopyTextToClipboard("this is the text");
           showUpToast(
             context: context,

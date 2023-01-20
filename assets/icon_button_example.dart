@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/enums/up_button_type.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_button.dart';
 
 Widget iconButtons() {
@@ -9,10 +10,8 @@ Widget iconButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.icon,
-          onPress: () {
+          type: UpButtonType.icon,
+          onPressed: () {
             // Perform action
           },
           child: const Icon(
@@ -23,12 +22,9 @@ Widget iconButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.icon,
-          colorType: UpColorType.basic,
-          onPress: () {
-            // Perform action
+          type: UpButtonType.icon,
+          onPressed: () {
+            //Do some code
           },
           child: const Icon(
             Icons.home,
@@ -39,12 +35,9 @@ Widget iconButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.icon,
-          colorType: UpColorType.accent,
-          onPress: () {
-            // Perform action
+          type: UpButtonType.icon,
+          onPressed: () {
+            //Do some code
           },
           child: const Icon(
             Icons.face,
@@ -55,12 +48,10 @@ Widget iconButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.icon,
+          type: UpButtonType.icon,
           colorType: UpColorType.warn,
-          onPress: () {
-            // Perform action
+          onPressed: () {
+            //Do some code
           },
           child: const Icon(
             Icons.warning,
@@ -71,14 +62,22 @@ Widget iconButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          buttonType: UpButtonType.icon,
-          roundedBorderRadius: 3.0,
-          isButtonDisable: true,
-          onPress: () {
-            // Perform action
+          type: UpButtonType.icon,
+          onPressed: () {
+            //Do some code
           },
           child: const Icon(Icons.menu),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: UpButton(
+          type: UpButtonType.icon,
+          style: UpStyle(isDisabled: true),
+          onPressed: () {
+            //Do some code
+          },
+          child: const Icon(Icons.stop),
         ),
       ),
     ],

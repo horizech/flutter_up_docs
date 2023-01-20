@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/elevated_button_example.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/floating_button_example.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/icon_button_example.dart';
@@ -21,26 +23,26 @@ class ButtonView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Flutter up buttons are elements enhanced with styling and ink ripples.",
-                style: TextStyle(fontSize: 25),
+                style: UpStyle(textFontSize: 25),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Elevated Button",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
-                elevatedButtons(),
+                UpButtons(),
                 const UpCode(
                   assetCode: 'elevated_button_example.dart',
-                  codeHeight: 1300,
+                  codeHeight: 1550,
                 ),
               ],
             ),
@@ -57,11 +59,11 @@ class ButtonView extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Outlined Buttons",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(
@@ -69,18 +71,18 @@ class ButtonView extends StatelessWidget {
                 outlinedButtons(),
                 const UpCode(
                   assetCode: 'outlined_button_example.dart',
-                  codeHeight: 1300,
+                  codeHeight: 1750,
                 ),
               ],
             ),
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Text Buttons",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(
@@ -88,18 +90,18 @@ class ButtonView extends StatelessWidget {
                 textButtons(),
                 const UpCode(
                   assetCode: 'text_button_example.dart',
-                  codeHeight: 1300,
+                  codeHeight: 1750,
                 ),
               ],
             ),
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Icon Buttons",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(
@@ -114,11 +116,11 @@ class ButtonView extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Floating Buttons",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(
@@ -133,11 +135,11 @@ class ButtonView extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Loading Button",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(
@@ -155,124 +157,3 @@ class ButtonView extends StatelessWidget {
     );
   }
 }
-
-// Row(
-            //   children: [
-            //     GestureDetector(
-            //       onTap: () {
-            //         setState(() {
-            //           currentView = ViewOption.overview;
-            //         });
-            //       },
-            //       child: Row(
-            //         crossAxisAlignment: CrossAxisAlignment.start,
-            //         mainAxisAlignment: MainAxisAlignment.center,
-            //         children: [
-            //           Text(
-            //             "Overview",
-            //             style: TextStyle(
-            //                 fontSize: 20,
-            //                 fontWeight: FontWeight.w700,
-            //                 decoration: currentView == ViewOption.overview
-            //                     ? TextDecoration.underline
-            //                     : TextDecoration.none,
-            //                 color: currentView == ViewOption.overview
-            //                     ? Colors.blue
-            //                     : Colors.black),
-            //           ),
-            //         ],
-            //       ),
-            //     ),
-            //     const SizedBox(
-            //       width: 50,
-            //     ),
-            //     GestureDetector(
-            //       onTap: () {
-            //         setState(() {
-            //           currentView = ViewOption.api;
-            //         });
-            //       },
-            //       child: Row(
-            //         crossAxisAlignment: CrossAxisAlignment.start,
-            //         children: [
-            //           Text(
-            //             "Api",
-            //             style: TextStyle(
-            //                 fontSize: 20,
-            //                 fontWeight: FontWeight.w700,
-            //                 decoration: currentView == ViewOption.api
-            //                     ? TextDecoration.underline
-            //                     : TextDecoration.none,
-            //                 color: currentView == ViewOption.api
-            //                     ? Colors.blue
-            //                     : Colors.black),
-            //           ),
-            //         ],
-            //       ),
-            //     ),
-            //     const SizedBox(
-            //       width: 50,
-            //     ),
-            //     GestureDetector(
-            //       onTap: () {
-            //         setState(() {
-            //           currentView = ViewOption.examples;
-            //         });
-            //       },
-            //       child: Row(
-            //         crossAxisAlignment: CrossAxisAlignment.start,
-            //         children: [
-            //           Text(
-            //             "Examples",
-            //             style: TextStyle(
-            //                 fontSize: 20,
-            //                 fontWeight: FontWeight.w700,
-            //                 decoration: currentView == ViewOption.examples
-            //                     ? TextDecoration.underline
-            //                     : TextDecoration.none,
-            //                 color: currentView == ViewOption.examples
-            //                     ? Colors.blue
-            //                     : Colors.black),
-            //           ),
-            //         ],
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            // const SizedBox(
-            //   height: 50,
-            // ),
-
- // // ViewOption currentView = ViewOption.overview;
-  // _buttonView() {
-
-  // }
-
-  // _api() {
-  //   return Padding(
-  //     padding: const EdgeInsets.all(8.0),
-  //     child: Column(
-  //       children: const [],
-  //     ),
-  //   );
-  // }
-
-  // _examples() {
-  //   return const Text("examples");
-  // }
-
-  // _selectView(currentView) {
-  //   switch (currentView) {
-  //     case ViewOption.overview:
-  //       return _overview();
-
-  //     case ViewOption.api:
-  //       return _api();
-
-  //     case ViewOption.examples:
-  //       return _examples();
-
-  //     default:
-  //       return _overview();
-  //   }
-  // }

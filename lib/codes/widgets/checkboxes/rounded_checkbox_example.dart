@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/enums/up_color_type.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_checkbox.dart';
 
 Widget roundedCheckboxes() {
@@ -7,12 +9,8 @@ Widget roundedCheckboxes() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpCheckbox(
-          isRounded: true,
-          roundedBorderRadius: 20,
-          borderWidth: 1,
-          borderColor: Colors.red,
-          activeColor: Colors.black,
-          checkColor: Colors.orange,
+          colorType: UpColorType.success,
+          style: UpStyle(checkboxBorderRadius: 300),
           initialValue: true,
           label: "Rounded Checkbox",
           onChange: (bool? newcheck) {
@@ -23,11 +21,10 @@ Widget roundedCheckboxes() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpCheckbox(
-          isDisable: true,
-          isRounded: true,
-          roundedBorderRadius: 20,
-          initialValue: true,
-          borderWidth: 1,
+          style: UpStyle(
+            checkboxBorderRadius: 500,
+            isDisabled: true,
+          ),
           label: "Rounded Disabled Checkbox",
         ),
       ),

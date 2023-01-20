@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/enums/up_text_direction.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_checkbox.dart';
 
 Widget customCheckboxes() {
@@ -8,14 +9,19 @@ Widget customCheckboxes() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpCheckbox(
-          isRounded: true,
-          roundedBorderRadius: 5,
-          borderWidth: 1.5,
-          borderColor: Colors.pink,
-          activeColor: Colors.blue,
-          checkColor: Colors.pink,
           initialValue: true,
           label: "Custom Checkbox",
+          style: UpStyle(
+            checkboxBackgroundColor: Colors.orange,
+            checkboxLabelColor: Colors.red,
+            checkboxBorderColor: Colors.black,
+            checkboxBorderRadius: 2,
+            checkboxBorderWidth: 1,
+            checkboxCheckedColor: Colors.pink,
+            checkboxHoverBorderColor: Colors.blueAccent,
+            checkboxRippleColor: Colors.purple[100],
+            checkboxLabelSize: 12,
+          ),
           labelDirection: UpTextDirection.left,
           onChange: (bool? newcheck) {
             // Perform action
@@ -25,13 +31,14 @@ Widget customCheckboxes() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpCheckbox(
-          labelDirection: UpTextDirection.left,
-          isDisable: true,
-          isRounded: true,
-          roundedBorderRadius: 5,
           initialValue: true,
-          borderWidth: 1.5,
-          label: "Custom Disabled Checkbox",
+          style: UpStyle(
+              checkboxDisabledBackgroundColor: Colors.red[200],
+              checkboxDisabledLabelColor: Colors.green[200],
+              checkboxCheckedDisabledColor: Colors.blueGrey[200],
+              isDisabled: true),
+          labelDirection: UpTextDirection.right,
+          label: "Custom diabled checkbox",
         ),
       ),
     ],

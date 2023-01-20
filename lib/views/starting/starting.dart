@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 
 class StartingView extends StatelessWidget {
   const StartingView({Key? key}) : super(key: key);
@@ -10,85 +12,85 @@ class StartingView extends StatelessWidget {
       padding: const EdgeInsets.all(15.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text(
+        children: [
+          UpText(
             "Get started with FlutterUp.",
-            style: TextStyle(fontSize: 25),
+            style: UpStyle(textFontSize: 25),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text("Run this command with Flutter:"),
+            child: UpText("Run this command with Flutter:"),
           ),
-          UpCode(
+          const UpCode(
             code: ''' flutter pub add flutter_up''',
             codeHeight: 80,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text(
+            child: UpText(
                 "This will add a line like this to your package's pubspec.yaml (and run an implicit flutter pub get):"),
           ),
-          UpCode(
+          const UpCode(
             code: '''dependencies:
   flutter_up: ^0.6.5''',
             codeHeight: 80,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text("Import it and use it in your Dart code:"),
+            child: UpText("Import it and use it in your Dart code:"),
           ),
-          UpCode(
+          const UpCode(
             code: '''import 'package:flutter_up/flutter_up.dart';''',
             codeHeight: 80,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text(
+            child: UpText(
                 "Now you need to create locater file in you lib folder and initaialize services you want to use"),
           ),
-          UpCode(
+          const UpCode(
             assetCode: 'locator.dart',
             codeHeight: 280,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text("Now need to setup locator file in main"),
+            child: UpText("Now need to setup locator file in main"),
           ),
-          UpCode(
+          const UpCode(
             assetCode: "main.dart",
-            codeHeight: 200,
+            codeHeight: 300,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text(
+            child: UpText(
                 "Now initalize you app by using FlutterUpApp, initialize routes by providing path and pagebuider to upRoute."),
           ),
-          UpCode(
+          const UpCode(
             assetCode: "app.dart",
-            codeHeight: 700,
+            codeHeight: 1100,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
         ],

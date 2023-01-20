@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
+import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/codes/widgets/radio/custom_radio_example.dart';
 import 'package:flutter_up_docs/codes/widgets/radio/radio_example.dart';
 import 'package:flutter_up_docs/widgets/widget_box.dart';
 
@@ -15,19 +18,48 @@ class RadioView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Flutter Up Radio Buttons",
-                style: TextStyle(fontSize: 25),
+                style: UpStyle(textFontSize: 25),
+              ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
+                "Radio Button",
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
-                const Radios(),
+                const RadioButtonExample(),
                 const UpCode(
                   assetCode: 'radio_example.dart',
-                  codeHeight: 850,
+                  codeHeight: 1100,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
+                "Custom Radio Button",
+                style: UpStyle(textFontSize: 20),
+              ),
+            ),
+            widgetBox(
+              widgets: [
+                const CustomRadioButtonExample(),
+                const UpCode(
+                  assetCode: 'custom_radio_example.dart',
+                  codeHeight: 1300,
                 ),
               ],
             ),

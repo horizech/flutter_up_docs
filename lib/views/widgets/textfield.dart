@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/codes/widgets/textfields/custom_textfield_example.dart';
 import 'package:flutter_up_docs/codes/widgets/textfields/key_textfield_example.dart';
 import 'package:flutter_up_docs/codes/widgets/textfields/search_textfield_example.dart';
@@ -18,18 +20,18 @@ class TextFieldView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Flutter up textfields",
-                style: TextStyle(fontSize: 25),
+                style: UpStyle(textFontSize: 25),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Textfields",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(
@@ -44,11 +46,11 @@ class TextFieldView extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Password Textfield",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(
@@ -56,18 +58,18 @@ class TextFieldView extends StatelessWidget {
                 keyTextfield(),
                 const UpCode(
                   assetCode: 'key_textfield_example.dart',
-                  codeHeight: 420,
+                  codeHeight: 800,
                 ),
               ],
             ),
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Search Textfield",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(
@@ -82,11 +84,11 @@ class TextFieldView extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
                 "Custom Textfields",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(
@@ -94,7 +96,7 @@ class TextFieldView extends StatelessWidget {
                 customTextfields(),
                 const UpCode(
                   assetCode: 'custom_textfield_example.dart',
-                  codeHeight: 1150,
+                  codeHeight: 900,
                 ),
               ],
             ),

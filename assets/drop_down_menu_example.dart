@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_up/widgets/up_drop_down_menu.dart';
+
+import 'package:flutter_up/widgets/up_dropdown.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/constants.dart';
 
 class DropDownMenu extends StatefulWidget {
@@ -24,14 +26,14 @@ class _DropDownMenuState extends State<DropDownMenu> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          UpDropDownMenuWidget(
+          UpDropDown(
             value: _currentSelection,
             itemList: fruitItems,
             onChanged: (value) => _onChange(value),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text("Current selection is $_currentSelection"),
+            child: UpText("Current selection is $_currentSelection"),
           )
         ],
       ),

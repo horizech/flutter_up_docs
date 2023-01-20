@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/codes/drawer/app_example.dart';
 
 import 'package:flutter_up_docs/widgets/widget_box.dart';
@@ -14,15 +16,18 @@ class DrawerItemCardView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text("Flutter up drawer "),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: UpText(
+              "Flutter up drawer ",
+              style: UpStyle(textFontSize: 25),
+            ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: UpText(
               "First create your drawer by using drawer item card ",
-              style: TextStyle(fontSize: 20),
+              style: UpStyle(textFontSize: 20),
             ),
           ),
           widgetBox(
@@ -36,11 +41,11 @@ class DrawerItemCardView extends StatelessWidget {
                 assetCode: 'drawer_example.dart',
                 codeHeight: 1200,
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: UpText(
                   "Now add you drawer in your Scaffold to use it",
-                  style: TextStyle(fontSize: 20),
+                  style: UpStyle(textFontSize: 20),
                 ),
               ),
               const UpCode(

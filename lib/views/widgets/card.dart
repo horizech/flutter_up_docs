@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/codes/widgets/card/loading_card_example.dart';
 
 import 'package:flutter_up_docs/widgets/widget_box.dart';
@@ -18,13 +20,13 @@ class CardView extends StatelessWidget {
           children: [
             const Padding(
               padding: EdgeInsets.all(8.0),
-              child: Text("Flutter up Cards."),
+              child: UpText("Flutter up Cards."),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
-              child: Text(
+              child: UpText(
                 "Loading Card",
-                style: TextStyle(fontSize: 20),
+                style: UpStyle(textFontSize: 20),
               ),
             ),
             widgetBox(

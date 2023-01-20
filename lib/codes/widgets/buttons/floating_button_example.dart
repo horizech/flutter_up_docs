@@ -9,10 +9,8 @@ Widget floatingButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 50.0,
-          buttonType: UpButtonType.floating,
-          onPress: () {
+          type: UpButtonType.floating,
+          onPressed: () {
             // Perform action
           },
           child: const Icon(
@@ -23,11 +21,8 @@ Widget floatingButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 50.0,
-          buttonType: UpButtonType.floating,
-          colorType: UpColorType.basic,
-          onPress: () {
+          type: UpButtonType.floating,
+          onPressed: () {
             // Perform action
           },
           child: const Icon(
@@ -38,11 +33,8 @@ Widget floatingButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          buttonType: UpButtonType.floating,
-          roundedBorderRadius: 50.0,
-          colorType: UpColorType.accent,
-          onPress: () {
+          type: UpButtonType.floating,
+          onPressed: () {
             // Perform action
           },
           child: const Icon(
@@ -53,11 +45,9 @@ Widget floatingButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          buttonType: UpButtonType.floating,
-          roundedBorderRadius: 50.0,
+          type: UpButtonType.floating,
           colorType: UpColorType.warn,
-          onPress: () {
+          onPressed: () {
             // Perform action
           },
           child: const Icon(
@@ -68,11 +58,8 @@ Widget floatingButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          buttonType: UpButtonType.floating,
-          roundedBorderRadius: 50.0,
-          isButtonDisable: true,
-          onPress: () {
+          type: UpButtonType.floating,
+          onPressed: () {
             // Perform action
           },
           child: const Icon(Icons.menu),

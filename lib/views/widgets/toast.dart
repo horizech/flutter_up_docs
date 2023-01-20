@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/codes/widgets/toast/toast_example.dart';
 
 import 'package:flutter_up_docs/widgets/widget_box.dart';
@@ -16,11 +18,11 @@ class ToastView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
+                style: UpStyle(textFontSize: 20),
                 "Flutter up Toast",
-                style: TextStyle(fontSize: 25),
               ),
             ),
             widgetBox(
@@ -28,7 +30,7 @@ class ToastView extends StatelessWidget {
                 toast(context),
                 const UpCode(
                   assetCode: 'toast_example.dart',
-                  codeHeight: 2100,
+                  codeHeight: 2500,
                 ),
               ],
             ),

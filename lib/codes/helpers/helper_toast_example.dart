@@ -12,14 +12,14 @@ class Toast extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: UpButton(
-            onPress: () {
+            onPressed: () {
               showUpToast(
                 context: context,
                 isRounded: true,
                 text: "Place your toast message here",
               );
             },
-            child: const Text("Toast"),
+            text: "Toast",
           ),
         )
       ],

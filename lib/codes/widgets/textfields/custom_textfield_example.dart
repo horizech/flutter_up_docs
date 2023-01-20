@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/enums/up_color_type.dart';
+import 'package:flutter_up/themes/up_style.dart';
+import 'package:flutter_up/validation/up_valdation.dart';
 import 'package:flutter_up/widgets/up_textfield.dart';
 
 Widget customTextfields() {
@@ -9,61 +12,33 @@ Widget customTextfields() {
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: UpTextField(
+            colorType: UpColorType.secondary,
+            validation: UpValidation(isRequired: true),
+            style: UpStyle(textBackgroundColor: Colors.red),
             readOnly: true,
             keyboardType: TextInputType.text,
             controller: TextEditingController(text: "a1jh4vhv"),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(2)),
-                borderSide: BorderSide(
-                  width: 0,
-                  style: BorderStyle.solid,
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(2)),
-                borderSide: BorderSide(
-                  width: 0,
-                  style: BorderStyle.solid,
-                ),
-              ),
-            ),
             label: "Generated No",
           ),
         ),
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: UpTextField(
+            style: UpStyle(
+              textfieldBorderColor: Colors.orangeAccent,
+              textfieldBorderRadius: 2,
+              textfieldBorderWidth: 2,
+              textfieldCursorColor: Colors.pink,
+              textfieldErrorBorderColor: Colors.amber,
+              textfieldFocusedBorderColor: Colors.black,
+              textfieldLabelColor: Colors.blueGrey,
+              textfieldLabelSize: 12,
+            ),
             controller: TextEditingController(),
             keyboardType: TextInputType.text,
             obscureText: true,
             readOnly: false,
-            fixedLengths: const [16],
-            label: "Key",
-            minLength: 1,
-            decoration: const InputDecoration(
-              labelText: "Key",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
-                ),
-                borderSide: BorderSide(
-                  width: 1,
-                  color: Colors.red,
-                  style: BorderStyle.solid,
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
-                ),
-                borderSide: BorderSide(
-                  width: 1,
-                  color: Colors.red,
-                  style: BorderStyle.solid,
-                ),
-              ),
-            ),
+            label: "Name",
           ),
         ),
       ],

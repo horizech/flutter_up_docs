@@ -18,8 +18,8 @@ Widget widgetBox({List<Widget>? widgets}) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: widgets!.map((e) => e).toList(),
             //  [
-            //   example ?? const Text(""),
-            //   code ?? const Text(""),
+            //   example ?? const UpText(""),
+            //   code ?? const UpText(""),
 
             // ],
           ),

@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/config/up_config.dart';
 import 'package:flutter_up/models/up_label_value.dart';
+import 'package:flutter_up/themes/up_style.dart';
+import 'package:flutter_up/themes/up_theme_data.dart';
 import 'package:flutter_up/themes/up_themes.dart';
 import 'package:flutter_up/widgets/up_code.dart';
-import 'package:flutter_up/widgets/up_drop_down_menu.dart';
+
+import 'package:flutter_up/widgets/up_dropdown.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 
 List<UpLabelValuePair> _themes = [
-  UpLabelValuePair(label: 'Light', value: "${UpThemes.light.id}"),
-  UpLabelValuePair(label: 'Dark', value: "${UpThemes.dark.id}"),
-  UpLabelValuePair(label: 'Light Red', value: "${UpThemes.lightRed.id}"),
-  UpLabelValuePair(label: 'Light Blue', value: "${UpThemes.lightBlue.id}"),
-  UpLabelValuePair(label: 'Light Yellow', value: "${UpThemes.lightYellow.id}"),
-  UpLabelValuePair(label: 'Vintage', value: "${UpThemes.vintage.id}"),
+  UpLabelValuePair(label: 'Select ', value: "Default"),
+
+  UpLabelValuePair(label: 'Purple', value: "1"),
+  UpLabelValuePair(label: 'Orange', value: "2"),
+  // UpLabelValuePair(label: 'Red', value: "${UpThemes.lightRed.id}"),
+  // UpLabelValuePair(label: 'Blue', value: "${UpThemes.lightBlue.id}"),
+  // UpLabelValuePair(label: 'Yellow', value: "${UpThemes.lightYellow.id}"),
+  // UpLabelValuePair(label: 'Vintage', value: "${UpThemes.vintage.id}"),
 ];
 
 class ThemeView extends StatefulWidget {
-  const ThemeView({Key? key}) : super(key: key);
+  final Function? onChange;
+  const ThemeView({Key? key, this.onChange}) : super(key: key);
 
   @override
   State<ThemeView> createState() => _ThemesPageState();
@@ -22,9 +30,28 @@ class ThemeView extends StatefulWidget {
 
 class _ThemesPageState extends State<ThemeView> {
   String _themeId = _themes.first.value;
-  _onChange(value) {
-    UpThemes.setTheme(context, int.parse(value));
-    _themeId = value;
+  _onChange(String id) {
+    UpThemeData theme = UpThemes.generateThemeByColor(
+      primaryColor: getColorById(int.parse(id)),
+    );
+    UpConfig.changeTheme(context, theme);
+    if (widget.onChange != null) {
+      widget.onChange!();
+    }
+    setState(() {
+      _themeId = id;
+    });
+  }
+
+  Color getColorById(int id) {
+    switch (id) {
+      case 1:
+        return Colors.purple;
+      case 2:
+        return Colors.orange;
+      default:
+        return Colors.transparent;
+    }
   }
 
   Widget _themeCodes() {
@@ -33,20 +60,20 @@ class _ThemesPageState extends State<ThemeView> {
       children: const [
         Padding(
           padding: EdgeInsets.all(8.0),
-          child: Text(
-              "Initialize FlutterUp predefined theme collection and use UpThemes"),
+          child: UpText(
+              "Initialize theme in FlutterUpApp by generating UpThemeData."),
         ),
         UpCode(
           assetCode: "app.dart",
-          codeHeight: 600,
+          codeHeight: 1000,
         ),
         SizedBox(
           height: 20,
         ),
         Padding(
           padding: EdgeInsets.all(8.0),
-          child: Text(
-              "You can also use your own theme collection.For this first you need to create UpThemeData file by passing theme id and theme data."),
+          child: UpText(
+              "You can also create your own UpThemeData.For this first you need to create UpThemeData file by filling all UpThemeData parameters."),
         ),
         UpCode(
           assetCode: "up_theme_data_Example.dart",
@@ -57,27 +84,23 @@ class _ThemesPageState extends State<ThemeView> {
         ),
         Padding(
           padding: EdgeInsets.all(8.0),
-          child: Text(
-              "Now pass your UpThemeData list and your fallbackTheme to generateThemeCollection() and initialize themecollection and defaultThemeId in FlutterUpApp. In case you not initialize it FlutterUp will use its predefined themes"),
+          child: UpText("Now pass your UpThemeData in FlutterUpApp. "),
         ),
         UpCode(
-          code: ''' themeCollection: UpThemes.generateThemeCollection(
-        themes: [lightpurple],
-        fallbackTheme: ThemeData.light(),
-      ),
-      defaultThemeId: lightpurple.id,''',
-          codeHeight: 150,
+          code: ''' FlutterUpApp(  
+                       theme: lightpurple,
+             )''',
+          codeHeight: 80,
         ),
         SizedBox(
           height: 20,
         ),
         Padding(
           padding: EdgeInsets.all(8.0),
-          child: Text(
-              "Use setTheme( ) function to set theme by passing context and theme id to it"),
+          child: UpText("In case you want to change theme use"),
         ),
         UpCode(
-          code: '''  UpThemes.setTheme(context, UpThemes.dark.id);''',
+          code: '''   UpConfig.changeTheme(context, upThemeData); ''',
           codeHeight: 80,
         ),
       ],
@@ -91,14 +114,15 @@ class _ThemesPageState extends State<ThemeView> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          UpText(
             "Flutter Up Themes",
-            style: TextStyle(fontSize: 25),
+            style: UpStyle(textFontSize: 25),
           ),
-          UpDropDownMenuWidget(
+          UpDropDown(
             value: _themeId,
+            label: "Color",
             itemList: _themes,
-            onChanged: (value) => _onChange(value),
+            onChanged: (g) => _onChange(g ?? ""),
           ),
           _themeCodes(),
         ],

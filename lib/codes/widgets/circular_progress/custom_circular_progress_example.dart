@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/enums/up_color_type.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_circualar_progress.dart';
 
 Widget customCircularProgress() {
-  return Row(children: const [
-    Padding(
+  return Row(children: [
+    const Padding(
       padding: EdgeInsets.all(5.0),
       child: UpCircularProgress(
+        colorType: UpColorType.secondary,
         alignment: Alignment.topLeft,
-        color: Colors.green,
         height: 40,
         width: 40,
         strokeWidth: 1,
       ),
     ),
-    SizedBox(
+    const SizedBox(
       width: 20,
     ),
     Padding(
-      padding: EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(5.0),
       child: UpCircularProgress(
-        backgroundColor: Colors.black,
-        color: Colors.orange,
+        upStyle: UpStyle(circularProgressBarColor: Colors.orange),
         height: 20,
         width: 30,
         value: 0.8,

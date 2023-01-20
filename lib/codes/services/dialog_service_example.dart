@@ -3,6 +3,8 @@ import 'package:flutter_up/dialogs/up_base.dart';
 import 'package:flutter_up/helpers/up_console.dart';
 import 'package:flutter_up/locator.dart';
 import 'package:flutter_up/services/up_dialog.dart';
+import 'package:flutter_up/widgets/up_button.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 
 dialogServiceExample(BuildContext context) {
   String completerId = ServiceManager<UpDialogService>()
@@ -54,20 +56,20 @@ class MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(widget.document['title']),
+      title: UpText(widget.document['title']),
       actionsPadding: const EdgeInsets.all(0),
       titlePadding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
       contentPadding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
       content: Container(),
       actions: <Widget>[
-        ElevatedButton(
-          child: const Text("Okay"),
+        UpButton(
+          text: "Okay",
           onPressed: () {
             /// Okay pressed
           },
         ),
-        ElevatedButton(
-          child: const Text("Cancel"),
+        UpButton(
+          text: "Cancel",
           onPressed: () {
             _closeDialog();
           },

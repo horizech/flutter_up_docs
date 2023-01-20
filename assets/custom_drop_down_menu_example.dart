@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_up/widgets/up_drop_down_menu.dart';
+import 'package:flutter_up/enums/up_input_type.dart';
+import 'package:flutter_up/themes/up_style.dart';
 
 import 'package:flutter_up/models/up_label_value.dart';
+import 'package:flutter_up/widgets/up_dropdown.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 
 List<UpLabelValuePair> _items = [
   UpLabelValuePair(
@@ -40,26 +43,24 @@ class _CustomDropDownMenuState extends State<CustomDropDownMenu> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          UpDropDownMenuWidget(
-            // isDense: true,
-            isExpanded: true,
-            dropDownColor: Colors.grey[500],
-            alignmnet: Alignment.topLeft,
-            menuMaxHeight: 600,
-
-            focusColor: Colors.red[200],
-            underline: Container(
-              height: 2,
-              color: Colors.black,
-            ),
-            icon: const Icon(Icons.production_quantity_limits),
+          UpDropDown(
+            type: UpInputType.outline,
+            style: UpStyle(
+                dropdownBorderColor: Colors.red,
+                dropdownBorderRadius: 5,
+                dropdownBorderWidth: 1,
+                dropdownFocusedBorderColor: Colors.purple,
+                dropdownErrorBorderColor: Colors.red,
+                dropdownLabelColor: Colors.orange,
+                dropdownLabelSize: 17),
+            label: 'Item',
             value: _currentSelection,
             itemList: _items,
             onChanged: (value) => _onChange(value),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text("Current Item is $_currentSelection"),
+            child: UpText("Current Item is $_currentSelection"),
           )
         ],
       ),

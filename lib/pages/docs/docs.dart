@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/config/up_config.dart';
+import 'package:flutter_up/themes/up_style.dart';
+import 'package:flutter_up/widgets/up_app_bar.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/enum/menu_option.dart';
 import 'package:flutter_up_docs/views/dialogs/about_dialog.dart';
 import 'package:flutter_up_docs/views/dialogs/action_dialog.dart';
@@ -14,14 +18,14 @@ import 'package:flutter_up_docs/views/services/dialog.dart';
 import 'package:flutter_up_docs/views/services/navigation.dart';
 import 'package:flutter_up_docs/views/services/search.dart';
 import 'package:flutter_up_docs/views/services/url.dart';
+import 'package:flutter_up_docs/views/widgets/button.dart';
+import 'package:flutter_up_docs/views/widgets/checkbox.dart';
 import 'package:flutter_up_docs/views/widgets/circular_progress.dart';
+import 'package:flutter_up_docs/views/widgets/drop_down_menu.dart';
 import 'package:flutter_up_docs/views/widgets/orientational_column_row.dart';
 import 'package:flutter_up_docs/views/starting/starting.dart';
 import 'package:flutter_up_docs/views/theme/theme.dart';
-import 'package:flutter_up_docs/views/widgets/button.dart';
-import 'package:flutter_up_docs/views/widgets/checkbox.dart';
 import 'package:flutter_up_docs/views/widgets/drawer.dart';
-import 'package:flutter_up_docs/views/widgets/drop_down_menu.dart';
 import 'package:flutter_up_docs/views/widgets/radio.dart';
 import 'package:flutter_up_docs/views/widgets/textfield.dart';
 import 'package:flutter_up_docs/views/widgets/toast.dart';
@@ -36,6 +40,10 @@ class DocsPage extends StatefulWidget {
 }
 
 class _DocsPageState extends State<DocsPage> {
+  onThemeChange() {
+    setState(() {});
+  }
+
   Color? secondaryColor;
   Color? primaryColor;
   MenuOption currentSelection = MenuOption.start;
@@ -43,7 +51,8 @@ class _DocsPageState extends State<DocsPage> {
     switch (currentSelection) {
       //Theme view
       case MenuOption.theme:
-        return const ThemeView();
+        return ThemeView(onChange: () => onThemeChange());
+
       //widgets view
       case MenuOption.button:
         return const ButtonView();
@@ -115,10 +124,10 @@ class _DocsPageState extends State<DocsPage> {
           iconData,
           color: currentSelection == menuOption ? secondaryColor : primaryColor,
         ),
-        title: Text(
+        title: UpText(
           text,
-          style: TextStyle(
-            color:
+          style: UpStyle(
+            textColor:
                 currentSelection == menuOption ? secondaryColor : primaryColor,
           ),
         ),
@@ -131,11 +140,13 @@ class _DocsPageState extends State<DocsPage> {
 
   @override
   Widget build(BuildContext context) {
-    secondaryColor = Theme.of(context).colorScheme.secondary;
-    primaryColor = Theme.of(context).primaryColor;
+    secondaryColor = Colors.white;
+
+    primaryColor = UpConfig.of(context)?.theme.primaryColor;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("FlutterUp Documentation"),
+      appBar: const UpAppBar(
+        // backgroundColor: primaryColor,
+        title: "FlutterUp Documentation",
       ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,8 +184,10 @@ class _DocsPageState extends State<DocsPage> {
                     },
                   ),
                   ExpansionTile(
-                    leading: const Icon(Icons.design_services),
-                    title: const Text("Services"),
+                    leading: const Icon(
+                      Icons.design_services,
+                    ),
+                    title: const UpText("Services"),
                     children: [
                       _listTileContainer(
                         menuOption: MenuOption.navigationService,
@@ -226,7 +239,7 @@ class _DocsPageState extends State<DocsPage> {
                     leading: const Icon(
                       Icons.widgets,
                     ),
-                    title: const Text("Widgets"),
+                    title: const UpText("Widgets"),
                     children: [
                       _listTileContainer(
                         menuOption: MenuOption.button,
@@ -316,7 +329,7 @@ class _DocsPageState extends State<DocsPage> {
                   ),
                   ExpansionTile(
                     leading: const Icon(Icons.smart_screen),
-                    title: const Text("Dialogs"),
+                    title: const UpText("Dialogs"),
                     children: [
                       _listTileContainer(
                         menuOption: MenuOption.aboutDialog,
@@ -366,7 +379,7 @@ class _DocsPageState extends State<DocsPage> {
                   ),
                   ExpansionTile(
                     leading: const Icon(Icons.help_outline),
-                    title: const Text("Helpers"),
+                    title: const UpText("Helpers"),
                     children: [
                       _listTileContainer(
                         menuOption: MenuOption.copyToClipboard,

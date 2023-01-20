@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/models/up_drawer_item.dart';
+import 'package:flutter_up/themes/up_style.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 
 class DrawerExample extends StatelessWidget {
   const DrawerExample({Key? key}) : super(key: key);
@@ -27,10 +29,10 @@ class DrawerExample extends StatelessWidget {
         decoration: const BoxDecoration(
           color: Colors.deepPurple,
         ),
-        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: const [
-          Text(
+        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+          UpText(
+            style: UpStyle(textFontSize: 25, textColor: Colors.white),
             "Drawer Example",
-            style: TextStyle(color: Colors.white, fontSize: 25),
           )
         ]));
   }
@@ -43,7 +45,7 @@ class DrawerExample extends StatelessWidget {
       ..._getDrawerActions()
           .map<Widget>((action) => ListTile(
                 leading: Icon(action.icon),
-                title: Text(action.title),
+                title: UpText(action.title),
                 onTap: () => {action.onTap(context)},
               ))
           .toList()

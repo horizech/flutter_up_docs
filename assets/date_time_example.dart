@@ -14,9 +14,7 @@ Widget dateTime() {
               text: formatSecondsTime(100),
             ),
             readOnly: true,
-            decoration: const InputDecoration(
-              labelText: "Format seconds time",
-            ),
+            label: "Format seconds time",
           ),
         ),
         Padding(
@@ -26,9 +24,6 @@ Widget dateTime() {
             readOnly: true,
             controller: TextEditingController(
               text: formatMinutesTime(2),
-            ),
-            decoration: const InputDecoration(
-              labelText: "Format minutes time",
             ),
           ),
         ),

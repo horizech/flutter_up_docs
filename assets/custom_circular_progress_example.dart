@@ -7,7 +7,7 @@ Widget customCircularProgress() {
       padding: EdgeInsets.all(5.0),
       child: UpCircularProgress(
         alignment: Alignment.topLeft,
-        color: Colors.green,
+        // color: Colors.green,
         height: 40,
         width: 40,
         strokeWidth: 1,
@@ -19,8 +19,8 @@ Widget customCircularProgress() {
     Padding(
       padding: EdgeInsets.all(5.0),
       child: UpCircularProgress(
-        backgroundColor: Colors.black,
-        color: Colors.orange,
+        // backgroundColor: Colors.black,
+        // color: Colors.orange,
         height: 20,
         width: 30,
         value: 0.8,

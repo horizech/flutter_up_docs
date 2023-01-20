@@ -6,7 +6,8 @@ void setupLocator() {
     FlutterUpLocators.upNavigationService,
     FlutterUpLocators.upScaffoldHelperService,
     FlutterUpLocators.upSearchService,
-    FlutterUpLocators.upUrlService
+    FlutterUpLocators.upUrlService,
+    FlutterUpLocators.upLayoutService
   ]);
   // You can also create your own services
   // ServiceManager.registerLazySingleton(() => KeyService());

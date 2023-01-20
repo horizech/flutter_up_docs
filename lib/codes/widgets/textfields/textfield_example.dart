@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/enums/up_color_type.dart';
+import 'package:flutter_up/validation/up_valdation.dart';
 import 'package:flutter_up/widgets/up_textfield.dart';
 
 Widget textfields() {
@@ -11,43 +13,38 @@ Widget textfields() {
           padding: const EdgeInsets.all(5.0),
           child: UpTextField(
             controller: emailController,
-            minLength: 6,
             onSaved: (input) {
               // Perform action
             },
-            decoration: const InputDecoration(
-              labelText: "Username",
-            ),
+            label: "Username",
           ),
         ),
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: UpTextField(
+            colorType: UpColorType.secondary,
             autofillHint: AutofillHints.email,
             keyboardType: TextInputType.emailAddress,
+            validation: UpValidation(isEmail: true),
             label: "Email",
             onChanged: (input) {
               //do something
             },
             readOnly: false,
             controller: TextEditingController(),
-            decoration: const InputDecoration(
-              labelText: "Email",
-            ),
           ),
         ),
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: UpTextField(
+            colorType: UpColorType.tertiary,
             controller: TextEditingController(),
-            minLength: 6,
+            validation: UpValidation(minLength: 6),
             onSaved: (input) => {
               // Perform action
             },
             obscureText: true,
-            decoration: const InputDecoration(
-              labelText: "Password",
-            ),
+            label: "Password",
           ),
         ),
       ],

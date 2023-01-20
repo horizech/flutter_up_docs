@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/enums/up_button_type.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_button.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 
 Widget outlinedButtons() {
   return Wrap(
@@ -9,70 +11,92 @@ Widget outlinedButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.outlined,
-          onPress: () {
+          type: UpButtonType.outlined,
+          onPressed: () {
             // Perform action
           },
-          child: const Text(
+          child: UpText(
             "Primary",
-            style: TextStyle(color: Colors.white),
+            style: UpStyle(textColor: Colors.white),
           ),
         ),
       ),
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.outlined,
-          colorType: UpColorType.basic,
-          onPress: () {
-            // Perform action
+          colorType: UpColorType.secondary,
+          type: UpButtonType.outlined,
+          onPressed: () {
+            //Do some code
           },
-          child: const Text("Basic"),
+          child: const UpText("Secondary"),
         ),
       ),
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.outlined,
-          colorType: UpColorType.accent,
-          onPress: () {
-            // Perform action
+          type: UpButtonType.outlined,
+          colorType: UpColorType.tertiary,
+          onPressed: () {
+            //Do some code
           },
-          child: const Text("Accent"),
+          child: const UpText("Tertiary"),
         ),
       ),
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.outlined,
+          type: UpButtonType.outlined,
           colorType: UpColorType.warn,
-          onPress: () {
+          onPressed: () {
+            //Do some code
             // Perform action
           },
-          child: const Text("Warn"),
+          child: const UpText("Warn"),
         ),
       ),
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          buttonType: UpButtonType.outlined,
-          roundedBorderRadius: 3.0,
-          isButtonDisable: true,
-          onPress: () {
+          type: UpButtonType.outlined,
+          onPressed: () {
             // Perform action
           },
-          child: const Text("Disabled"),
+          child: const UpText("Sucess"),
         ),
-      )
+      ),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: UpButton(
+          type: UpButtonType.outlined,
+          style: UpStyle(isDisabled: true),
+          onPressed: () {
+            //Do some code
+          },
+          child: const UpText("Disabled"),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: UpButton(
+          type: UpButtonType.outlined,
+          style: UpStyle(
+            buttonBackgroundColor: Colors.white,
+            buttonBorderColor: Colors.red,
+            buttonBorderRadius: 12,
+            buttonBorderWidth: 1,
+            buttonHoverBackgroundColor: Colors.red,
+            buttonHoverBorderColor: Colors.black,
+            buttonHoverTextColor: Colors.black,
+            buttonTextColor: Colors.black,
+            buttonTextSize: 16,
+          ),
+          onPressed: () {
+            //Do some code
+          },
+          child: const UpText("Custom"),
+        ),
+      ),
     ],
   );
 }

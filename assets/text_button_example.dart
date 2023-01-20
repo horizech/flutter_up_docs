@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/enums/up_button_type.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_button.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 
 Widget textButtons() {
   return Wrap(
@@ -9,70 +11,91 @@ Widget textButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.text,
-          onPress: () {
+          onPressed: () {
             // Perform action
           },
-          child: const Text(
+          child: UpText(
             "Primary",
-            style: TextStyle(color: Colors.white),
+            style: UpStyle(textColor: Colors.white),
           ),
         ),
       ),
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.text,
-          colorType: UpColorType.basic,
-          onPress: () {
-            // Perform action
+          colorType: UpColorType.secondary,
+          type: UpButtonType.text,
+          onPressed: () {
+            //Do some code
           },
-          child: const Text("Basic"),
+          child: const UpText("Secondary"),
         ),
       ),
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.text,
-          colorType: UpColorType.accent,
-          onPress: () {
-            // Perform action
+          type: UpButtonType.text,
+          colorType: UpColorType.tertiary,
+          onPressed: () {
+            //Do some code
           },
-          child: const Text("Accent"),
+          child: const UpText("Tertiary"),
         ),
       ),
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          buttonType: UpButtonType.text,
+          type: UpButtonType.text,
           colorType: UpColorType.warn,
-          onPress: () {
-            // Perform action
+          onPressed: () {
+            //Do some code
           },
-          child: const Text("Warn"),
+          child: const UpText("Warn"),
         ),
       ),
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
-          buttonType: UpButtonType.text,
-          isRounded: true,
-          roundedBorderRadius: 3.0,
-          isButtonDisable: true,
-          onPress: () {
-            // Perform action
+          type: UpButtonType.text,
+          colorType: UpColorType.success,
+          onPressed: () {
+            //Do some code
           },
-          child: const Text("Disabled"),
+          child: const UpText("Sucess"),
         ),
-      )
+      ),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: UpButton(
+          type: UpButtonType.text,
+          style: UpStyle(isDisabled: true),
+          onPressed: () {
+            //Do some code
+          },
+          child: const UpText("Disabled"),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: UpButton(
+          type: UpButtonType.text,
+          style: UpStyle(
+            buttonBackgroundColor: Colors.white,
+            buttonBorderColor: Colors.red,
+            buttonBorderRadius: 12,
+            buttonBorderWidth: 1,
+            buttonHoverBackgroundColor: Colors.red,
+            buttonHoverBorderColor: Colors.black,
+            buttonHoverTextColor: Colors.black,
+            buttonTextColor: Colors.black,
+            buttonTextSize: 16,
+          ),
+          onPressed: () {
+            //Do some code
+          },
+          child: const UpText("Custom"),
+        ),
+      ),
     ],
   );
 }
