@@ -24,10 +24,13 @@ class StartingView extends StatelessWidget {
             padding: EdgeInsets.all(8.0),
             child: UpText("Run this command with Flutter:"),
           ),
+          // const UpDynamicView(
+          //   code: ''' flutter pub add flutter_up''',
+          // ),
           const UpCode(
-            code: ''' flutter pub add flutter_up''',
-            codeHeight: 80,
-          ),
+              code: ''' flutter pub add flutter_up''',
+              height: 80,
+              language: 'shell'),
           const SizedBox(
             height: 20,
           ),
@@ -39,7 +42,7 @@ class StartingView extends StatelessWidget {
           const UpCode(
             code: '''dependencies:
   flutter_up: ^0.6.5''',
-            codeHeight: 80,
+            height: 80,
           ),
           const SizedBox(
             height: 20,
@@ -50,7 +53,7 @@ class StartingView extends StatelessWidget {
           ),
           const UpCode(
             code: '''import 'package:flutter_up/flutter_up.dart';''',
-            codeHeight: 80,
+            height: 80,
           ),
           const SizedBox(
             height: 20,
@@ -62,7 +65,7 @@ class StartingView extends StatelessWidget {
           ),
           const UpCode(
             assetCode: 'locator.dart',
-            codeHeight: 280,
+            height: 280,
           ),
           const SizedBox(
             height: 20,
@@ -73,7 +76,7 @@ class StartingView extends StatelessWidget {
           ),
           const UpCode(
             assetCode: "main.dart",
-            codeHeight: 300,
+            height: 300,
           ),
           const SizedBox(
             height: 20,
@@ -88,7 +91,7 @@ class StartingView extends StatelessWidget {
           ),
           const UpCode(
             assetCode: "app.dart",
-            codeHeight: 1100,
+            height: 500,
           ),
           const SizedBox(
             height: 20,

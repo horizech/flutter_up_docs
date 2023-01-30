@@ -30,7 +30,7 @@ class ToastView extends StatelessWidget {
                 toast(context),
                 const UpCode(
                   assetCode: 'toast_example.dart',
-                  codeHeight: 2500,
+                  height: 2500,
                 ),
               ],
             ),

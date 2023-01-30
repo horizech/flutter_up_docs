@@ -40,7 +40,7 @@ class RadioView extends StatelessWidget {
                 const RadioButtonExample(),
                 const UpCode(
                   assetCode: 'radio_example.dart',
-                  codeHeight: 1100,
+                  height: 1100,
                 ),
               ],
             ),
@@ -59,7 +59,7 @@ class RadioView extends StatelessWidget {
                 const CustomRadioButtonExample(),
                 const UpCode(
                   assetCode: 'custom_radio_example.dart',
-                  codeHeight: 1300,
+                  height: 1300,
                 ),
               ],
             ),

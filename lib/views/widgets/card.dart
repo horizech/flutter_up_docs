@@ -23,7 +23,7 @@ class CardView extends StatelessWidget {
               child: UpText("Flutter up Cards."),
             ),
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Loading Card",
                 style: UpStyle(textFontSize: 20),
@@ -34,7 +34,7 @@ class CardView extends StatelessWidget {
                 loadingCard(),
                 const UpCode(
                   assetCode: 'loading_card_example.dart',
-                  codeHeight: 1300,
+                  height: 1300,
                 ),
               ],
             ),

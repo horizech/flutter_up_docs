@@ -24,7 +24,7 @@ class SearchServiceView extends StatelessWidget {
             ),
             const UpCode(
               assetCode: 'search_service_example.dart',
-              codeHeight: 270,
+              height: 270,
             ),
           ],
         ),

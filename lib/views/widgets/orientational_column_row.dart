@@ -37,7 +37,7 @@ class OrientationalColumnRowView extends StatelessWidget {
                 orientationalColumnRow(),
                 const UpCode(
                   assetCode: 'orientational_column_row_example.dart',
-                  codeHeight: 900,
+                  height: 900,
                 ),
               ],
             ),

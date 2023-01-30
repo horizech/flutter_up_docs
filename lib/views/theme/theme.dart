@@ -65,7 +65,7 @@ class _ThemesPageState extends State<ThemeView> {
         ),
         UpCode(
           assetCode: "app.dart",
-          codeHeight: 1000,
+          height: 1000,
         ),
         SizedBox(
           height: 20,
@@ -77,7 +77,7 @@ class _ThemesPageState extends State<ThemeView> {
         ),
         UpCode(
           assetCode: "up_theme_data_Example.dart",
-          codeHeight: 320,
+          height: 320,
         ),
         SizedBox(
           height: 20,
@@ -90,7 +90,7 @@ class _ThemesPageState extends State<ThemeView> {
           code: ''' FlutterUpApp(  
                        theme: lightpurple,
              )''',
-          codeHeight: 80,
+          height: 80,
         ),
         SizedBox(
           height: 20,
@@ -101,7 +101,7 @@ class _ThemesPageState extends State<ThemeView> {
         ),
         UpCode(
           code: '''   UpConfig.changeTheme(context, upThemeData); ''',
-          codeHeight: 80,
+          height: 80,
         ),
       ],
     );

@@ -39,7 +39,7 @@ class TextFieldView extends StatelessWidget {
                 textfields(),
                 const UpCode(
                   assetCode: 'textfield_example.dart',
-                  codeHeight: 930,
+                  height: 930,
                 ),
               ],
             ),
@@ -58,7 +58,7 @@ class TextFieldView extends StatelessWidget {
                 keyTextfield(),
                 const UpCode(
                   assetCode: 'key_textfield_example.dart',
-                  codeHeight: 800,
+                  height: 800,
                 ),
               ],
             ),
@@ -77,7 +77,7 @@ class TextFieldView extends StatelessWidget {
                 searchtextfield(),
                 const UpCode(
                   assetCode: 'search_textfield_example.dart',
-                  codeHeight: 420,
+                  height: 420,
                 ),
               ],
             ),
@@ -96,7 +96,7 @@ class TextFieldView extends StatelessWidget {
                 customTextfields(),
                 const UpCode(
                   assetCode: 'custom_textfield_example.dart',
-                  codeHeight: 900,
+                  height: 900,
                 ),
               ],
             ),

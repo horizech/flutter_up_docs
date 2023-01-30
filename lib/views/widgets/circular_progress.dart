@@ -31,7 +31,7 @@ class CircularProgressView extends StatelessWidget {
                 circularProgress(),
                 const UpCode(
                   assetCode: 'circular_progress_example.dart',
-                  codeHeight: 200,
+                  height: 200,
                 ),
               ],
             ),
@@ -47,7 +47,7 @@ class CircularProgressView extends StatelessWidget {
                 customCircularProgress(),
                 const UpCode(
                   assetCode: 'custom_circular_progress_example.dart',
-                  codeHeight: 550,
+                  height: 550,
                 ),
               ],
             ),

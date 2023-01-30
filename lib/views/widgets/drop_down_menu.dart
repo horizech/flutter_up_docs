@@ -34,7 +34,7 @@ class DropDownMenuView extends StatelessWidget {
             ),
             const UpCode(
               assetCode: 'constants.dart',
-              codeHeight: 300,
+              height: 300,
             ),
             const SizedBox(
               height: 50,
@@ -51,7 +51,7 @@ class DropDownMenuView extends StatelessWidget {
                 const DropDownMenu(),
                 const UpCode(
                   assetCode: 'drop_down_menu_example.dart',
-                  codeHeight: 700,
+                  height: 700,
                 ),
               ],
             ),
@@ -70,7 +70,7 @@ class DropDownMenuView extends StatelessWidget {
                 const CustomDropDownMenu(),
                 const UpCode(
                   assetCode: 'custom_drop_down_menu_example.dart',
-                  codeHeight: 1150,
+                  height: 1150,
                 ),
               ],
             ),

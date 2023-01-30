@@ -39,7 +39,7 @@ class DrawerItemCardView extends StatelessWidget {
               ),
               const UpCode(
                 assetCode: 'drawer_example.dart',
-                codeHeight: 1200,
+                height: 1200,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -50,7 +50,7 @@ class DrawerItemCardView extends StatelessWidget {
               ),
               const UpCode(
                 assetCode: 'app_example.dart',
-                codeHeight: 500,
+                height: 500,
               ),
             ],
           ),

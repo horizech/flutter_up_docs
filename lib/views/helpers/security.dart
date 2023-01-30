@@ -24,7 +24,7 @@ class SecurityView extends StatelessWidget {
             ),
             const UpCode(
               assetCode: 'security_example.dart',
-              codeHeight: 300,
+              height: 300,
             ),
           ],
         ),

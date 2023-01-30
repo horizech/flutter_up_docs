@@ -30,7 +30,7 @@ class InfoDialogView extends StatelessWidget {
                 const InfoDialogExample(),
                 const UpCode(
                   assetCode: 'info_dialog_example.dart',
-                  codeHeight: 350,
+                  height: 350,
                 ),
               ],
             ),

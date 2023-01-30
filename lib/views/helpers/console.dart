@@ -24,7 +24,7 @@ class ConsoleView extends StatelessWidget {
             ),
             const UpCode(
               assetCode: 'console_example.dart',
-              codeHeight: 270,
+              height: 270,
             ),
           ],
         ),

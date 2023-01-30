@@ -39,7 +39,7 @@ class CheckboxView extends StatelessWidget {
                 checkboxes(),
                 const UpCode(
                   assetCode: 'checkbox_example.dart',
-                  codeHeight: 1100,
+                  height: 1100,
                 ),
               ],
             ),
@@ -58,7 +58,7 @@ class CheckboxView extends StatelessWidget {
                 customCheckboxes(),
                 const UpCode(
                   assetCode: 'custom_checkbox_example.dart',
-                  codeHeight: 800,
+                  height: 800,
                 ),
               ],
             ),
@@ -77,7 +77,7 @@ class CheckboxView extends StatelessWidget {
                 roundedCheckboxes(),
                 const UpCode(
                   assetCode: 'rounded_checkbox_example.dart',
-                  codeHeight: 600,
+                  height: 600,
                 ),
               ],
             ),

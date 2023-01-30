@@ -42,7 +42,7 @@ class ButtonView extends StatelessWidget {
                 UpButtons(),
                 const UpCode(
                   assetCode: 'elevated_button_example.dart',
-                  codeHeight: 1550,
+                  height: 1550,
                 ),
               ],
             ),
@@ -71,7 +71,7 @@ class ButtonView extends StatelessWidget {
                 outlinedButtons(),
                 const UpCode(
                   assetCode: 'outlined_button_example.dart',
-                  codeHeight: 1750,
+                  height: 1750,
                 ),
               ],
             ),
@@ -90,7 +90,7 @@ class ButtonView extends StatelessWidget {
                 textButtons(),
                 const UpCode(
                   assetCode: 'text_button_example.dart',
-                  codeHeight: 1750,
+                  height: 1750,
                 ),
               ],
             ),
@@ -109,7 +109,7 @@ class ButtonView extends StatelessWidget {
                 iconButtons(),
                 const UpCode(
                   assetCode: 'icon_button_example.dart',
-                  codeHeight: 1420,
+                  height: 1420,
                 ),
               ],
             ),
@@ -128,7 +128,7 @@ class ButtonView extends StatelessWidget {
                 floatingButtons(),
                 const UpCode(
                   assetCode: 'floating_button_example.dart',
-                  codeHeight: 1400,
+                  height: 1400,
                 ),
               ],
             ),
@@ -147,7 +147,7 @@ class ButtonView extends StatelessWidget {
                 loadingButton(),
                 const UpCode(
                   assetCode: 'loading_button_example.dart',
-                  codeHeight: 1000,
+                  height: 1000,
                 ),
               ],
             ),

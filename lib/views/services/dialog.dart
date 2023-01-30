@@ -24,7 +24,7 @@ class DialogServiceView extends StatelessWidget {
             ),
             const UpCode(
               assetCode: 'dialog_service_example.dart',
-              codeHeight: 1300,
+              height: 1300,
             ),
           ],
         ),

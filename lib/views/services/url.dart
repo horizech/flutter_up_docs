@@ -29,7 +29,7 @@ class UrlServiceView extends StatelessWidget {
                 const URLService(),
                 const UpCode(
                   assetCode: 'url_service_example.dart',
-                  codeHeight: 450,
+                  height: 450,
                 ),
               ],
             ),

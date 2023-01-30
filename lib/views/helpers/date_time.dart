@@ -40,7 +40,7 @@ class DateTimeView extends StatelessWidget {
                 const DateTimepickerExample(),
                 const UpCode(
                   assetCode: 'date_time_picker_example.dart',
-                  codeHeight: 1500,
+                  height: 1500,
                 ),
               ],
             ),
@@ -59,7 +59,7 @@ class DateTimeView extends StatelessWidget {
                 dateTime(),
                 const UpCode(
                   assetCode: 'date_time_example.dart',
-                  codeHeight: 680,
+                  height: 680,
                 ),
               ],
             )

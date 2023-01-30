@@ -30,7 +30,7 @@ class CopyToClipboardView extends StatelessWidget {
                 copyToClipboard(context),
                 const UpCode(
                   assetCode: 'copy_to_clipboard_example.dart',
-                  codeHeight: 400,
+                  height: 400,
                 ),
               ],
             ),

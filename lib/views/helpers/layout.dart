@@ -37,7 +37,7 @@ class LayoutView extends StatelessWidget {
                 const LayoutExample(),
                 const UpCode(
                   assetCode: 'layout_example.dart',
-                  codeHeight: 800,
+                  height: 800,
                 ),
               ],
             ),
