@@ -15,7 +15,7 @@ class StartingView extends StatelessWidget {
         children: [
           UpText(
             "Get started with FlutterUp.",
-            style: UpStyle(textFontSize: 25),
+            style: UpStyle(textSize: 25),
           ),
           const SizedBox(
             height: 20,
@@ -64,7 +64,7 @@ class StartingView extends StatelessWidget {
                 "Now you need to create locater file in you lib folder and initaialize services you want to use"),
           ),
           const UpCode(
-            assetCode: 'locator.dart',
+            assetCode: 'assets/locator.dart',
             height: 280,
           ),
           const SizedBox(
@@ -75,7 +75,7 @@ class StartingView extends StatelessWidget {
             child: UpText("Now need to setup locator file in main"),
           ),
           const UpCode(
-            assetCode: "main.dart",
+            assetCode: "assets/main.dart",
             height: 300,
           ),
           const SizedBox(
@@ -90,7 +90,7 @@ class StartingView extends StatelessWidget {
                 "Now initalize you app by using FlutterUpApp, initialize routes by providing path and pagebuider to upRoute."),
           ),
           const UpCode(
-            assetCode: "app.dart",
+            assetCode: "assets/app.dart",
             height: 500,
           ),
           const SizedBox(

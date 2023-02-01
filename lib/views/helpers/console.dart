@@ -19,11 +19,11 @@ class ConsoleView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Console",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             const UpCode(
-              assetCode: 'console_example.dart',
+              assetCode: 'assets/console_example.dart',
               height: 270,
             ),
           ],

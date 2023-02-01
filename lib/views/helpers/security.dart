@@ -18,12 +18,12 @@ class SecurityView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
                 "Security",
               ),
             ),
             const UpCode(
-              assetCode: 'security_example.dart',
+              assetCode: 'assets/security_example.dart',
               height: 300,
             ),
           ],

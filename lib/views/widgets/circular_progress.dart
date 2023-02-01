@@ -23,14 +23,14 @@ class CircularProgressView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Flutter Up  Circular Progress",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             widgetBox(
               widgets: [
                 circularProgress(),
                 const UpCode(
-                  assetCode: 'circular_progress_example.dart',
+                  assetCode: 'assets/circular_progress_example.dart',
                   height: 200,
                 ),
               ],
@@ -39,14 +39,14 @@ class CircularProgressView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Custom Flutter Up Circular Progress",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 customCircularProgress(),
                 const UpCode(
-                  assetCode: 'custom_circular_progress_example.dart',
+                  assetCode: 'assets/custom_circular_progress_example.dart',
                   height: 550,
                 ),
               ],

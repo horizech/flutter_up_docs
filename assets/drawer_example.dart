@@ -31,7 +31,7 @@ class DrawerExample extends StatelessWidget {
         ),
         child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
           UpText(
-            style: UpStyle(textFontSize: 25, textColor: Colors.white),
+            style: UpStyle(textSize: 25, textColor: Colors.white),
             "Drawer Example",
           )
         ]));

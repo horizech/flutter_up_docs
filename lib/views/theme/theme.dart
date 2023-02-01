@@ -64,7 +64,7 @@ class _ThemesPageState extends State<ThemeView> {
               "Initialize theme in FlutterUpApp by generating UpThemeData."),
         ),
         UpCode(
-          assetCode: "app.dart",
+          assetCode: "assets/app.dart",
           height: 1000,
         ),
         SizedBox(
@@ -76,7 +76,7 @@ class _ThemesPageState extends State<ThemeView> {
               "You can also create your own UpThemeData.For this first you need to create UpThemeData file by filling all UpThemeData parameters."),
         ),
         UpCode(
-          assetCode: "up_theme_data_Example.dart",
+          assetCode: "assets/up_theme_data_Example.dart",
           height: 320,
         ),
         SizedBox(
@@ -116,7 +116,7 @@ class _ThemesPageState extends State<ThemeView> {
         children: [
           UpText(
             "Flutter Up Themes",
-            style: UpStyle(textFontSize: 25),
+            style: UpStyle(textSize: 25),
           ),
           UpDropDown(
             value: _themeId,

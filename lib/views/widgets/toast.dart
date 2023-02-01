@@ -21,7 +21,7 @@ class ToastView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
                 "Flutter up Toast",
               ),
             ),
@@ -29,7 +29,7 @@ class ToastView extends StatelessWidget {
               widgets: [
                 toast(context),
                 const UpCode(
-                  assetCode: 'toast_example.dart',
+                  assetCode: 'assets/toast_example.dart',
                   height: 2500,
                 ),
               ],

@@ -24,21 +24,21 @@ class CheckboxView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Flutter up Checkbox are elements enhanced with styling and ink ripples.",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Checkboxes",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 checkboxes(),
                 const UpCode(
-                  assetCode: 'checkbox_example.dart',
+                  assetCode: 'assets/checkbox_example.dart',
                   height: 1100,
                 ),
               ],
@@ -50,14 +50,14 @@ class CheckboxView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Custom Checkboxes",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 customCheckboxes(),
                 const UpCode(
-                  assetCode: 'custom_checkbox_example.dart',
+                  assetCode: 'assets/custom_checkbox_example.dart',
                   height: 800,
                 ),
               ],
@@ -69,14 +69,16 @@ class CheckboxView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Rounded Checkboxes",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(
+                  textSize: 20,
+                ),
               ),
             ),
             widgetBox(
               widgets: [
                 roundedCheckboxes(),
                 const UpCode(
-                  assetCode: 'rounded_checkbox_example.dart',
+                  assetCode: 'assets/rounded_checkbox_example.dart',
                   height: 600,
                 ),
               ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
-import 'package:flutter_up/helpers/up_date_time.dart';
+
+import 'package:flutter_up/helpers/up_datetime_helper.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_textfield.dart';
 
@@ -16,7 +17,7 @@ class _DateTimepickerState extends State<DateTimepicker> {
   TextEditingController timeController = TextEditingController();
 
   _datePicker() async {
-    DateTime? pickedDate = await upDatePicker(
+    DateTime? pickedDate = await UpDateTimeHelper.upDatePicker(
       context,
       initialDate: DateTime.now(),
       firstDate: DateTime(2000),
@@ -29,7 +30,7 @@ class _DateTimepickerState extends State<DateTimepicker> {
   }
 
   _timePicker() async {
-    TimeOfDay? pickedTime = await upTimePicker(
+    TimeOfDay? pickedTime = await UpDateTimeHelper.upTimePicker(
       context: context,
       initialTime: const TimeOfDay(hour: 12, minute: 0),
     );
@@ -41,8 +42,7 @@ class _DateTimepickerState extends State<DateTimepicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Column(
+    return Column(
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -85,6 +85,6 @@ class _DateTimepickerState extends State<DateTimepicker> {
               }),
         ),
       ],
-    ));
+    );
   }
 }

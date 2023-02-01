@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
           children: [
             UpText(
               "Flutter Up",
-              style: UpStyle(textFontSize: 50),
+              style: UpStyle(textSize: 50),
             ),
             const SizedBox(
               height: 20,

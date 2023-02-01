@@ -9,25 +9,28 @@ class ActionDialogExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UpButton(
-      onPressed: () {
-        ServiceManager<UpDialogService>()
-            .showDialog(context, UpActionsDialog(), data: {
-          'title': 'Delete',
-          'text': "Are you sure you want to delete?",
-          'actions': [
-            {
-              'text': 'Yes',
-              'onPressed': () {},
-            },
-            {
-              'text': 'No',
-              'onPressed': () {},
-            },
-          ]
-        });
-      },
-      text :"Action Dialog",
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: UpButton(
+        onPressed: () {
+          ServiceManager<UpDialogService>()
+              .showDialog(context, UpActionsDialog(), data: {
+            'title': 'Delete',
+            'text': "Are you sure you want to delete?",
+            'actions': [
+              {
+                'text': 'Yes',
+                'onPressed': () {},
+              },
+              {
+                'text': 'No',
+                'onPressed': () {},
+              },
+            ]
+          });
+        },
+        text: "Action Dialog",
+      ),
     );
   }
 }

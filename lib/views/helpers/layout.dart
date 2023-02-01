@@ -22,7 +22,7 @@ class LayoutView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Layout",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             Padding(
@@ -36,7 +36,7 @@ class LayoutView extends StatelessWidget {
               widgets: [
                 const LayoutExample(),
                 const UpCode(
-                  assetCode: 'layout_example.dart',
+                  assetCode: 'assets/layout_example.dart',
                   height: 800,
                 ),
               ],

@@ -22,14 +22,14 @@ class AboutDialogView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "About Dialog",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             widgetBox(
               widgets: [
                 const AboutDialogExample(),
                 const UpCode(
-                  assetCode: 'about_dialog_example.dart',
+                  assetCode: 'assets/about_dialog_example.dart',
                   height: 350,
                 ),
               ],

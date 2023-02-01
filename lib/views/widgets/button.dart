@@ -5,9 +5,8 @@ import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/elevated_button_example.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/floating_button_example.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/icon_button_example.dart';
+import 'package:flutter_up_docs/codes/widgets/buttons/image_button_example.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/loading_button_example.dart';
-import 'package:flutter_up_docs/codes/widgets/buttons/outlined_button_example.dart';
-import 'package:flutter_up_docs/codes/widgets/buttons/text_button_example.dart';
 
 import 'package:flutter_up_docs/widgets/widget_box.dart';
 
@@ -27,21 +26,21 @@ class ButtonView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Flutter up buttons are elements enhanced with styling and ink ripples.",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Elevated Button",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 UpButtons(),
                 const UpCode(
-                  assetCode: 'elevated_button_example.dart',
+                  assetCode: 'assets/elevated_button_example.dart',
                   height: 1550,
                 ),
               ],
@@ -59,41 +58,58 @@ class ButtonView extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: UpText(
+            //     "Outlined Buttons",
+            //     style: UpStyle(textSize: 20),
+            //   ),
+            // ),
+            // widgetBox(
+            //   widgets: [
+            //     outlinedButtons(),
+            //     const UpCode(
+            //       assetCode: 'assets/outlined_button_example.dart',
+            //       height: 1750,
+            //     ),
+            //   ],
+            // ),
+            // const SizedBox(
+            //   height: 50,
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: UpText(
+            //     "Text Buttons",
+            //     style: UpStyle(textSize: 20),
+            //   ),
+            // ),
+            // widgetBox(
+            //   widgets: [
+            //     textButtons(),
+            //     const UpCode(
+            //       assetCode: 'assets/text_button_example.dart',
+            //       height: 1750,
+            //     ),
+            //   ],
+            // ),
+
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
-                "Outlined Buttons",
-                style: UpStyle(textFontSize: 20),
+                "Image Button",
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
-                outlinedButtons(),
+                imageButton(),
                 const UpCode(
-                  assetCode: 'outlined_button_example.dart',
-                  height: 1750,
+                  assetCode: 'assets/image_button_example.dart',
                 ),
               ],
             ),
-            const SizedBox(
-              height: 50,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Text Buttons",
-                style: UpStyle(textFontSize: 20),
-              ),
-            ),
-            widgetBox(
-              widgets: [
-                textButtons(),
-                const UpCode(
-                  assetCode: 'text_button_example.dart',
-                  height: 1750,
-                ),
-              ],
-            ),
+
             const SizedBox(
               height: 50,
             ),
@@ -101,15 +117,14 @@ class ButtonView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Icon Buttons",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 iconButtons(),
                 const UpCode(
-                  assetCode: 'icon_button_example.dart',
-                  height: 1420,
+                  assetCode: 'assets/icon_button_example.dart',
                 ),
               ],
             ),
@@ -120,14 +135,14 @@ class ButtonView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Floating Buttons",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 floatingButtons(),
                 const UpCode(
-                  assetCode: 'floating_button_example.dart',
+                  assetCode: 'assets/floating_button_example.dart',
                   height: 1400,
                 ),
               ],
@@ -139,14 +154,14 @@ class ButtonView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Loading Button",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 loadingButton(),
                 const UpCode(
-                  assetCode: 'loading_button_example.dart',
+                  assetCode: 'assets/loading_button_example.dart',
                   height: 1000,
                 ),
               ],

@@ -22,14 +22,14 @@ class InfoDialogView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Info Dialog",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             widgetBox(
               widgets: [
                 const InfoDialogExample(),
                 const UpCode(
-                  assetCode: 'info_dialog_example.dart',
+                  assetCode: 'assets/info_dialog_example.dart',
                   height: 350,
                 ),
               ],

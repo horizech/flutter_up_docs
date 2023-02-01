@@ -18,12 +18,12 @@ class NavigationServiceView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
                 "Navigation Service",
               ),
             ),
             const UpCode(
-              assetCode: 'navigation_service_example.dart',
+              assetCode: 'assets/navigation_service_example.dart',
               height: 400,
             ),
           ],

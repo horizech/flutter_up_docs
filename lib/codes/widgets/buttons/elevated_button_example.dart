@@ -30,6 +30,13 @@ Widget UpButtons() {
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
           colorType: UpColorType.tertiary,
+          style: UpStyle(
+            buttonBackgroundImage: Image.asset(
+              'assets/image2.jpg',
+            ),
+          ),
+          // icon: Icons.add,
+          // image: Image.asset('assets/image.jpeg'),
           onPressed: () {
             // Perform action
           },
@@ -69,10 +76,52 @@ Widget UpButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
+          colorType: UpColorType.secondary,
           style: UpStyle(
+            buttonBackgroundImage: Image.asset(
+              'assets/image.jpeg',
+              width: 200,
+            ),
+            buttonBackgroundGradient: const LinearGradient(
+              colors: [
+                Color.fromARGB(255, 190, 125, 201),
+                Color.fromARGB(255, 241, 219, 187)
+              ],
+            ),
+          ),
+          onPressed: () {
+            //Do some code
+          },
+          text: "Gradient",
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: UpButton(
+          style: UpStyle(
+            buttonBorderTopStyle: UpStyle(
+              buttonBorderColor: Colors.orange,
+              buttonBorderWidth: 5,
+            ),
+            buttonBorderRadius: 12,
+            buttonTextFit: BoxFit.contain,
+            buttonBorderBottomStyle: UpStyle(
+              buttonBorderColor: Colors.purple,
+              buttonBorderWidth: 5,
+              buttonHoverBorderColor: Colors.orange,
+            ),
+            buttonBorderLeftStyle: UpStyle(
+              buttonBorderColor: Colors.pink,
+              buttonBorderWidth: 5,
+              buttonHoverBorderColor: Colors.green,
+            ),
+            buttonBorderRightStyle: UpStyle(
+              buttonBorderColor: Colors.black,
+              buttonBorderWidth: 5,
+              buttonHoverBorderColor: Colors.grey,
+            ),
             buttonBackgroundColor: Colors.white,
             buttonBorderColor: Colors.red,
-            buttonBorderRadius: 12,
             buttonBorderWidth: 1,
             buttonHoverBackgroundColor: Colors.red,
             buttonHoverBorderColor: Colors.black,
@@ -85,7 +134,7 @@ Widget UpButtons() {
           },
           text: "Custom",
         ),
-      )
+      ),
     ],
   );
 }

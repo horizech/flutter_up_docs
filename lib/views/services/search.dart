@@ -18,12 +18,12 @@ class SearchServiceView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
                 "Search Service",
               ),
             ),
             const UpCode(
-              assetCode: 'search_service_example.dart',
+              assetCode: 'assets/search_service_example.dart',
               height: 270,
             ),
           ],

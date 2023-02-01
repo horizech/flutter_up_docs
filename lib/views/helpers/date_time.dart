@@ -22,7 +22,7 @@ class DateTimeView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Date Time helper functions",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             const SizedBox(
@@ -32,14 +32,14 @@ class DateTimeView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Date time picker",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 const DateTimepickerExample(),
                 const UpCode(
-                  assetCode: 'date_time_picker_example.dart',
+                  assetCode: 'assets/date_time_picker_example.dart',
                   height: 1500,
                 ),
               ],
@@ -50,7 +50,7 @@ class DateTimeView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
                 "Date time ",
               ),
             ),
@@ -58,7 +58,7 @@ class DateTimeView extends StatelessWidget {
               widgets: [
                 dateTime(),
                 const UpCode(
-                  assetCode: 'date_time_example.dart',
+                  assetCode: 'assets/date_time_example.dart',
                   height: 680,
                 ),
               ],

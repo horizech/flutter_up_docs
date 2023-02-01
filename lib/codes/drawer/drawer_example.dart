@@ -34,7 +34,7 @@ class DrawerExample extends StatelessWidget {
         children: [
           UpText(
             "Drawer Example",
-            style: UpStyle(textColor: Colors.white, textFontSize: 25),
+            style: UpStyle(textColor: Colors.white, textSize: 25),
           )
         ],
       ),

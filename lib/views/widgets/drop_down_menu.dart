@@ -22,18 +22,18 @@ class DropDownMenuView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Flutter up drop down menu",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "To use dropdown menu first you need to create UpLabelValuePair like ",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             const UpCode(
-              assetCode: 'constants.dart',
+              assetCode: 'assets/constants.dart',
               height: 300,
             ),
             const SizedBox(
@@ -42,7 +42,7 @@ class DropDownMenuView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
                 "Now initialize dropdown menu ",
               ),
             ),
@@ -50,7 +50,7 @@ class DropDownMenuView extends StatelessWidget {
               widgets: [
                 const DropDownMenu(),
                 const UpCode(
-                  assetCode: 'drop_down_menu_example.dart',
+                  assetCode: 'assets/drop_down_menu_example.dart',
                   height: 700,
                 ),
               ],
@@ -62,14 +62,14 @@ class DropDownMenuView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Customize dropdown menu",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 const CustomDropDownMenu(),
                 const UpCode(
-                  assetCode: 'custom_drop_down_menu_example.dart',
+                  assetCode: 'assets/custom_drop_down_menu_example.dart',
                   height: 1150,
                 ),
               ],

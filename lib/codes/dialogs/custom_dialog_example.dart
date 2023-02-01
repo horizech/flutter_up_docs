@@ -10,13 +10,16 @@ class CustomDialogExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UpButton(
-      type: UpButtonType.elevated,
-      onPressed: () {
-        ServiceManager<UpDialogService>()
-            .showDialog(context, CustomDialog(), data: null);
-      },
-      text: "Custom dialog",
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: UpButton(
+        type: UpButtonType.elevated,
+        onPressed: () {
+          ServiceManager<UpDialogService>()
+              .showDialog(context, CustomDialog(), data: null);
+        },
+        text: "Custom dialog",
+      ),
     );
   }
 }

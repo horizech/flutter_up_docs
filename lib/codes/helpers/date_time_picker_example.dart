@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/enums/up_button_type.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
-import 'package:flutter_up/helpers/up_date_time.dart';
+
+import 'package:flutter_up/helpers/up_datetime_helper.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_button.dart';
 import 'package:flutter_up/widgets/up_text.dart';
@@ -19,7 +20,7 @@ class _DateTimepickerExampleState extends State<DateTimepickerExample> {
   TextEditingController timeController = TextEditingController();
 
   _datePicker() async {
-    DateTime? pickedDate = await upDatePicker(
+    DateTime? pickedDate = await UpDateTimeHelper.upDatePicker(
       context,
       initialDate: DateTime.now(),
       firstDate: DateTime(2000),
@@ -32,7 +33,7 @@ class _DateTimepickerExampleState extends State<DateTimepickerExample> {
   }
 
   _timePicker() async {
-    TimeOfDay? pickedTime = await upTimePicker(
+    TimeOfDay? pickedTime = await UpDateTimeHelper.upTimePicker(
       context: context,
       initialTime: const TimeOfDay(hour: 12, minute: 0),
     );

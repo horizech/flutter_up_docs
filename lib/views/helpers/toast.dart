@@ -22,14 +22,14 @@ class HelperToastView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Toast",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             widgetBox(
               widgets: [
                 const Toast(),
                 const UpCode(
-                  assetCode: 'helper_toast_example.dart',
+                  assetCode: 'assets/helper_toast_example.dart',
                   height: 500,
                 ),
               ],

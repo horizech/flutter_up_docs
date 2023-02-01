@@ -26,14 +26,14 @@ class CardView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Loading Card",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 loadingCard(),
                 const UpCode(
-                  assetCode: 'loading_card_example.dart',
+                  assetCode: 'assets/loading_card_example.dart',
                   height: 1300,
                 ),
               ],

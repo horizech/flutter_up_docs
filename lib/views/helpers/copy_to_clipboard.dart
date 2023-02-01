@@ -22,14 +22,14 @@ class CopyToClipboardView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Copy to clipboard",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             widgetBox(
               widgets: [
                 copyToClipboard(context),
                 const UpCode(
-                  assetCode: 'copy_to_clipboard_example.dart',
+                  assetCode: 'assets/copy_to_clipboard_example.dart',
                   height: 400,
                 ),
               ],

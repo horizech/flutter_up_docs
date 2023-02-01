@@ -18,12 +18,12 @@ class DialogServiceView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
                 "Dialog Service",
               ),
             ),
             const UpCode(
-              assetCode: 'dialog_service_example.dart',
+              assetCode: 'assets/dialog_service_example.dart',
               height: 1300,
             ),
           ],

@@ -22,14 +22,14 @@ class ActionDialogView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Action dialog",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             widgetBox(
               widgets: [
                 const ActionDialogExample(),
                 const UpCode(
-                  assetCode: 'action_dialog_example.dart',
+                  assetCode: 'assets/action_dialog_example.dart',
                   height: 600,
                 ),
               ],

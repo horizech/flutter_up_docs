@@ -21,14 +21,14 @@ class UrlServiceView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Url Service",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             widgetBox(
               widgets: [
                 const URLService(),
                 const UpCode(
-                  assetCode: 'url_service_example.dart',
+                  assetCode: 'assets/url_service_example.dart',
                   height: 450,
                 ),
               ],

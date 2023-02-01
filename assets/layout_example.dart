@@ -16,7 +16,7 @@ class LayoutExample extends StatelessWidget {
             children: [
               UpText(
                 "Layout: ",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
               UpLayout.isPortrait(context)
                   ? const UpText("Portrait")
@@ -30,7 +30,7 @@ class LayoutExample extends StatelessWidget {
             children: [
               UpText(
                 "View: ",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
               UpLayout.isMobile(context) == true
                   ? const UpText("Mobile")

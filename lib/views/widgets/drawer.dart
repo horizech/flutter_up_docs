@@ -20,14 +20,14 @@ class DrawerItemCardView extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: UpText(
               "Flutter up drawer ",
-              style: UpStyle(textFontSize: 25),
+              style: UpStyle(textSize: 25),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: UpText(
               "First create your drawer by using drawer item card ",
-              style: UpStyle(textFontSize: 20),
+              style: UpStyle(textSize: 20),
             ),
           ),
           widgetBox(
@@ -38,18 +38,18 @@ class DrawerItemCardView extends StatelessWidget {
                 child: AppExample(),
               ),
               const UpCode(
-                assetCode: 'drawer_example.dart',
+                assetCode: 'assets/drawer_example.dart',
                 height: 1200,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: UpText(
                   "Now add you drawer in your Scaffold to use it",
-                  style: UpStyle(textFontSize: 20),
+                  style: UpStyle(textSize: 20),
                 ),
               ),
               const UpCode(
-                assetCode: 'app_example.dart',
+                assetCode: 'assets/app_example.dart',
                 height: 500,
               ),
             ],

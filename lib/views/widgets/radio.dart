@@ -22,7 +22,7 @@ class RadioView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Flutter Up Radio Buttons",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             const SizedBox(
@@ -32,14 +32,14 @@ class RadioView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Radio Button",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 const RadioButtonExample(),
                 const UpCode(
-                  assetCode: 'radio_example.dart',
+                  assetCode: 'assets/radio_example.dart',
                   height: 1100,
                 ),
               ],
@@ -51,14 +51,14 @@ class RadioView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Custom Radio Button",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 const CustomRadioButtonExample(),
                 const UpCode(
-                  assetCode: 'custom_radio_example.dart',
+                  assetCode: 'assets/custom_radio_example.dart',
                   height: 1300,
                 ),
               ],

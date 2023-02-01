@@ -22,20 +22,20 @@ class CustomDialogView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Custom dialog",
-                style: UpStyle(textFontSize: 25),
+                style: UpStyle(textSize: 25),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Create your custom dialog widget",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 const UpCode(
-                  assetCode: 'custom_dialog_widget.dart',
+                  assetCode: 'assets/custom_dialog_widget.dart',
                   height: 400,
                 ),
               ],
@@ -44,13 +44,13 @@ class CustomDialogView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Now extends it from base dialog class",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 const UpCode(
-                  assetCode: 'custom_dialog.dart',
+                  assetCode: 'assets/custom_dialog.dart',
                   height: 300,
                 ),
               ],
@@ -59,14 +59,14 @@ class CustomDialogView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: UpText(
                 "Now use it",
-                style: UpStyle(textFontSize: 20),
+                style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
                 const CustomDialogExample(),
                 const UpCode(
-                  assetCode: 'custom_dialog_example.dart',
+                  assetCode: 'assets/custom_dialog_example.dart',
                   height: 400,
                 ),
               ],

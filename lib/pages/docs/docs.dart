@@ -142,7 +142,7 @@ class _DocsPageState extends State<DocsPage> {
   Widget build(BuildContext context) {
     secondaryColor = Colors.white;
 
-    primaryColor = UpConfig.of(context)?.theme.primaryColor;
+    primaryColor = UpConfig.of(context).theme.primaryColor;
     return Scaffold(
       appBar: const UpAppBar(
         // backgroundColor: primaryColor,
