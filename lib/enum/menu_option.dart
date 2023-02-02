@@ -25,5 +25,8 @@ enum MenuOption {
   dialogService,
   searchService,
   layout,
-  circularProgress
+  circularProgress,
+  appbar,
+  expansionTile,
+  upcode,
 }

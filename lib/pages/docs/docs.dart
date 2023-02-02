@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/config/up_config.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_app_bar.dart';
+import 'package:flutter_up/widgets/up_expansion_tile.dart';
 import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/enum/menu_option.dart';
 import 'package:flutter_up_docs/views/dialogs/about_dialog.dart';
@@ -18,10 +19,12 @@ import 'package:flutter_up_docs/views/services/dialog.dart';
 import 'package:flutter_up_docs/views/services/navigation.dart';
 import 'package:flutter_up_docs/views/services/search.dart';
 import 'package:flutter_up_docs/views/services/url.dart';
+import 'package:flutter_up_docs/views/widgets/app_bar.dart';
 import 'package:flutter_up_docs/views/widgets/button.dart';
 import 'package:flutter_up_docs/views/widgets/checkbox.dart';
 import 'package:flutter_up_docs/views/widgets/circular_progress.dart';
 import 'package:flutter_up_docs/views/widgets/drop_down_menu.dart';
+import 'package:flutter_up_docs/views/widgets/expansion_tile.dart';
 import 'package:flutter_up_docs/views/widgets/orientational_column_row.dart';
 import 'package:flutter_up_docs/views/starting/starting.dart';
 import 'package:flutter_up_docs/views/theme/theme.dart';
@@ -29,6 +32,7 @@ import 'package:flutter_up_docs/views/widgets/drawer.dart';
 import 'package:flutter_up_docs/views/widgets/radio.dart';
 import 'package:flutter_up_docs/views/widgets/textfield.dart';
 import 'package:flutter_up_docs/views/widgets/toast.dart';
+import 'package:flutter_up_docs/views/widgets/up_code.dart';
 
 class DocsPage extends StatefulWidget {
   static const routeName = '/docs';
@@ -72,6 +76,13 @@ class _DocsPageState extends State<DocsPage> {
         return const ToastView();
       case MenuOption.orientationalColumnRow:
         return const OrientationalColumnRowView();
+      case MenuOption.appbar:
+        return const AppbarView();
+      case MenuOption.expansionTile:
+        return const ExpansionTileView();
+      case MenuOption.upcode:
+        return const UpCodeView();
+
       //helpers view
       case MenuOption.copyToClipboard:
         return const CopyToClipboardView();
@@ -183,11 +194,11 @@ class _DocsPageState extends State<DocsPage> {
                       );
                     },
                   ),
-                  ExpansionTile(
+                  UpExpansionTile(
                     leading: const Icon(
                       Icons.design_services,
                     ),
-                    title: const UpText("Services"),
+                    title: "Services",
                     children: [
                       _listTileContainer(
                         menuOption: MenuOption.navigationService,
@@ -235,11 +246,11 @@ class _DocsPageState extends State<DocsPage> {
                       ),
                     ],
                   ),
-                  ExpansionTile(
+                  UpExpansionTile(
                     leading: const Icon(
                       Icons.widgets,
                     ),
-                    title: const UpText("Widgets"),
+                    title: "Widgets",
                     children: [
                       _listTileContainer(
                         menuOption: MenuOption.button,
@@ -314,6 +325,33 @@ class _DocsPageState extends State<DocsPage> {
                           });
                         },
                       ),
+                      _listTileContainer(
+                        menuOption: MenuOption.appbar,
+                        text: "AppBar",
+                        onTap: () {
+                          setState(() {
+                            currentSelection = MenuOption.appbar;
+                          });
+                        },
+                      ),
+                      _listTileContainer(
+                        menuOption: MenuOption.expansionTile,
+                        text: "Expansion Tile",
+                        onTap: () {
+                          setState(() {
+                            currentSelection = MenuOption.expansionTile;
+                          });
+                        },
+                      ),
+                      _listTileContainer(
+                        menuOption: MenuOption.upcode,
+                        text: "Code",
+                        onTap: () {
+                          setState(() {
+                            currentSelection = MenuOption.upcode;
+                          });
+                        },
+                      ),
                       // _listTileContainer(
                       //   menuOption: MenuOption.drawer,
                       //   text: "Drawer",
@@ -327,9 +365,9 @@ class _DocsPageState extends State<DocsPage> {
                       // ),
                     ],
                   ),
-                  ExpansionTile(
+                  UpExpansionTile(
                     leading: const Icon(Icons.smart_screen),
-                    title: const UpText("Dialogs"),
+                    title: "Dialogs",
                     children: [
                       _listTileContainer(
                         menuOption: MenuOption.aboutDialog,
@@ -377,9 +415,9 @@ class _DocsPageState extends State<DocsPage> {
                       ),
                     ],
                   ),
-                  ExpansionTile(
+                  UpExpansionTile(
                     leading: const Icon(Icons.help_outline),
-                    title: const UpText("Helpers"),
+                    title: "Helpers",
                     children: [
                       _listTileContainer(
                         menuOption: MenuOption.copyToClipboard,

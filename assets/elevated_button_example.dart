@@ -30,11 +30,6 @@ Widget UpButtons() {
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
           colorType: UpColorType.tertiary,
-          style: UpStyle(
-            buttonBackgroundImage: Image.asset('assets/image2.jpg'),
-          ),
-          // icon: Icons.add,
-          // image: Image.asset('assets/image.jpeg'),
           onPressed: () {
             // Perform action
           },
@@ -76,7 +71,6 @@ Widget UpButtons() {
         child: UpButton(
           colorType: UpColorType.secondary,
           style: UpStyle(
-            buttonBackgroundImage: Image.asset('assets/image.jpeg'),
             buttonBackgroundGradient: const LinearGradient(
               colors: [
                 Color.fromARGB(255, 190, 125, 201),
