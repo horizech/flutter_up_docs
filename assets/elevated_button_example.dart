@@ -92,7 +92,7 @@ Widget UpButtons() {
               buttonBorderColor: Colors.orange,
               buttonBorderWidth: 5,
             ),
-            buttonBorderRadius: 12,
+            buttonBorderRadius: 20,
             buttonTextFit: BoxFit.contain,
             buttonBorderBottomStyle: UpStyle(
               buttonBorderColor: Colors.purple,
@@ -122,6 +122,85 @@ Widget UpButtons() {
             //Do some code
           },
           text: "Custom",
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: UpButton(
+          style: UpStyle(
+            buttonBorderTopStyle: UpStyle(
+              buttonBorderColor: Colors.orange,
+              buttonBorderWidth: 5,
+            ),
+            buttonTextColor: Colors.black,
+            buttonBackgroundColor: Colors.white,
+            buttonHoverBackgroundColor: Colors.transparent,
+            buttonHoverTextColor: Colors.black,
+          ),
+          onPressed: () {
+            //Do some code
+          },
+          text: "Top Border",
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: UpButton(
+          style: UpStyle(
+            buttonBorderLeftStyle: UpStyle(
+              buttonBorderColor: Colors.pink,
+              buttonBorderWidth: 5,
+              buttonHoverBorderColor: Colors.green,
+            ),
+            buttonTextColor: Colors.black,
+            buttonBackgroundColor: Colors.white,
+            buttonHoverBackgroundColor: Colors.transparent,
+            buttonHoverTextColor: Colors.black,
+          ),
+          onPressed: () {
+            //Do some code
+          },
+          text: "Left Border",
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: UpButton(
+          style: UpStyle(
+            buttonBorderBottomStyle: UpStyle(
+              buttonBorderColor: Colors.purple,
+              buttonBorderWidth: 5,
+              buttonHoverBorderColor: Colors.orange,
+            ),
+            buttonTextColor: Colors.black,
+            buttonHoverBackgroundColor: Colors.transparent,
+            buttonBackgroundColor: Colors.white,
+            buttonHoverTextColor: Colors.black,
+          ),
+          onPressed: () {
+            //Do some code
+          },
+          text: "Bottom Border",
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: UpButton(
+          style: UpStyle(
+            buttonBorderRightStyle: UpStyle(
+              buttonBorderColor: Colors.black,
+              buttonBorderWidth: 5,
+              buttonHoverBorderColor: Colors.grey,
+            ),
+            buttonTextColor: Colors.black,
+            buttonBackgroundColor: Colors.white,
+            buttonHoverTextColor: Colors.black,
+            buttonHoverBackgroundColor: Colors.transparent,
+          ),
+          onPressed: () {
+            //Do some code
+          },
+          text: "Right Border",
         ),
       ),
     ],
