@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
+import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/validation/up_valdation.dart';
 import 'package:flutter_up/widgets/up_textfield.dart';
 
-Widget textfields() {
-  TextEditingController emailController = TextEditingController();
+Widget customTextfields() {
   return SizedBox(
     width: 300,
     child: Column(
@@ -12,39 +12,34 @@ Widget textfields() {
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: UpTextField(
-            controller: emailController,
-            onSaved: (input) {
-              // Perform action
-            },
-            label: "Username",
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: UpTextField(
             colorType: UpColorType.secondary,
-            autofillHint: AutofillHints.email,
-            keyboardType: TextInputType.emailAddress,
-            validation: UpValidation(isEmail: true),
-            label: "Email",
-            onChanged: (input) {
-              //do something
-            },
-            readOnly: false,
-            controller: TextEditingController(),
+            validation: UpValidation(isRequired: true),
+            style: UpStyle(textBackgroundColor: Colors.red),
+            readOnly: true,
+            keyboardType: TextInputType.text,
+            controller: TextEditingController(text: "a1jh4vhv"),
+            label: "Generated No",
           ),
         ),
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: UpTextField(
-            colorType: UpColorType.tertiary,
+            style: UpStyle(
+              textfieldBorderColor: Colors.orangeAccent,
+              textfieldBorderRadius: 2,
+              textfieldBorderWidth: 2,
+              textfieldCursorColor: Colors.pink,
+              textfieldErrorBorderColor: Colors.amber,
+              textfieldFocusedBorderColor: Colors.black,
+              textfieldLabelColor: Colors.blueGrey,
+              textfieldLabelSize: 12,
+              textfieldFilledColor: Colors.cyan[100],
+            ),
             controller: TextEditingController(),
-            validation: UpValidation(minLength: 6),
-            onSaved: (input) => {
-              //do some code
-            },
+            keyboardType: TextInputType.text,
             obscureText: true,
-            label: "Password",
+            readOnly: false,
+            label: "Name",
           ),
         ),
       ],

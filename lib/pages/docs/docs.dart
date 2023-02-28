@@ -25,11 +25,14 @@ import 'package:flutter_up_docs/views/widgets/checkbox.dart';
 import 'package:flutter_up_docs/views/widgets/circular_progress.dart';
 import 'package:flutter_up_docs/views/widgets/drop_down_menu.dart';
 import 'package:flutter_up_docs/views/widgets/expansion_tile.dart';
+import 'package:flutter_up_docs/views/widgets/icon.dart';
+import 'package:flutter_up_docs/views/widgets/list_tile.dart';
 import 'package:flutter_up_docs/views/widgets/orientational_column_row.dart';
 import 'package:flutter_up_docs/views/starting/starting.dart';
 import 'package:flutter_up_docs/views/theme/theme.dart';
 import 'package:flutter_up_docs/views/widgets/drawer.dart';
 import 'package:flutter_up_docs/views/widgets/radio.dart';
+import 'package:flutter_up_docs/views/widgets/text.dart';
 import 'package:flutter_up_docs/views/widgets/textfield.dart';
 import 'package:flutter_up_docs/views/widgets/toast.dart';
 import 'package:flutter_up_docs/views/widgets/up_code.dart';
@@ -80,8 +83,14 @@ class _DocsPageState extends State<DocsPage> {
         return const AppbarView();
       case MenuOption.expansionTile:
         return const ExpansionTileView();
+      case MenuOption.upText:
+        return const UpTextView();
+      case MenuOption.icon:
+        return const UpIconView();
       case MenuOption.upcode:
         return const UpCodeView();
+      case MenuOption.listtile:
+        return const ListTileView();
 
       //helpers view
       case MenuOption.copyToClipboard:
@@ -335,11 +344,38 @@ class _DocsPageState extends State<DocsPage> {
                         },
                       ),
                       _listTileContainer(
+                        menuOption: MenuOption.listtile,
+                        text: "List Tile",
+                        onTap: () {
+                          setState(() {
+                            currentSelection = MenuOption.listtile;
+                          });
+                        },
+                      ),
+                      _listTileContainer(
                         menuOption: MenuOption.expansionTile,
                         text: "Expansion Tile",
                         onTap: () {
                           setState(() {
                             currentSelection = MenuOption.expansionTile;
+                          });
+                        },
+                      ),
+                      _listTileContainer(
+                        menuOption: MenuOption.upText,
+                        text: "Text",
+                        onTap: () {
+                          setState(() {
+                            currentSelection = MenuOption.upText;
+                          });
+                        },
+                      ),
+                      _listTileContainer(
+                        menuOption: MenuOption.icon,
+                        text: "Icon",
+                        onTap: () {
+                          setState(() {
+                            currentSelection = MenuOption.icon;
                           });
                         },
                       ),

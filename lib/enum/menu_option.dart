@@ -29,4 +29,7 @@ enum MenuOption {
   appbar,
   expansionTile,
   upcode,
+  upText,
+  listtile,
+  icon
 }

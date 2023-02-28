@@ -36,7 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   expandable: ^5.0.1
-  flutter_up: ^2.0.1
+  flutter_up: ^2.0.2
 
   # flutter_up:
   #   path: ../flutter_up

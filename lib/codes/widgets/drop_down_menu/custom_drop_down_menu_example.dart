@@ -53,6 +53,7 @@ class _CustomDropDownMenuState extends State<CustomDropDownMenu> {
               dropdownErrorBorderColor: Colors.red,
               dropdownLabelColor: Colors.orange,
               dropdownLabelSize: 17,
+              dropdownFilledColor: Colors.cyan[100],
             ),
             label: 'Item',
             value: _currentSelection,
