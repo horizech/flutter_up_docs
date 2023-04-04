@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/enums/direction.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
 import 'package:flutter_up/models/up_radio_button_items.dart';
 import 'package:flutter_up/widgets/up_radio_button.dart';
@@ -14,13 +15,14 @@ class RadioButtonExample extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          width: 220,
+          width: 250,
           child: Row(
             children: [
               const Expanded(child: UpText("Gender :")),
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: UpRadioButton(
+                  direction: UpDirection.vertical,
                   items: [
                     UpRadioButtonItem(label: "Male", value: "m"),
                     UpRadioButtonItem(label: "Female", value: "fm"),

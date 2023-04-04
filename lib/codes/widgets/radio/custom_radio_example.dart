@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/enums/direction.dart';
 import 'package:flutter_up/enums/up_text_direction.dart';
 import 'package:flutter_up/models/up_radio_button_items.dart';
 import 'package:flutter_up/themes/up_style.dart';
@@ -15,12 +16,14 @@ class CustomRadioButtonExample extends StatelessWidget {
       children: [
         SizedBox(
           width: 250,
-          child: Row(
+          child: Wrap(
             children: [
               const Expanded(child: UpText("Fav Fruit :")),
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: UpRadioButton(
+                  labelDirection: UpTextDirection.right,
+                  direction: UpDirection.vertical,
                   style: UpStyle(
                     radioButtonBorderColor: Colors.pink,
                     radioButtonBorderWidth: 2,

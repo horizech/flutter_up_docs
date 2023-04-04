@@ -14,7 +14,7 @@ class RadioButtonExample extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          width: 220,
+          width: 250,
           child: Row(
             children: [
               const Expanded(child: UpText("Gender :")),
