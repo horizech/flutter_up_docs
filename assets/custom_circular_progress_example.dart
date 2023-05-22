@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/widgets/up_circualar_progress.dart';
 
 Widget customCircularProgress() {
-  return Row(children: const [
+  return const Row(children: [
     Padding(
       padding: EdgeInsets.all(5.0),
       child: UpCircularProgress(

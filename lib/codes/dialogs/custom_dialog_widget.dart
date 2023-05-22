@@ -8,16 +8,16 @@ class CustomDialogWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      title: const UpText("Custom alert"),
-      actionsPadding: const EdgeInsets.all(0),
-      titlePadding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-      contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+    return const AlertDialog(
+      title: UpText("Custom alert"),
+      actionsPadding: EdgeInsets.all(0),
+      titlePadding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+      contentPadding: EdgeInsets.fromLTRB(10, 0, 10, 0),
       content: SizedBox(
         width: 200,
         height: 200,
         child: Column(
-          children: const [
+          children: [
             Padding(
               padding: EdgeInsets.all(20.0),
               child: UpText("Custom alert message"),

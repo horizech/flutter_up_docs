@@ -55,9 +55,9 @@ class _ThemesPageState extends State<ThemeView> {
   }
 
   Widget _themeCodes() {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
+      children: [
         Padding(
           padding: EdgeInsets.all(8.0),
           child: UpText(

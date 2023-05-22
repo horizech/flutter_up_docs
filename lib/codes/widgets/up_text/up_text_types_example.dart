@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/enums/text_style.dart';
-import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_text.dart';
 
 class UpTextTypesExample extends StatelessWidget {
@@ -8,9 +7,9 @@ class UpTextTypesExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
+      children: [
         Padding(
           padding: EdgeInsets.all(8.0),
           child: UpText(

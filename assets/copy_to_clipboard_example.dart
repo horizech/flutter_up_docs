@@ -14,7 +14,7 @@ Widget copyToClipboard(BuildContext context) {
         ),
         onPressed: () {
           upCopyTextToClipboard("this is the text");
-          showUpToast(
+          UpToast().showToast(
             context: context,
             text: "Copied to clipboard",
             isRounded: true,

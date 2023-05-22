@@ -45,7 +45,7 @@ class _DateTimepickerExampleState extends State<DateTimepickerExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,

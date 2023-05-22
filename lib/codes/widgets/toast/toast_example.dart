@@ -15,7 +15,7 @@ Widget toast(context) {
           child: UpButton(
             colorType: UpColorType.primary,
             onPressed: () {
-              showUpToast(
+              UpToast().showToast(
                 context: context,
                 text: "Place your message here",
               );
@@ -31,7 +31,7 @@ Widget toast(context) {
           child: UpButton(
             colorType: UpColorType.secondary,
             onPressed: () {
-              showUpToast(
+              UpToast().showToast(
                 context: context,
                 text: "Place your message here",
                 upToastType: UpToastType.secondary,
@@ -48,7 +48,7 @@ Widget toast(context) {
           child: UpButton(
             colorType: UpColorType.warn,
             onPressed: () {
-              showUpToast(
+              UpToast().showToast(
                 context: context,
                 text: "Oops!! its an error",
                 upToastType: UpToastType.danger,
@@ -65,7 +65,7 @@ Widget toast(context) {
           child: UpButton(
             colorType: UpColorType.success,
             onPressed: () {
-              showUpToast(
+              UpToast().showToast(
                 context: context,
                 text: "Hurrah! Login successfully",
                 upToastType: UpToastType.success,
@@ -82,7 +82,7 @@ Widget toast(context) {
           child: UpButton(
             colorType: UpColorType.warn,
             onPressed: () {
-              showUpToast(
+              UpToast().showToast(
                 context: context,
                 text: "There is a problem with your network connection",
                 upToastType: UpToastType.warning,
@@ -99,7 +99,7 @@ Widget toast(context) {
           child: UpButton(
             colorType: UpColorType.tertiary,
             onPressed: () {
-              showUpToast(
+              UpToast().showToast(
                 context: context,
                 text: "Please read the comments carefully",
                 upToastType: UpToastType.info,
@@ -123,7 +123,7 @@ Widget toast(context) {
               buttonHoverTextColor: Colors.black,
             ),
             onPressed: () {
-              showUpToast(
+              UpToast().showToast(
                 context: context,
                 text: "Its a light toast",
                 upToastType: UpToastType.light,
@@ -145,7 +145,7 @@ Widget toast(context) {
                 buttonHoverBorderColor: Colors.transparent,
                 buttonHoverBackgroundColor: Colors.transparent),
             onPressed: () {
-              showUpToast(
+              UpToast().showToast(
                 context: context,
                 text: "Its a dark toast",
                 upToastType: UpToastType.dark,
@@ -167,7 +167,7 @@ Widget toast(context) {
               buttonHoverBorderColor: Colors.amber,
             ),
             onPressed: () {
-              showUpToast(
+              UpToast().showToast(
                 upToastType: UpToastType.custom,
                 context: context,
                 text: "Its a customized toast",

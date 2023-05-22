@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
-import 'package:flutter_up_docs/codes/widgets/expansion_tile/expansion_tile_example.dart';
 import 'package:flutter_up_docs/codes/widgets/list_tile/list_tile_example.dart';
 import 'package:flutter_up_docs/widgets/widget_box.dart';
 
