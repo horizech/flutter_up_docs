@@ -18,7 +18,7 @@ class CustomRadioButtonExample extends StatelessWidget {
           width: 250,
           child: Wrap(
             children: [
-              const Expanded(child: UpText("Fav Fruit :")),
+              const UpText("Fav Fruit :"),
               Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: UpRadioButton(

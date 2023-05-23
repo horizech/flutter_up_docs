@@ -8,11 +8,16 @@ import 'package:flutter_up/widgets/up_button.dart';
 import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/pages/docs/docs.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   static const routeName = '/home';
 
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +49,7 @@ class HomePage extends StatelessWidget {
                     .navigateToNamed(DocsPage.routeName);
               },
               text: 'Get Started',
-            )
+            ),
           ],
         ),
       ),

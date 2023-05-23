@@ -36,7 +36,7 @@ class CheckboxView extends StatelessWidget {
             ),
             widgetBox(
               widgets: [
-                checkboxes(),
+                const CheckBoxes(),
                 const UpCode(
                   assetCode: 'assets/checkbox_example.dart',
                   height: 1100,
