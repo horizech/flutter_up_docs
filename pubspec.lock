@@ -142,10 +142,11 @@ packages:
   flutter_up:
     dependency: "direct main"
     description:
-      path: "../flutter_up"
-      relative: true
-    source: path
-    version: "2.0.5"
+      name: flutter_up
+      sha256: be0a4303a6e08bdfa2e2715fecb3fab896e54cf32665bd9e2d7623b970b5556f
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.6"
   flutter_web_plugins:
     dependency: transitive
     description: flutter

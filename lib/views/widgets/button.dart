@@ -38,7 +38,7 @@ class ButtonView extends StatelessWidget {
             ),
             widgetBox(
               widgets: [
-                UpButtons(),
+                upButtons(),
                 const UpCode(
                   assetCode: 'assets/elevated_button_example.dart',
                   height: 1550,

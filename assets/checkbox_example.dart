@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_up/controller/checkbox_controller.dart';
+
+import 'package:flutter_up/controller/up_checkbox_controller.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_checkbox.dart';
@@ -13,9 +14,9 @@ class CheckBoxes extends StatefulWidget {
 
 class _CheckBoxesState extends State<CheckBoxes> {
   bool isCheck = false;
-  CheckBoxController checkBoxController1 = CheckBoxController(value: true);
-  CheckBoxController checkBoxController2 = CheckBoxController(value: false);
-  CheckBoxController checkBoxController3 = CheckBoxController();
+  UpCheckBoxController checkBoxController1 = UpCheckBoxController(value: true);
+  UpCheckBoxController checkBoxController2 = UpCheckBoxController(value: false);
+  UpCheckBoxController checkBoxController3 = UpCheckBoxController();
 
   @override
   Widget build(BuildContext context) {

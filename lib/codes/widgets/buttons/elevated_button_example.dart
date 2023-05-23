@@ -4,7 +4,7 @@ import 'package:flutter_up/themes/up_style.dart';
 
 import 'package:flutter_up/widgets/up_button.dart';
 
-Widget UpButtons() {
+Widget upButtons() {
   return Wrap(
     children: [
       Padding(

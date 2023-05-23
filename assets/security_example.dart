@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_up/helpers/up_security.dart';
 
 security() {
@@ -11,4 +12,7 @@ security() {
   /// Encrypt text
   String encryptedResult =
       UpSecurity.encrypt(text: "Text", key: "1234567890123456");
+
+  debugPrint(decryptedResult);
+  debugPrint(encryptedResult);
 }
