@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
-import 'package:flutter_up_docs/codes/widgets/card/loading_card_example.dart';
+import 'package:flutter_up_docs/codes/widgets/card/card_example.dart';
+import 'package:flutter_up_docs/codes/widgets/card/card_image_exmaple.dart';
+import 'package:flutter_up_docs/codes/widgets/card/card_second_example.dart';
+import 'package:flutter_up_docs/codes/widgets/card/customize_card_example.dart';
 
 import 'package:flutter_up_docs/widgets/widget_box.dart';
 
@@ -18,23 +21,82 @@ class CardView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: UpText("Flutter up Cards."),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
+                "Flutter Up Cards",
+                style: UpStyle(textSize: 25),
+              ),
+            ),
+            const SizedBox(
+              height: 50,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: UpText(
-                "Loading Card",
+                "Card Example",
                 style: UpStyle(textSize: 20),
               ),
             ),
             widgetBox(
               widgets: [
-                loadingCard(),
+                const CardExample(),
                 const UpCode(
-                  assetCode: 'assets/loading_card_example.dart',
-                  height: 1300,
+                  assetCode: 'assets/card_example.dart',
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
+                "Card example (without header padding)",
+                style: UpStyle(textSize: 20),
+              ),
+            ),
+            widgetBox(
+              widgets: [
+                const CardSecondExample(),
+                const UpCode(
+                  assetCode: 'assets/card_second_example.dart',
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
+                "Image Card example",
+                style: UpStyle(textSize: 20),
+              ),
+            ),
+            widgetBox(
+              widgets: [
+                const CardImageExample(),
+                const UpCode(
+                  assetCode: 'assets/card_image_exmaple.dart',
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: UpText(
+                "Customize Card example",
+                style: UpStyle(textSize: 20),
+              ),
+            ),
+            widgetBox(
+              widgets: [
+                const CustomizeCardExample(),
+                const UpCode(
+                  assetCode: 'assets/customize_card_example.dart',
                 ),
               ],
             ),

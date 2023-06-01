@@ -21,6 +21,7 @@ import 'package:flutter_up_docs/views/services/search.dart';
 import 'package:flutter_up_docs/views/services/url.dart';
 import 'package:flutter_up_docs/views/widgets/app_bar.dart';
 import 'package:flutter_up_docs/views/widgets/button.dart';
+import 'package:flutter_up_docs/views/widgets/card.dart';
 import 'package:flutter_up_docs/views/widgets/checkbox.dart';
 import 'package:flutter_up_docs/views/widgets/circular_progress.dart';
 import 'package:flutter_up_docs/views/widgets/drop_down_menu.dart';
@@ -69,6 +70,8 @@ class _DocsPageState extends State<DocsPage> {
         return const CheckboxView();
       case MenuOption.radio:
         return const RadioView();
+      case MenuOption.card:
+        return const CardView();
       case MenuOption.dropDownMenu:
         return const DropDownMenuView();
       case MenuOption.circularProgress:
@@ -312,6 +315,15 @@ class _DocsPageState extends State<DocsPage> {
                         onTap: () {
                           setState(() {
                             currentSelection = MenuOption.radio;
+                          });
+                        },
+                      ),
+                      _listTileContainer(
+                        menuOption: MenuOption.card,
+                        text: "Cards",
+                        onTap: () {
+                          setState(() {
+                            currentSelection = MenuOption.card;
                           });
                         },
                       ),

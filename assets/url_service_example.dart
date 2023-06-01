@@ -12,11 +12,14 @@ class URLService extends StatelessWidget {
       await ServiceManager<UpUrlService>().openUrl("https://google.com/");
     }
 
-    return UpButton(
-      onPressed: () {
-        urlServiceExample();
-      },
-      text: "Open google",
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: UpButton(
+        onPressed: () {
+          urlServiceExample();
+        },
+        text: "Open google",
+      ),
     );
   }
 }

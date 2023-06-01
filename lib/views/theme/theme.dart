@@ -4,20 +4,18 @@ import 'package:flutter_up/models/up_label_value.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/themes/up_theme_data.dart';
 import 'package:flutter_up/themes/up_themes.dart';
+import 'package:flutter_up/widgets/up_button.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 
 import 'package:flutter_up/widgets/up_dropdown.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/widgets/color_dialog.dart';
 
 List<UpLabelValuePair> _themes = [
   UpLabelValuePair(label: 'Select ', value: "Default"),
-
   UpLabelValuePair(label: 'Purple', value: "1"),
   UpLabelValuePair(label: 'Orange', value: "2"),
-  // UpLabelValuePair(label: 'Red', value: "${UpThemes.lightRed.id}"),
-  // UpLabelValuePair(label: 'Blue', value: "${UpThemes.lightBlue.id}"),
-  // UpLabelValuePair(label: 'Yellow', value: "${UpThemes.lightYellow.id}"),
-  // UpLabelValuePair(label: 'Vintage', value: "${UpThemes.vintage.id}"),
+  UpLabelValuePair(label: 'Custom', value: "3"),
 ];
 
 class ThemeView extends StatefulWidget {
@@ -30,17 +28,30 @@ class ThemeView extends StatefulWidget {
 
 class _ThemesPageState extends State<ThemeView> {
   String _themeId = _themes.first.value;
+  dynamic primaryColor;
+  dynamic secondaryColor;
+  dynamic tertiarayColor, warnColor, successColor, linkColor;
+
   _onChange(String id) {
-    UpThemeData theme = UpThemes.generateThemeByColor(
-      primaryColor: getColorById(int.parse(id)),
-    );
-    UpConfig.changeTheme(context, theme);
-    if (widget.onChange != null) {
-      widget.onChange!();
+    if (id == "3") {
+      _customDialog();
+    } else {
+      UpThemeData theme = UpThemes.generateThemeByColor(
+        primaryColor: getColorById(int.parse(id)),
+        secondaryColor: UpConfig.of(context).theme.secondaryColor,
+        tertiaryColor: UpConfig.of(context).theme.tertiaryColor,
+        warnColor: UpConfig.of(context).theme.warnColor,
+        linkColor: UpConfig.of(context).theme.linkColor,
+        successColor: UpConfig.of(context).theme.successColor,
+      );
+      UpConfig.changeTheme(context, theme);
+      if (widget.onChange != null) {
+        widget.onChange!();
+      }
+      setState(() {
+        _themeId = id;
+      });
     }
-    setState(() {
-      _themeId = id;
-    });
   }
 
   Color getColorById(int id) {
@@ -52,6 +63,251 @@ class _ThemesPageState extends State<ThemeView> {
       default:
         return Colors.transparent;
     }
+  }
+
+  _customDialog() {
+    return showDialog(
+        context: context,
+        barrierDismissible: false, // user must tap button!
+        builder: (BuildContext context) {
+          return StatefulBuilder(builder: (context, StateSetter setState) {
+            return AlertDialog(
+              title: const Text('Custom Theme'),
+              content: SingleChildScrollView(
+                child: ListBody(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        width: 100,
+                        child: UpButton(
+                          style: UpStyle(
+                              buttonHoverBorderColor: primaryColor ??
+                                  UpConfig.of(context).theme.primaryColor,
+                              buttonHoverBackgroundColor: primaryColor ??
+                                  UpConfig.of(context).theme.primaryColor,
+                              buttonBorderColor: primaryColor ??
+                                  UpConfig.of(context).theme.primaryColor,
+                              buttonBackgroundColor: primaryColor ??
+                                  UpConfig.of(context).theme.primaryColor),
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return StatefulBuilder(
+                                      builder: (context, StateSetter setState) {
+                                    return const ColorPickerDialog();
+                                  });
+                                }).then((pickedColor) {
+                              if (pickedColor != null) {
+                                primaryColor = pickedColor;
+                                setState(() {});
+                                return primaryColor;
+                              }
+                            });
+                          },
+                          text: "Primary",
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: UpButton(
+                        style: UpStyle(
+                            buttonHoverBorderColor: secondaryColor ??
+                                UpConfig.of(context).theme.secondaryColor,
+                            buttonHoverBackgroundColor: secondaryColor ??
+                                UpConfig.of(context).theme.secondaryColor,
+                            buttonBorderColor: secondaryColor ??
+                                UpConfig.of(context).theme.secondaryColor,
+                            buttonBackgroundColor: secondaryColor ??
+                                UpConfig.of(context).theme.secondaryColor),
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return StatefulBuilder(
+                                    builder: (context, StateSetter setState) {
+                                  return const ColorPickerDialog();
+                                });
+                              }).then((pickedColor) {
+                            if (pickedColor != null) {
+                              secondaryColor = pickedColor;
+                              setState(() {});
+                            }
+                          });
+                        },
+                        text: "Secondary",
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: UpButton(
+                        style: UpStyle(
+                            buttonHoverBorderColor: tertiarayColor ??
+                                UpConfig.of(context).theme.tertiaryColor,
+                            buttonHoverBackgroundColor: tertiarayColor ??
+                                UpConfig.of(context).theme.tertiaryColor,
+                            buttonBorderColor: tertiarayColor ??
+                                UpConfig.of(context).theme.tertiaryColor,
+                            buttonBackgroundColor: tertiarayColor ??
+                                UpConfig.of(context).theme.tertiaryColor),
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return StatefulBuilder(
+                                    builder: (context, StateSetter setState) {
+                                  return const ColorPickerDialog();
+                                });
+                              }).then((pickedColor) {
+                            if (pickedColor != null) {
+                              tertiarayColor = pickedColor;
+                              setState(() {});
+                            }
+                          });
+                        },
+                        text: "Tertiary",
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: UpButton(
+                        style: UpStyle(
+                            buttonHoverBorderColor: warnColor ??
+                                UpConfig.of(context).theme.warnColor,
+                            buttonHoverBackgroundColor: warnColor ??
+                                UpConfig.of(context).theme.warnColor,
+                            buttonBorderColor: warnColor ??
+                                UpConfig.of(context).theme.warnColor,
+                            buttonBackgroundColor: warnColor ??
+                                UpConfig.of(context).theme.warnColor),
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return StatefulBuilder(
+                                    builder: (context, StateSetter setState) {
+                                  return const ColorPickerDialog();
+                                });
+                              }).then((pickedColor) {
+                            if (pickedColor != null) {
+                              warnColor = pickedColor;
+                              setState(() {});
+                            }
+                          });
+                        },
+                        text: "Warn",
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: UpButton(
+                        style: UpStyle(
+                            buttonHoverBorderColor: linkColor ??
+                                UpConfig.of(context).theme.linkColor,
+                            buttonHoverBackgroundColor: linkColor ??
+                                UpConfig.of(context).theme.linkColor,
+                            buttonBorderColor: linkColor ??
+                                UpConfig.of(context).theme.linkColor,
+                            buttonBackgroundColor: linkColor ??
+                                UpConfig.of(context).theme.linkColor),
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return StatefulBuilder(
+                                    builder: (context, StateSetter setState) {
+                                  return const ColorPickerDialog();
+                                });
+                              }).then((pickedColor) {
+                            if (pickedColor != null) {
+                              linkColor = pickedColor;
+                              setState(() {});
+                            }
+                          });
+                        },
+                        text: "Link",
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: UpButton(
+                        style: UpStyle(
+                            buttonHoverBorderColor: successColor ??
+                                UpConfig.of(context).theme.successColor,
+                            buttonHoverBackgroundColor: successColor ??
+                                UpConfig.of(context).theme.successColor,
+                            buttonBorderColor: successColor ??
+                                UpConfig.of(context).theme.successColor,
+                            buttonBackgroundColor: successColor ??
+                                UpConfig.of(context).theme.successColor),
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return StatefulBuilder(
+                                    builder: (context, StateSetter setState) {
+                                  return const ColorPickerDialog();
+                                });
+                              }).then((pickedColor) {
+                            if (pickedColor != null) {
+                              successColor = pickedColor;
+                              setState(() {});
+                            }
+                          });
+                        },
+                        text: "Success",
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              actions: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: 80,
+                    child: UpButton(
+                      text: 'Apply',
+                      onPressed: () {
+                        Navigator.of(context).pop();
+
+                        UpThemeData theme = UpThemes.generateThemeByColor(
+                          primaryColor: primaryColor ??
+                              UpConfig.of(context).theme.primaryColor,
+                          secondaryColor: secondaryColor ??
+                              UpConfig.of(context).theme.secondaryColor,
+                          tertiaryColor: tertiarayColor ??
+                              UpConfig.of(context).theme.tertiaryColor,
+                          warnColor:
+                              warnColor ?? UpConfig.of(context).theme.warnColor,
+                          linkColor:
+                              linkColor ?? UpConfig.of(context).theme.linkColor,
+                          successColor: successColor ??
+                              UpConfig.of(context).theme.successColor,
+                        );
+                        UpConfig.changeTheme(context, theme);
+                      },
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: 80,
+                    child: UpButton(
+                      text: 'Cancel',
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            );
+          });
+        });
   }
 
   Widget _themeCodes() {

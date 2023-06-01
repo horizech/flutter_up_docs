@@ -28,7 +28,7 @@ class UpIconView extends StatelessWidget {
               widgets: [
                 const UpIconExample(),
                 const UpCode(
-                  assetCode: 'assets/up_icon-example.dart',
+                  assetCode: 'assets/up_icon_example.dart',
                 ),
               ],
             ),

@@ -72,6 +72,9 @@ class _CheckBoxesState extends State<CheckBoxes> {
             Padding(
               padding: const EdgeInsets.all(5.0),
               child: UpCheckbox(
+                onChange: (value) {
+                  value;
+                },
                 style: UpStyle(isDisabled: true),
                 label: "Disabled",
               ),
