@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/widgets/up_app_bar.dart';
+import 'package:flutter_up/widgets/up_scaffold.dart';
 import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/codes/drawer/drawer_example.dart';
 
@@ -7,10 +9,10 @@ class AppExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return UpScaffold(
       drawer: const DrawerExample(),
-      appBar: AppBar(
-        title: const UpText("Drawer Example"),
+      appBar: const UpAppBar(
+        title: "Drawer Example",
       ),
       body: Container(
         color: Theme.of(context).colorScheme.secondary,

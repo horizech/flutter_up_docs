@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
     return UpApp(
       //Define theme
       theme: UpThemes.generateThemeByColor(
-        primaryColor: Colors.blue,
+        baseColor: const Color.fromARGB(255, 25, 23, 30),
+        isDark: true,
+        primaryColor: Colors.pink,
         secondaryColor: Colors.blueGrey,
         tertiaryColor: Colors.amber,
         linkColor: Colors.black,

@@ -31,5 +31,7 @@ enum MenuOption {
   upcode,
   upText,
   listtile,
-  icon
+  icon,
+  scaffold,
+  table
 }

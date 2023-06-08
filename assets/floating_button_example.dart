@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/enums/up_button_type.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
 import 'package:flutter_up/widgets/up_button.dart';
+import 'package:flutter_up/widgets/up_icon.dart';
 
 Widget floatingButtons() {
   return Wrap(
@@ -13,8 +14,8 @@ Widget floatingButtons() {
           onPressed: () {
             // Perform action
           },
-          child: const Icon(
-            Icons.more_vert,
+          child: const UpIcon(
+            icon: Icons.more_vert,
           ),
         ),
       ),
@@ -25,8 +26,8 @@ Widget floatingButtons() {
           onPressed: () {
             // Perform action
           },
-          child: const Icon(
-            Icons.home,
+          child: const UpIcon(
+            icon: Icons.home,
           ),
         ),
       ),
@@ -37,8 +38,8 @@ Widget floatingButtons() {
           onPressed: () {
             // Perform action
           },
-          child: const Icon(
-            Icons.face,
+          child: const UpIcon(
+            icon: Icons.face,
           ),
         ),
       ),
@@ -50,8 +51,8 @@ Widget floatingButtons() {
           onPressed: () {
             // Perform action
           },
-          child: const Icon(
-            Icons.warning,
+          child: const UpIcon(
+            icon: Icons.warning,
           ),
         ),
       ),
@@ -62,7 +63,7 @@ Widget floatingButtons() {
           onPressed: () {
             // Perform action
           },
-          child: const Icon(Icons.menu),
+          child: const UpIcon(icon: Icons.menu),
         ),
       ),
     ],

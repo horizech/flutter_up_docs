@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
+import 'package:flutter_up/widgets/up_icon.dart';
 import 'package:flutter_up/widgets/up_list_tile.dart';
 
 class UpListTileExample extends StatelessWidget {
@@ -20,7 +21,7 @@ class UpListTileExample extends StatelessWidget {
               child: UpListTile(
                 contentPadding: EdgeInsets.all(8.0),
                 title: "List Tile",
-                leading: Icon(Icons.home),
+                leading: UpIcon(icon: Icons.home),
               ),
             ),
           ),
@@ -44,7 +45,7 @@ class UpListTileExample extends StatelessWidget {
                 ),
                 contentPadding: const EdgeInsets.all(8.0),
                 title: "Custom List Tile",
-                leading: const Icon(Icons.style),
+                leading: const UpIcon(icon: Icons.style),
               ),
             ),
           ),

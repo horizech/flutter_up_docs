@@ -3,8 +3,8 @@ import 'package:flutter_up/enums/up_button_type.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
 
 import 'package:flutter_up/helpers/up_datetime_helper.dart';
-import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_button.dart';
+import 'package:flutter_up/widgets/up_icon.dart';
 import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up/widgets/up_textfield.dart';
 
@@ -63,7 +63,7 @@ class _DateTimepickerExampleState extends State<DateTimepickerExample> {
               //   datePickerPrimaryColor: Colors.orange,
               //   datePickerSurfaceColor: Colors.black45
               // ),
-              prefixIcon: const Icon(Icons.calendar_today),
+              prefixIcon: const UpIcon(icon: Icons.calendar_today),
               label: "Date picker",
               onTap: () {
                 _datePicker();
@@ -79,20 +79,12 @@ class _DateTimepickerExampleState extends State<DateTimepickerExample> {
               const UpText('Time Picker'),
               UpButton(
                   type: UpButtonType.icon,
-                  colorType: UpColorType.secondary,
-                  style: UpStyle(
-                    timePickerDialogBackgroundColor: Colors.amber,
-                    timePickerOnPrimaryColor: Colors.red,
-                    timePickerOnSurfaceColor: Colors.orange,
-                    timePickerPrimaryColor: Colors.cyan,
-                    timePickerSurfaceColor: Colors.green,
-                  ),
                   text: "Time picker",
                   onPressed: () {
                     _timePicker();
                   },
-                  child: const Icon(
-                    Icons.calendar_today,
+                  child: const UpIcon(
+                    icon: Icons.calendar_today,
                   )),
             ],
           ),

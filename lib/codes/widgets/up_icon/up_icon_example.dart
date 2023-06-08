@@ -7,15 +7,22 @@ class UpIconExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: UpIcon(
+            semanticLabel: "Add",
+            icon: Icons.add,
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: UpIcon(
-            semanticLabel: "Add",
+            semanticLabel: "Subject",
             shadows: const [],
-            icon: Icons.add,
+            icon: Icons.subject,
             style: UpStyle(
               iconSize: 25,
               iconColor: Colors.red,

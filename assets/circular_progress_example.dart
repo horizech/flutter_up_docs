@@ -3,7 +3,7 @@ import 'package:flutter_up/widgets/up_circualar_progress.dart';
 
 Widget circularProgress() {
   return const Padding(
-    padding: EdgeInsets.all(5.0),
+    padding: EdgeInsets.all(8.0),
     child: UpCircularProgress(),
   );
 }

@@ -10,6 +10,16 @@ Widget upButtons() {
       Padding(
         padding: const EdgeInsets.all(5.0),
         child: UpButton(
+          colorType: UpColorType.basic,
+          onPressed: () {
+            // Perform action
+          },
+          text: "Basic",
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: UpButton(
           onPressed: () {
             // Perform action
           },

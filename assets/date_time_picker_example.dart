@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_up/enums/up_button_type.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
 
 import 'package:flutter_up/helpers/up_datetime_helper.dart';
-import 'package:flutter_up/themes/up_style.dart';
+import 'package:flutter_up/widgets/up_button.dart';
+import 'package:flutter_up/widgets/up_icon.dart';
+import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up/widgets/up_textfield.dart';
 
-class DateTimepicker extends StatefulWidget {
-  const DateTimepicker({Key? key}) : super(key: key);
+class DateTimepickerExample extends StatefulWidget {
+  const DateTimepickerExample({Key? key}) : super(key: key);
 
   @override
-  State<DateTimepicker> createState() => _DateTimepickerState();
+  State<DateTimepickerExample> createState() => _DateTimepickerExampleState();
 }
 
-class _DateTimepickerState extends State<DateTimepicker> {
+class _DateTimepickerExampleState extends State<DateTimepickerExample> {
   TextEditingController dateController = TextEditingController();
   TextEditingController timeController = TextEditingController();
 
@@ -42,7 +45,10 @@ class _DateTimepickerState extends State<DateTimepicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return SizedBox(
+        child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -57,7 +63,7 @@ class _DateTimepickerState extends State<DateTimepicker> {
               //   datePickerPrimaryColor: Colors.orange,
               //   datePickerSurfaceColor: Colors.black45
               // ),
-              prefixIcon: const Icon(Icons.calendar_today),
+              prefixIcon: const UpIcon(icon: Icons.calendar_today),
               label: "Date picker",
               onTap: () {
                 _datePicker();
@@ -68,23 +74,22 @@ class _DateTimepickerState extends State<DateTimepicker> {
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: UpTextField(
-              colorType: UpColorType.secondary,
-              style: UpStyle(
-                timePickerDialogBackgroundColor: Colors.amber,
-                timePickerOnPrimaryColor: Colors.red,
-                timePickerOnSurfaceColor: Colors.orange,
-                timePickerPrimaryColor: Colors.cyan,
-                timePickerSurfaceColor: Colors.green,
-              ),
-              controller: timeController,
-              prefixIcon: const Icon(Icons.calendar_today),
-              label: "Time picker",
-              onTap: () {
-                _timePicker();
-              }),
+          child: Row(
+            children: [
+              const UpText('Time Picker'),
+              UpButton(
+                  type: UpButtonType.icon,
+                  text: "Time picker",
+                  onPressed: () {
+                    _timePicker();
+                  },
+                  child: const UpIcon(
+                    icon: Icons.calendar_today,
+                  )),
+            ],
+          ),
         ),
       ],
-    );
+    ));
   }
 }

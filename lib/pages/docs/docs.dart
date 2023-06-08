@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/config/up_config.dart';
 import 'package:flutter_up/themes/up_style.dart';
+import 'package:flutter_up/themes/up_themes.dart';
 import 'package:flutter_up/widgets/up_app_bar.dart';
 import 'package:flutter_up/widgets/up_expansion_tile.dart';
+import 'package:flutter_up/widgets/up_scaffold.dart';
 import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/enum/menu_option.dart';
 import 'package:flutter_up_docs/views/dialogs/about_dialog.dart';
@@ -33,6 +35,8 @@ import 'package:flutter_up_docs/views/starting/starting.dart';
 import 'package:flutter_up_docs/views/theme/theme.dart';
 import 'package:flutter_up_docs/views/widgets/drawer.dart';
 import 'package:flutter_up_docs/views/widgets/radio.dart';
+import 'package:flutter_up_docs/views/widgets/scaffold.dart';
+import 'package:flutter_up_docs/views/widgets/table.dart';
 import 'package:flutter_up_docs/views/widgets/text.dart';
 import 'package:flutter_up_docs/views/widgets/textfield.dart';
 import 'package:flutter_up_docs/views/widgets/toast.dart';
@@ -54,6 +58,7 @@ class _DocsPageState extends State<DocsPage> {
 
   Color? secondaryColor;
   Color? primaryColor;
+  Color? baseColor;
   MenuOption currentSelection = MenuOption.start;
   _selectView(currentSelection) {
     switch (currentSelection) {
@@ -94,6 +99,10 @@ class _DocsPageState extends State<DocsPage> {
         return const UpCodeView();
       case MenuOption.listtile:
         return const ListTileView();
+      case MenuOption.scaffold:
+        return const ScaffoldView();
+      case MenuOption.table:
+        return const TableView();
 
       //helpers view
       case MenuOption.copyToClipboard:
@@ -140,18 +149,55 @@ class _DocsPageState extends State<DocsPage> {
     required String text,
     required Function onTap,
   }) {
+    // return UpListTile(
+    //   title: text,
+    //   listTileTitleAlignment: ListTileTitleAlignment.center,
+    //   leading: Icon(
+    //     iconData,
+    //     color: currentSelection == menuOption
+    //         ? secondaryColor
+    //         : UpConfig.of(context).theme.baseColor.shade900,
+    //   ),
+    //   style: UpStyle(
+    //     listTileTextColor: currentSelection == menuOption
+    //         ? secondaryColor
+    //         : UpConfig.of(context).theme.baseColor.shade900,
+    //     listTileColor: currentSelection == menuOption
+    //         ? primaryColor
+    //         : UpConfig.of(context).theme.baseColor.shade50,
+    //     listTileHoveredColor: currentSelection == menuOption
+    //         ? primaryColor
+    //         : UpConfig.of(context).theme.baseColor.shade100,
+    //     listTileFocusedColor:
+    //         currentSelection == menuOption ? primaryColor : Colors.transparent,
+    //     // currentSelection == menuOption ? primaryColor : Colors.transparent,
+    //   ),
+    //   onTap: () {
+    //     onTap();
+    //   },
+    // );
     return Container(
-      color: currentSelection == menuOption ? primaryColor : Colors.transparent,
+      color: currentSelection == menuOption
+          ? primaryColor
+          : UpConfig.of(context).theme.baseColor.shade50,
       child: ListTile(
         leading: Icon(
           iconData,
-          color: currentSelection == menuOption ? secondaryColor : primaryColor,
+          color: currentSelection == menuOption
+              ? secondaryColor
+              : UpConfig.of(context).theme.baseColor.shade900,
         ),
+        hoverColor: currentSelection == menuOption
+            ? primaryColor
+            : UpConfig.of(context).theme.baseColor.shade100,
+        focusColor:
+            currentSelection == menuOption ? primaryColor : Colors.transparent,
         title: UpText(
           text,
           style: UpStyle(
-            textColor:
-                currentSelection == menuOption ? secondaryColor : primaryColor,
+            textColor: currentSelection == menuOption
+                ? secondaryColor
+                : UpConfig.of(context).theme.baseColor.shade900,
           ),
         ),
         onTap: () {
@@ -163,10 +209,11 @@ class _DocsPageState extends State<DocsPage> {
 
   @override
   Widget build(BuildContext context) {
-    secondaryColor = Colors.white;
-
+    secondaryColor =
+        UpThemes.getContrastColor(UpConfig.of(context).theme.primaryColor);
     primaryColor = UpConfig.of(context).theme.primaryColor;
-    return Scaffold(
+
+    return UpScaffold(
       appBar: const UpAppBar(
         // backgroundColor: primaryColor,
         title: "FlutterUp Documentation",
@@ -178,364 +225,375 @@ class _DocsPageState extends State<DocsPage> {
           SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Container(
-              color: Colors.transparent,
+              color: UpConfig.of(context).theme.baseColor.shade50,
               width: 300,
-              child: Column(
-                children: [
-                  _listTileContainer(
-                    menuOption: MenuOption.start,
-                    iconData: Icons.start_outlined,
-                    text: "Getting Started",
-                    onTap: () {
-                      setState(
-                        () {
-                          currentSelection = MenuOption.start;
-                        },
-                      );
-                    },
-                  ),
-                  _listTileContainer(
-                    menuOption: MenuOption.theme,
-                    iconData: Icons.color_lens,
-                    text: "Theme",
-                    onTap: () {
-                      setState(
-                        () {
-                          currentSelection = MenuOption.theme;
-                        },
-                      );
-                    },
-                  ),
-                  UpExpansionTile(
-                    leading: const Icon(
-                      Icons.design_services,
+              height: MediaQuery.of(context).size.height - 10,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: [
+                    _listTileContainer(
+                      menuOption: MenuOption.start,
+                      iconData: Icons.start_outlined,
+                      text: "Getting Started",
+                      onTap: () {
+                        setState(
+                          () {
+                            currentSelection = MenuOption.start;
+                          },
+                        );
+                      },
                     ),
-                    title: "Services",
-                    children: [
-                      _listTileContainer(
-                        menuOption: MenuOption.navigationService,
-                        text: "Navigation",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.navigationService;
-                            },
-                          );
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.dialogService,
-                        text: "Dialog",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.dialogService;
-                            },
-                          );
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.searchService,
-                        text: "Search",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.searchService;
-                            },
-                          );
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.urlService,
-                        text: "Url",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.urlService;
-                            },
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                  UpExpansionTile(
-                    leading: const Icon(
-                      Icons.widgets,
+                    _listTileContainer(
+                      menuOption: MenuOption.theme,
+                      iconData: Icons.color_lens,
+                      text: "Theme",
+                      onTap: () {
+                        setState(
+                          () {
+                            currentSelection = MenuOption.theme;
+                          },
+                        );
+                      },
                     ),
-                    title: "Widgets",
-                    children: [
-                      _listTileContainer(
-                        menuOption: MenuOption.button,
-                        text: "Buttons",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.button;
-                          });
-                        },
+                    UpExpansionTile(
+                      leading: const Icon(
+                        Icons.design_services,
                       ),
-                      _listTileContainer(
-                        menuOption: MenuOption.textfield,
-                        text: "Textfields",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.textfield;
-                          });
-                        },
+                      title: "Services",
+                      children: [
+                        _listTileContainer(
+                          menuOption: MenuOption.navigationService,
+                          text: "Navigation",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.navigationService;
+                              },
+                            );
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.dialogService,
+                          text: "Dialog",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.dialogService;
+                              },
+                            );
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.searchService,
+                          text: "Search",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.searchService;
+                              },
+                            );
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.urlService,
+                          text: "Url",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.urlService;
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                    UpExpansionTile(
+                      leading: const Icon(
+                        Icons.widgets,
                       ),
-                      _listTileContainer(
-                        menuOption: MenuOption.checkbox,
-                        text: "Checkboxes",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.checkbox;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.dropDownMenu,
-                        text: "Dropdown Menu",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.dropDownMenu;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.circularProgress,
-                        text: "Circular Progress",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.circularProgress;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.radio,
-                        text: "Radio Buttons",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.radio;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.card,
-                        text: "Cards",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.card;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.orientationalColumnRow,
-                        text: "Orientational column row",
-                        onTap: () {
-                          setState(() {
-                            currentSelection =
-                                MenuOption.orientationalColumnRow;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.toast,
-                        text: "Toast",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.toast;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.appbar,
-                        text: "AppBar",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.appbar;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.listtile,
-                        text: "List Tile",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.listtile;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.expansionTile,
-                        text: "Expansion Tile",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.expansionTile;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.upText,
-                        text: "Text",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.upText;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.icon,
-                        text: "Icon",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.icon;
-                          });
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.upcode,
-                        text: "Code",
-                        onTap: () {
-                          setState(() {
-                            currentSelection = MenuOption.upcode;
-                          });
-                        },
-                      ),
-                      // _listTileContainer(
-                      //   menuOption: MenuOption.drawer,
-                      //   text: "Drawer",
-                      //   onTap: () {
-                      //     setState(
-                      //       () {
-                      //         currentSelection = MenuOption.drawer;
-                      //       },
-                      //     );
-                      //   },
-                      // ),
-                    ],
-                  ),
-                  UpExpansionTile(
-                    leading: const Icon(Icons.smart_screen),
-                    title: "Dialogs",
-                    children: [
-                      _listTileContainer(
-                        menuOption: MenuOption.aboutDialog,
-                        text: "About",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.aboutDialog;
-                            },
-                          );
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.infoDialog,
-                        text: "Information",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.infoDialog;
-                            },
-                          );
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.actionDialog,
-                        text: "Action",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.actionDialog;
-                            },
-                          );
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.customDialog,
-                        text: "Custom",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.customDialog;
-                            },
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                  UpExpansionTile(
-                    leading: const Icon(Icons.help_outline),
-                    title: "Helpers",
-                    children: [
-                      _listTileContainer(
-                        menuOption: MenuOption.copyToClipboard,
-                        text: "Copy to clipboard",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.copyToClipboard;
-                            },
-                          );
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.console,
-                        text: "Console",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.console;
-                            },
-                          );
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.toastH,
-                        text: "Toast",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.toastH;
-                            },
-                          );
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.dateTime,
-                        text: "Date Time",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.dateTime;
-                            },
-                          );
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.security,
-                        text: "Security",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.security;
-                            },
-                          );
-                        },
-                      ),
-                      _listTileContainer(
-                        menuOption: MenuOption.layout,
-                        text: "Layout",
-                        onTap: () {
-                          setState(
-                            () {
-                              currentSelection = MenuOption.layout;
-                            },
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                ],
+                      title: "Widgets",
+                      children: [
+                        _listTileContainer(
+                          menuOption: MenuOption.button,
+                          text: "Buttons",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.button;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.textfield,
+                          text: "Textfields",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.textfield;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.checkbox,
+                          text: "Checkboxes",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.checkbox;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.dropDownMenu,
+                          text: "Dropdown Menu",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.dropDownMenu;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.circularProgress,
+                          text: "Circular Progress",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.circularProgress;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.radio,
+                          text: "Radio Buttons",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.radio;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.card,
+                          text: "Cards",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.card;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.table,
+                          text: "Table",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.table;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.orientationalColumnRow,
+                          text: "Orientational column row",
+                          onTap: () {
+                            setState(() {
+                              currentSelection =
+                                  MenuOption.orientationalColumnRow;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.toast,
+                          text: "Toast",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.toast;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.appbar,
+                          text: "AppBar",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.appbar;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.listtile,
+                          text: "List Tile",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.listtile;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.expansionTile,
+                          text: "Expansion Tile",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.expansionTile;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.upText,
+                          text: "Text",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.upText;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.icon,
+                          text: "Icon",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.icon;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.upcode,
+                          text: "Code",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.upcode;
+                            });
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.scaffold,
+                          text: "Scaffold",
+                          onTap: () {
+                            setState(() {
+                              currentSelection = MenuOption.scaffold;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    UpExpansionTile(
+                      leading: const Icon(Icons.smart_screen),
+                      title: "Dialogs",
+                      children: [
+                        _listTileContainer(
+                          menuOption: MenuOption.aboutDialog,
+                          text: "About",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.aboutDialog;
+                              },
+                            );
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.infoDialog,
+                          text: "Information",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.infoDialog;
+                              },
+                            );
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.actionDialog,
+                          text: "Action",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.actionDialog;
+                              },
+                            );
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.customDialog,
+                          text: "Custom",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.customDialog;
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                    UpExpansionTile(
+                      leading: const Icon(Icons.help_outline),
+                      title: "Helpers",
+                      children: [
+                        _listTileContainer(
+                          menuOption: MenuOption.copyToClipboard,
+                          text: "Copy to clipboard",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.copyToClipboard;
+                              },
+                            );
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.console,
+                          text: "Console",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.console;
+                              },
+                            );
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.toastH,
+                          text: "Toast",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.toastH;
+                              },
+                            );
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.dateTime,
+                          text: "Date Time",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.dateTime;
+                              },
+                            );
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.security,
+                          text: "Security",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.security;
+                              },
+                            );
+                          },
+                        ),
+                        _listTileContainer(
+                          menuOption: MenuOption.layout,
+                          text: "Layout",
+                          onTap: () {
+                            setState(
+                              () {
+                                currentSelection = MenuOption.layout;
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

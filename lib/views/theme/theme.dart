@@ -5,6 +5,7 @@ import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/themes/up_theme_data.dart';
 import 'package:flutter_up/themes/up_themes.dart';
 import 'package:flutter_up/widgets/up_button.dart';
+import 'package:flutter_up/widgets/up_checkbox.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 
 import 'package:flutter_up/widgets/up_dropdown.dart';
@@ -12,10 +13,12 @@ import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/widgets/color_dialog.dart';
 
 List<UpLabelValuePair> _themes = [
-  UpLabelValuePair(label: 'Select ', value: "Default"),
-  UpLabelValuePair(label: 'Purple', value: "1"),
-  UpLabelValuePair(label: 'Orange', value: "2"),
-  UpLabelValuePair(label: 'Custom', value: "3"),
+  UpLabelValuePair(label: 'Select', value: "Default"),
+  UpLabelValuePair(label: 'Purple (Light)', value: "1"),
+  UpLabelValuePair(label: 'Orange (Light)', value: "2"),
+  UpLabelValuePair(label: 'Purple (Dark)', value: "3"),
+  UpLabelValuePair(label: 'Orange (Dark)', value: "4"),
+  UpLabelValuePair(label: 'Custom', value: "5"),
 ];
 
 class ThemeView extends StatefulWidget {
@@ -30,13 +33,33 @@ class _ThemesPageState extends State<ThemeView> {
   String _themeId = _themes.first.value;
   dynamic primaryColor;
   dynamic secondaryColor;
+  bool isDark = false;
   dynamic tertiarayColor, warnColor, successColor, linkColor;
 
   _onChange(String id) {
-    if (id == "3") {
+    if (id == "5") {
       _customDialog();
-    } else {
+    } else if (id == "1" || id == "2") {
       UpThemeData theme = UpThemes.generateThemeByColor(
+        baseColor: Colors.white,
+        primaryColor: getColorById(int.parse(id)),
+        secondaryColor: UpConfig.of(context).theme.secondaryColor,
+        tertiaryColor: UpConfig.of(context).theme.tertiaryColor,
+        warnColor: UpConfig.of(context).theme.warnColor,
+        linkColor: UpConfig.of(context).theme.linkColor,
+        successColor: UpConfig.of(context).theme.successColor,
+      );
+      UpConfig.changeTheme(context, theme);
+      if (widget.onChange != null) {
+        widget.onChange!();
+      }
+      setState(() {
+        _themeId = id;
+      });
+    } else if (id == "3" || id == "4") {
+      UpThemeData theme = UpThemes.generateThemeByColor(
+        baseColor: const Color.fromARGB(255, 25, 23, 30),
+        isDark: true,
         primaryColor: getColorById(int.parse(id)),
         secondaryColor: UpConfig.of(context).theme.secondaryColor,
         tertiaryColor: UpConfig.of(context).theme.tertiaryColor,
@@ -57,7 +80,9 @@ class _ThemesPageState extends State<ThemeView> {
   Color getColorById(int id) {
     switch (id) {
       case 1:
+      case 3:
         return Colors.purple;
+      case 4:
       case 2:
         return Colors.orange;
       default:
@@ -72,14 +97,16 @@ class _ThemesPageState extends State<ThemeView> {
         builder: (BuildContext context) {
           return StatefulBuilder(builder: (context, StateSetter setState) {
             return AlertDialog(
+              backgroundColor: UpConfig.of(context).theme.baseColor,
               title: const Text('Custom Theme'),
               content: SingleChildScrollView(
-                child: ListBody(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SizedBox(
-                        width: 100,
                         child: UpButton(
                           style: UpStyle(
                               buttonHoverBorderColor: primaryColor ??
@@ -260,6 +287,17 @@ class _ThemesPageState extends State<ThemeView> {
                         text: "Success",
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: UpCheckbox(
+                        initialValue: isDark,
+                        label: "Dark mode",
+                        onChange: (value) {
+                          isDark = value;
+                          setState(() {});
+                        },
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -274,6 +312,10 @@ class _ThemesPageState extends State<ThemeView> {
                         Navigator.of(context).pop();
 
                         UpThemeData theme = UpThemes.generateThemeByColor(
+                          baseColor: isDark
+                              ? const Color.fromARGB(255, 25, 23, 30)
+                              : Colors.white,
+                          isDark: isDark,
                           primaryColor: primaryColor ??
                               UpConfig.of(context).theme.primaryColor,
                           secondaryColor: secondaryColor ??

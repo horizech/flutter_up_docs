@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/models/up_drawer_item.dart';
 import 'package:flutter_up/themes/up_style.dart';
+import 'package:flutter_up/widgets/up_icon.dart';
 import 'package:flutter_up/widgets/up_text.dart';
 
 class DrawerExample extends StatelessWidget {
@@ -44,7 +45,7 @@ class DrawerExample extends StatelessWidget {
       ...view,
       ..._getDrawerActions()
           .map<Widget>((action) => ListTile(
-                leading: Icon(action.icon),
+                leading: UpIcon(icon: action.icon),
                 title: UpText(action.title),
                 onTap: () => {action.onTap(context)},
               ))
