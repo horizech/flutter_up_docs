@@ -11,7 +11,7 @@ Widget keyTextfield() {
     child: Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpKey(
             lable: 'Password',
             type: UpInputType.outline,
@@ -23,7 +23,7 @@ Widget keyTextfield() {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpKey(
             lable: 'Code',
             type: UpInputType.underline,

@@ -15,7 +15,7 @@ class UpListTileExample extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Padding(
-            padding: EdgeInsets.all(15.0),
+            padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
             child: SizedBox(
               width: 200,
               child: UpListTile(
@@ -26,7 +26,7 @@ class UpListTileExample extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
             child: SizedBox(
               width: 200,
               child: UpListTile(

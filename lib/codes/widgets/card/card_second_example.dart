@@ -22,7 +22,7 @@ class _CardSecondExampleState extends State<CardSecondExample> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: SizedBox(
             width: 250,
             child: UpCard(

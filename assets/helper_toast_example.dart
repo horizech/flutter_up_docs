@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/helpers/up_toast.dart';
 import 'package:flutter_up/widgets/up_button.dart';
-import 'package:flutter_up/widgets/up_text.dart';
 
 class Toast extends StatelessWidget {
   const Toast({Key? key}) : super(key: key);
@@ -11,7 +10,7 @@ class Toast extends StatelessWidget {
     return Wrap(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpButton(
             onPressed: () {
               UpToast().showToast(
@@ -20,7 +19,7 @@ class Toast extends StatelessWidget {
                 text: "Place your toast message here",
               );
             },
-            child: const UpText("Toast"),
+            text: "Toast",
           ),
         )
       ],

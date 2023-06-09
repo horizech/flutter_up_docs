@@ -10,7 +10,7 @@ class LayoutExample extends StatelessWidget {
     return Wrap(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: Row(
             children: [
               const UpText(
@@ -23,7 +23,7 @@ class LayoutExample extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: Row(
             children: [
               const UpText(

@@ -10,7 +10,7 @@ Widget customTextfields() {
     child: Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
             colorType: UpColorType.secondary,
             validation: UpValidation(isRequired: true),
@@ -22,7 +22,7 @@ Widget customTextfields() {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
             style: UpStyle(
               textfieldBorderColor: Colors.orangeAccent,

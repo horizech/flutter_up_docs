@@ -10,11 +10,11 @@ Widget customTextfields() {
     child: Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
             colorType: UpColorType.secondary,
             validation: UpValidation(isRequired: true),
-            style: UpStyle(textfieldFocusedBorderColor: Colors.red),
+            style: UpStyle(textBackgroundColor: Colors.red),
             readOnly: true,
             keyboardType: TextInputType.text,
             controller: TextEditingController(text: "a1jh4vhv"),
@@ -22,7 +22,7 @@ Widget customTextfields() {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
             style: UpStyle(
               textfieldBorderColor: Colors.orangeAccent,
@@ -33,6 +33,7 @@ Widget customTextfields() {
               textfieldFocusedBorderColor: Colors.black,
               textfieldLabelColor: Colors.blueGrey,
               textfieldLabelSize: 12,
+              textfieldFilledColor: Colors.cyan[100],
             ),
             controller: TextEditingController(),
             keyboardType: TextInputType.text,

@@ -1,45 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/enums/up_color_type.dart';
-import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/validation/up_valdation.dart';
 import 'package:flutter_up/widgets/up_textfield.dart';
 
-Widget customTextfields() {
+Widget textfields() {
+  TextEditingController emailController = TextEditingController();
   return SizedBox(
     width: 300,
     child: Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
-            colorType: UpColorType.secondary,
-            validation: UpValidation(isRequired: true),
-            style: UpStyle(textBackgroundColor: Colors.red),
-            readOnly: true,
-            keyboardType: TextInputType.text,
-            controller: TextEditingController(text: "a1jh4vhv"),
-            label: "Generated No",
+            controller: emailController,
+            onSaved: (input) {
+              // Perform action
+            },
+            label: "Username",
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
-            style: UpStyle(
-              textfieldBorderColor: Colors.orangeAccent,
-              textfieldBorderRadius: 2,
-              textfieldBorderWidth: 2,
-              textfieldCursorColor: Colors.pink,
-              textfieldErrorBorderColor: Colors.amber,
-              textfieldFocusedBorderColor: Colors.black,
-              textfieldLabelColor: Colors.blueGrey,
-              textfieldLabelSize: 12,
-              textfieldFilledColor: Colors.cyan[100],
-            ),
-            controller: TextEditingController(),
-            keyboardType: TextInputType.text,
-            obscureText: true,
+            colorType: UpColorType.secondary,
+            autofillHint: AutofillHints.email,
+            keyboardType: TextInputType.emailAddress,
+            validation: UpValidation(isEmail: true),
+            label: "Email",
+            onChanged: (input) {
+              //do something
+            },
             readOnly: false,
-            label: "Name",
+            controller: TextEditingController(),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+          child: UpTextField(
+            colorType: UpColorType.tertiary,
+            controller: TextEditingController(),
+            validation: UpValidation(minLength: 6),
+            onSaved: (input) => {
+              // Perform action
+            },
+            obscureText: true,
+            label: "Password",
           ),
         ),
       ],

@@ -9,7 +9,7 @@ class UpExpansionTileExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
       child: SizedBox(
         child: UpExpansionTile(
           childrenPadding: EdgeInsets.all(8.0),

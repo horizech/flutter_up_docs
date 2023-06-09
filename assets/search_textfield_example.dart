@@ -8,7 +8,7 @@ Widget searchtextfield() {
     child: Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpSearch(
             controller: searchController,
             valueChanged: ((value) => {

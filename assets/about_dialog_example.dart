@@ -9,13 +9,16 @@ class AboutDialogExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UpButton(
-      onPressed: () {
-        ServiceManager<UpDialogService>().showDialog(
-            context, UpAboutAppDialog(),
-            data: {'title': 'About us', 'text': 'All rights reserved.'});
-      },
-      text: "About Dialog",
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+      child: UpButton(
+        onPressed: () {
+          ServiceManager<UpDialogService>().showDialog(
+              context, UpAboutAppDialog(),
+              data: {'title': 'About us', 'text': 'All rights reserved.'});
+        },
+        text: "About Dialog",
+      ),
     );
   }
 }

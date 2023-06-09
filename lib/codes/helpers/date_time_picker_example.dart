@@ -51,7 +51,7 @@ class _DateTimepickerExampleState extends State<DateTimepickerExample> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
               colorType: UpColorType.primary,
               controller: dateController,
@@ -73,7 +73,7 @@ class _DateTimepickerExampleState extends State<DateTimepickerExample> {
           height: 10,
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: Row(
             children: [
               const UpText('Time Picker'),

@@ -10,7 +10,7 @@ class InfoDialogExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
       child: UpButton(
         onPressed: () {
           ServiceManager<UpDialogService>().showDialog(context, UpInfoDialog(),

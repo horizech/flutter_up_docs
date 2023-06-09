@@ -9,12 +9,15 @@ class InfoDialogExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UpButton(
-      onPressed: () {
-        ServiceManager<UpDialogService>().showDialog(context, UpInfoDialog(),
-            data: {'title': 'Error', 'text': 'Please fill all fields!'});
-      },
-      text: "Information Dialog",
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+      child: UpButton(
+        onPressed: () {
+          ServiceManager<UpDialogService>().showDialog(context, UpInfoDialog(),
+              data: {'title': 'Error', 'text': 'Please fill all fields!'});
+        },
+        text: "Information Dialog",
+      ),
     );
   }
 }

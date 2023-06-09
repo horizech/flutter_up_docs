@@ -6,11 +6,16 @@ class UpCodeExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const UpCode(
-      assetCode: 'assets/main.dart',
-      backgroundColor: Colors.red,
-      height: 30,
-      language: 'dart',
+    return const Padding(
+      padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
+      child: SizedBox(
+        child: UpCode(
+          assetCode: 'assets/main.dart',
+          backgroundColor: Colors.red,
+          height: 100,
+          language: 'dart',
+        ),
+      ),
     );
   }
 }

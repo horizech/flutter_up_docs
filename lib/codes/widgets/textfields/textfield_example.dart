@@ -10,7 +10,7 @@ Widget textfields() {
     child: Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
             controller: emailController,
             onSaved: (input) {
@@ -20,7 +20,7 @@ Widget textfields() {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
             colorType: UpColorType.secondary,
             autofillHint: AutofillHints.email,
@@ -35,7 +35,7 @@ Widget textfields() {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
             colorType: UpColorType.tertiary,
             controller: TextEditingController(),

@@ -7,7 +7,7 @@ class UpCodeExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 8.0, bottom: 15.0),
+      padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
       child: SizedBox(
         child: UpCode(
           assetCode: 'assets/main.dart',

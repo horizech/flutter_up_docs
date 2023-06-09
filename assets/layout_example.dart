@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_up/helpers/up_layout.dart';
-import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_text.dart';
 
 class LayoutExample extends StatelessWidget {
@@ -11,12 +10,11 @@ class LayoutExample extends StatelessWidget {
     return Wrap(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: Row(
             children: [
-              UpText(
+              const UpText(
                 "Layout: ",
-                style: UpStyle(textSize: 20),
               ),
               UpLayout.isPortrait(context)
                   ? const UpText("Portrait")
@@ -25,12 +23,11 @@ class LayoutExample extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: Row(
             children: [
-              UpText(
+              const UpText(
                 "View: ",
-                style: UpStyle(textSize: 20),
               ),
               UpLayout.isMobile(context) == true
                   ? const UpText("Mobile")
