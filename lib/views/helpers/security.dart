@@ -15,12 +15,15 @@ class SecurityView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                style: UpStyle(textSize: 25),
-                "Security",
-              ),
+            const SizedBox(
+              height: 10,
+            ),
+            UpText(
+              style: UpStyle(textSize: 25),
+              "Security",
+            ),
+            const SizedBox(
+              height: 10,
             ),
             const UpCode(
               assetCode: 'assets/security_example.dart',

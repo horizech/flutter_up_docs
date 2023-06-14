@@ -7,9 +7,9 @@ Widget orientationalColumnRow() {
     children: [
       const UpText("Landscape View"),
       SizedBox(
-        width: 400,
+        width: 300,
         child: Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
           child: UpOrientationalColumnRow(
             children: [
               Container(
@@ -32,21 +32,24 @@ Widget orientationalColumnRow() {
         height: 10,
       ),
       const UpText("Portrait view"),
-      Column(
-        children: [
-          Container(
-            width: 200,
-            height: 100,
-            color: Colors.pink[200],
-            child: const Center(child: UpText("container1")),
-          ),
-          Container(
-            width: 200,
-            height: 100,
-            color: Colors.blue[200],
-            child: const Center(child: UpText("container2")),
-          ),
-        ],
+      Padding(
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
+        child: Column(
+          children: [
+            Container(
+              width: 200,
+              height: 100,
+              color: Colors.pink[200],
+              child: const Center(child: UpText("container1")),
+            ),
+            Container(
+              width: 200,
+              height: 100,
+              color: Colors.blue[200],
+              child: const Center(child: UpText("container2")),
+            ),
+          ],
+        ),
       )
     ],
   );

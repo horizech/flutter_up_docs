@@ -17,16 +17,22 @@ class UrlServiceView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Url Service",
-                style: UpStyle(textSize: 25),
-              ),
+            const SizedBox(
+              height: 10,
+            ),
+            UpText(
+              "Url Service",
+              style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const URLService(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/url_service_example.dart',
                   height: 450,

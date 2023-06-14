@@ -18,23 +18,28 @@ class LayoutView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Layout",
-                style: UpStyle(textSize: 25),
-              ),
+            const SizedBox(
+              height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Try resizing the window then you will see change from landscape to portrait",
-                style: UpStyle(),
-              ),
+            UpText(
+              "Layout",
+              style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const UpText(
+              "Try resizing the window then you will see change from landscape to portrait",
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const LayoutExample(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/layout_example.dart',
                   height: 800,

@@ -18,26 +18,29 @@ class DateTimeView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Date Time helper functions",
-                style: UpStyle(textSize: 25),
-              ),
+            const SizedBox(
+              height: 10,
+            ),
+            UpText(
+              "Date Time helper functions",
+              style: UpStyle(textSize: 25),
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Date time picker",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Date time picker",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const DateTimepickerExample(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/date_time_picker_example.dart',
                   height: 1500,
@@ -45,18 +48,21 @@ class DateTimeView extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                style: UpStyle(textSize: 20),
-                "Date time ",
-              ),
+            UpText(
+              style: UpStyle(textSize: 20),
+              "Date time ",
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 dateTime(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/date_time_example.dart',
                   height: 680,

@@ -15,12 +15,15 @@ class ConsoleView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Console",
-                style: UpStyle(textSize: 25),
-              ),
+            const SizedBox(
+              height: 10,
+            ),
+            UpText(
+              "Console",
+              style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             const UpCode(
               assetCode: 'assets/console_example.dart',

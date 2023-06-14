@@ -22,125 +22,100 @@ class ButtonView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Flutter up buttons are elements enhanced with styling and ink ripples.",
-                style: UpStyle(textSize: 25),
-              ),
+            const SizedBox(
+              height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Elevated Button",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Flutter up buttons",
+              style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            UpText(
+              "Elevated Button",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const UpText(
+              "Flutter up buttons are elements enhanced with styling and ink ripples.",
+              // style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 upButtons(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/elevated_button_example.dart',
                   height: 1550,
                 ),
               ],
             ),
-            // const Padding(
-            //   padding: EdgeInsets.only(
-            //     top: 50.0,
-            //   ),
-            //   child: Divider(
-            //     color: Colors.black,
-            //     height: 10,
-            //     thickness: 1.0,
-            //   ),
-            // ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: UpText(
-            //     "Outlined Buttons",
-            //     style: UpStyle(textSize: 20),
-            //   ),
-            // ),
-            // widgetBox(
-            //   widgets: [
-            //     outlinedButtons(),
-            //     const UpCode(
-            //       assetCode: 'assets/outlined_button_example.dart',
-            //       height: 1750,
-            //     ),
-            //   ],
-            // ),
-            // const SizedBox(
-            //   height: 50,
-            // ),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: UpText(
-            //     "Text Buttons",
-            //     style: UpStyle(textSize: 20),
-            //   ),
-            // ),
-            // widgetBox(
-            //   widgets: [
-            //     textButtons(),
-            //     const UpCode(
-            //       assetCode: 'assets/text_button_example.dart',
-            //       height: 1750,
-            //     ),
-            //   ],
-            // ),
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Image Button",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Image Button",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 imageButton(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/image_button_example.dart',
                 ),
               ],
             ),
-
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Icon Buttons",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Icon Buttons",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 iconButtons(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/icon_button_example.dart',
                 ),
               ],
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Floating Buttons",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Floating Buttons",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 floatingButtons(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/floating_button_example.dart',
                   height: 1400,
@@ -148,19 +123,21 @@ class ButtonView extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Loading Button",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Loading Button",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 loadingButton(),
-                const UpCode(
+               const SizedBox(
+                  height: 10,
+                ),   const UpCode(
                   assetCode: 'assets/loading_button_example.dart',
                   height: 1000,
                 ),

@@ -20,23 +20,29 @@ class CheckboxView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Flutter up Checkbox are elements enhanced with styling and ink ripples.",
-                style: UpStyle(textSize: 25),
-              ),
+            const SizedBox(
+              height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Checkboxes",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Flutter up Checkbox are elements enhanced with styling and ink ripples.",
+              style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            UpText(
+              "Checkboxes",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const CheckBoxes(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/checkbox_example.dart',
                   height: 1100,
@@ -44,18 +50,21 @@ class CheckboxView extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Custom Checkboxes",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Custom Checkboxes",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 customCheckboxes(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/custom_checkbox_example.dart',
                   height: 800,
@@ -63,20 +72,23 @@ class CheckboxView extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Rounded Checkboxes",
-                style: UpStyle(
-                  textSize: 20,
-                ),
+            UpText(
+              "Rounded Checkboxes",
+              style: UpStyle(
+                textSize: 20,
               ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 roundedCheckboxes(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/rounded_checkbox_example.dart',
                   height: 600,

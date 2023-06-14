@@ -17,16 +17,22 @@ class ExpansionTileView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Flutter Up Expansion Tile",
-                style: UpStyle(textSize: 25),
-              ),
+            const SizedBox(
+              height: 10,
+            ),
+            UpText(
+              "Flutter Up Expansion Tile",
+              style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const UpExpansionTileExample(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/expansion_tile_example.dart',
                 ),

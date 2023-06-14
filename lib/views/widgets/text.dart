@@ -18,34 +18,43 @@ class UpTextView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Flutter Up Text",
-                style: UpStyle(textSize: 25),
-              ),
+            const SizedBox(
+              height: 10,
+            ),
+            UpText(
+              "Flutter Up Text",
+              style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const UpTextExample(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/up_text_example.dart',
                 ),
               ],
             ),
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "UpText types",
-                style: UpStyle(textSize: 25),
-              ),
+            UpText(
+              "UpText types",
+              style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const UpTextTypesExample(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/up_text_types_example.dart',
                 ),

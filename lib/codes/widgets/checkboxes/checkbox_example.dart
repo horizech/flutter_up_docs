@@ -38,7 +38,7 @@ class _CheckBoxesState extends State<CheckBoxes> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
               child: UpCheckbox(
                 label: "Secondary",
                 colorType: UpColorType.secondary,
@@ -49,7 +49,7 @@ class _CheckBoxesState extends State<CheckBoxes> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
               child: UpCheckbox(
                 label: "Tertiary",
                 colorType: UpColorType.tertiary,
@@ -59,7 +59,7 @@ class _CheckBoxesState extends State<CheckBoxes> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
               child: UpCheckbox(
                 label: "Warn",
                 initialValue: true,
@@ -70,7 +70,7 @@ class _CheckBoxesState extends State<CheckBoxes> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
               child: UpCheckbox(
                 onChange: (value) {
                   value;
@@ -82,7 +82,10 @@ class _CheckBoxesState extends State<CheckBoxes> {
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+          padding: const EdgeInsets.only(
+            top: 8.0,
+            bottom: 8.0,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -98,7 +101,7 @@ class _CheckBoxesState extends State<CheckBoxes> {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  left: 20.0,
+                  left: 8.0,
                 ),
                 child: Column(
                   children: [

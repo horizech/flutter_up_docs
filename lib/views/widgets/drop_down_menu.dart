@@ -19,37 +19,43 @@ class DropDownMenuView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Flutter up drop down menu",
-                style: UpStyle(textSize: 25),
-              ),
+            const SizedBox(
+              height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "To use dropdown menu first you need to create UpLabelValuePair like ",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Flutter up drop down menu",
+              style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            UpText(
+              "To use dropdown menu first you need to create UpLabelValuePair like ",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             const UpCode(
               assetCode: 'assets/constants.dart',
               height: 300,
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                style: UpStyle(textSize: 20),
-                "Now initialize dropdown menu ",
-              ),
+            UpText(
+              style: UpStyle(textSize: 20),
+              "Now initialize dropdown menu ",
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const DropDownMenu(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/drop_down_menu_example.dart',
                   height: 700,
@@ -57,18 +63,21 @@ class DropDownMenuView extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Multiple Selection dropdown menu",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Multiple Selection dropdown menu",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const MultipleSelectionDropDownMenu(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode:
                       'assets/multiple_selection_drop_down_menu_example.dart',
@@ -77,18 +86,21 @@ class DropDownMenuView extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Customize dropdown menu",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Customize dropdown menu",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const CustomDropDownMenu(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/custom_drop_down_menu_example.dart',
                   height: 1150,

@@ -37,6 +37,9 @@ class DrawerItemCardView extends StatelessWidget {
                 height: 300,
                 child: AppExample(),
               ),
+              const SizedBox(
+                height: 10,
+              ),
               const UpCode(
                 assetCode: 'assets/drawer_example.dart',
                 height: 1200,

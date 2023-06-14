@@ -11,24 +11,25 @@ class UpTextExample extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpText(
             'Simple text',
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpText(
             style: UpStyle(
               textColor: Colors.purple,
               textWeight: FontWeight.w500,
               textFontStyle: FontStyle.italic,
             ),
+            isSelectable: true,
             'Italic text',
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpText(
             style: UpStyle(
               textStrokeColor: Colors.green,
@@ -38,7 +39,7 @@ class UpTextExample extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpText(
             overflow: TextOverflow.fade,
             style: UpStyle(

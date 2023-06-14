@@ -18,16 +18,22 @@ class ToastView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                style: UpStyle(textSize: 20),
-                "Flutter up Toast",
-              ),
+            const SizedBox(
+              height: 20,
+            ),
+            UpText(
+              style: UpStyle(textSize: 20),
+              "Flutter up Toast",
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 toast(context),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/toast_example.dart',
                   height: 2500,

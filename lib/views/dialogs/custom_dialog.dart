@@ -18,19 +18,22 @@ class CustomDialogView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Custom dialog",
-                style: UpStyle(textSize: 25),
-              ),
+            const SizedBox(
+              height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Create your custom dialog widget",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Custom dialog",
+              style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const UpText(
+              "Create your custom dialog widget",
+              // style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
@@ -40,12 +43,15 @@ class CustomDialogView extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Now extends it from base dialog class",
-                style: UpStyle(textSize: 20),
-              ),
+            const SizedBox(
+              height: 30,
+            ),
+            const UpText(
+              "Now extends it from base dialog class",
+              // style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
@@ -55,16 +61,22 @@ class CustomDialogView extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Now use it",
-                style: UpStyle(textSize: 20),
-              ),
+            const SizedBox(
+              height: 30,
+            ),
+            const UpText(
+              "Now use it",
+              // style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const CustomDialogExample(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/custom_dialog_example.dart',
                   height: 400,

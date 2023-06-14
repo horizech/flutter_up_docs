@@ -18,26 +18,29 @@ class RadioView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Flutter Up Radio Buttons",
-                style: UpStyle(textSize: 25),
-              ),
+            const SizedBox(
+              height: 10,
+            ),
+            UpText(
+              "Flutter Up Radio Buttons",
+              style: UpStyle(textSize: 25),
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Radio Button",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Radio Button",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const RadioButtonExample(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/radio_example.dart',
                   height: 1100,
@@ -45,18 +48,21 @@ class RadioView extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Custom Radio Button",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              "Custom Radio Button",
+              style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 const CustomRadioButtonExample(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/custom_radio_example.dart',
                   height: 1300,

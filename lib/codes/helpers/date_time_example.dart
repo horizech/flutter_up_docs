@@ -9,7 +9,7 @@ Widget dateTime() {
     child: Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
             controller: TextEditingController(
               text: UpDateTimeHelper.formatSecondsTime(100),
@@ -19,7 +19,7 @@ Widget dateTime() {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(5.0),
+          padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
           child: UpTextField(
             label: "Format minutes time",
             readOnly: true,

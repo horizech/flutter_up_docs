@@ -6,7 +6,7 @@ Widget loadingButton() {
   return Row(
     children: [
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpLoadingButton(
           isLoading: false,
           isError: false,
@@ -18,7 +18,7 @@ Widget loadingButton() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
         child: UpLoadingButton(
           isLoading: true,
           isError: false,
@@ -30,7 +30,7 @@ Widget loadingButton() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
         child: UpLoadingButton(
           isLoading: false,
           isError: false,
@@ -42,7 +42,7 @@ Widget loadingButton() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
         child: UpLoadingButton(
           isLoading: false,
           isError: true,

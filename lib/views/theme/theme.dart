@@ -356,33 +356,32 @@ class _ThemesPageState extends State<ThemeView> {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: UpText(
-              "Initialize theme in FlutterUpApp by generating UpThemeData."),
+        UpText("Initialize theme in FlutterUpApp by generating UpThemeData."),
+        SizedBox(
+          height: 10,
         ),
         UpCode(
           assetCode: "assets/app.dart",
           height: 1000,
         ),
         SizedBox(
-          height: 20,
+          height: 30,
         ),
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: UpText(
-              "You can also create your own UpThemeData.For this first you need to create UpThemeData file by filling all UpThemeData parameters."),
+        UpText(
+            "You can also create your own UpThemeData.For this first you need to create UpThemeData file by filling all UpThemeData parameters."),
+        SizedBox(
+          height: 10,
         ),
         UpCode(
           assetCode: "assets/up_theme_data_Example.dart",
           height: 320,
         ),
         SizedBox(
-          height: 20,
+          height: 30,
         ),
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: UpText("Now pass your UpThemeData in FlutterUpApp. "),
+        UpText("Now pass your UpThemeData in FlutterUpApp. "),
+        SizedBox(
+          height: 10,
         ),
         UpCode(
           code: ''' FlutterUpApp(  
@@ -391,11 +390,11 @@ class _ThemesPageState extends State<ThemeView> {
           height: 80,
         ),
         SizedBox(
-          height: 20,
+          height: 30,
         ),
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: UpText("In case you want to change theme use"),
+        UpText("In case you want to change theme use"),
+        SizedBox(
+          height: 10,
         ),
         UpCode(
           code: '''   UpConfig.changeTheme(context, upThemeData); ''',
@@ -408,19 +407,28 @@ class _ThemesPageState extends State<ThemeView> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(15.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const SizedBox(
+            height: 10,
+          ),
           UpText(
             "Flutter Up Themes",
             style: UpStyle(textSize: 25),
+          ),
+          const SizedBox(
+            height: 30,
           ),
           UpDropDown(
             value: _themeId,
             label: "Color",
             itemList: _themes,
             onChanged: (g) => _onChange(g ?? ""),
+          ),
+          const SizedBox(
+            height: 20,
           ),
           _themeCodes(),
         ],

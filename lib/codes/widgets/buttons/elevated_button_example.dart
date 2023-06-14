@@ -8,7 +8,7 @@ Widget upButtons() {
   return Wrap(
     children: [
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           colorType: UpColorType.basic,
           onPressed: () {
@@ -17,8 +17,11 @@ Widget upButtons() {
           text: "Basic",
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           onPressed: () {
             // Perform action
@@ -26,8 +29,11 @@ Widget upButtons() {
           text: "Primary",
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           colorType: UpColorType.secondary,
           onPressed: () {
@@ -36,8 +42,11 @@ Widget upButtons() {
           text: "Secondary",
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           colorType: UpColorType.tertiary,
           onPressed: () {
@@ -46,8 +55,11 @@ Widget upButtons() {
           text: "Tertiary",
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           colorType: UpColorType.warn,
           onPressed: () {
@@ -56,8 +68,11 @@ Widget upButtons() {
           text: "Warn",
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           colorType: UpColorType.success,
           onPressed: () {
@@ -66,8 +81,11 @@ Widget upButtons() {
           text: 'Success',
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           style: UpStyle(isDisabled: true),
           onPressed: () {
@@ -76,8 +94,11 @@ Widget upButtons() {
           text: "Disabled",
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           colorType: UpColorType.secondary,
           style: UpStyle(
@@ -94,8 +115,11 @@ Widget upButtons() {
           text: "Gradient",
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           style: UpStyle(
             buttonBorderTopStyle: UpStyle(
@@ -134,8 +158,11 @@ Widget upButtons() {
           text: "Custom",
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           style: UpStyle(
             buttonBorderTopStyle: UpStyle(
@@ -153,8 +180,11 @@ Widget upButtons() {
           text: "Top Border",
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           style: UpStyle(
             buttonBorderLeftStyle: UpStyle(
@@ -173,8 +203,11 @@ Widget upButtons() {
           text: "Left Border",
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           style: UpStyle(
             buttonBorderBottomStyle: UpStyle(
@@ -193,8 +226,11 @@ Widget upButtons() {
           text: "Bottom Border",
         ),
       ),
+      const SizedBox(
+        width: 10,
+      ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           style: UpStyle(
             buttonBorderRightStyle: UpStyle(

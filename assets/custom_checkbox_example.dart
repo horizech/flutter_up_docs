@@ -7,7 +7,7 @@ Widget customCheckboxes() {
   return Wrap(
     children: [
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpCheckbox(
           initialValue: true,
           label: "Custom Checkbox",
@@ -29,7 +29,7 @@ Widget customCheckboxes() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
         child: UpCheckbox(
           initialValue: true,
           style: UpStyle(

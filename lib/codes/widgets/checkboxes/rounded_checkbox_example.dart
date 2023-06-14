@@ -7,7 +7,7 @@ Widget roundedCheckboxes() {
   return Wrap(
     children: [
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpCheckbox(
           colorType: UpColorType.success,
           style: UpStyle(checkboxBorderRadius: 300),
@@ -19,7 +19,7 @@ Widget roundedCheckboxes() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
         child: UpCheckbox(
           style: UpStyle(
             checkboxBorderRadius: 500,

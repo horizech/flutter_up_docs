@@ -18,23 +18,29 @@ class OrientationalColumnRowView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                style: UpStyle(textSize: 25),
-                "Flutter up orientational_column_row",
-              ),
+            const SizedBox(
+              height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: UpText(
-                "Here in this example we are using container to show portrait and landscape view",
-                style: UpStyle(textSize: 20),
-              ),
+            UpText(
+              style: UpStyle(textSize: 25),
+              "Flutter up orientational_column_row",
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const UpText(
+              "Here in this example we are using container to show portrait and landscape view",
+              // style: UpStyle(textSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             widgetBox(
               widgets: [
                 orientationalColumnRow(),
+                const SizedBox(
+                  height: 10,
+                ),
                 const UpCode(
                   assetCode: 'assets/orientational_column_row_example.dart',
                   height: 900,

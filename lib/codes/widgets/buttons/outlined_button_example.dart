@@ -9,7 +9,7 @@ Widget outlinedButtons() {
   return Wrap(
     children: [
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
         child: UpButton(
           type: UpButtonType.outlined,
           onPressed: () {
@@ -22,7 +22,7 @@ Widget outlinedButtons() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
         child: UpButton(
           colorType: UpColorType.secondary,
           type: UpButtonType.outlined,
@@ -33,7 +33,7 @@ Widget outlinedButtons() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
         child: UpButton(
           type: UpButtonType.outlined,
           colorType: UpColorType.tertiary,
@@ -44,7 +44,7 @@ Widget outlinedButtons() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
         child: UpButton(
           type: UpButtonType.outlined,
           colorType: UpColorType.warn,
@@ -56,7 +56,7 @@ Widget outlinedButtons() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
         child: UpButton(
           type: UpButtonType.outlined,
           onPressed: () {
@@ -66,7 +66,7 @@ Widget outlinedButtons() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
         child: UpButton(
           type: UpButtonType.outlined,
           style: UpStyle(isDisabled: true),
@@ -77,7 +77,7 @@ Widget outlinedButtons() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(5.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0),
         child: UpButton(
           type: UpButtonType.outlined,
           style: UpStyle(

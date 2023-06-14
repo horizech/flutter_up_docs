@@ -22,7 +22,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return UpScaffold(
-      appBar: const UpAppBar(
+      appBar: UpAppBar(
+        style: UpStyle(appBarHeight: 100),
         title: "Flutter Up Documentation",
       ),
       body: Center(
