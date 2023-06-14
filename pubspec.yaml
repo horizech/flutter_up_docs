@@ -38,7 +38,7 @@ dependencies:
   expandable: ^5.0.1
   flutter_colorpicker: ^1.0.3
   shared_preferences: ^2.1.1
-  flutter_up: ^3.0.2
+  flutter_up: ^3.0.3
   # flutter_up:
   #   path: ../flutter_up
 
