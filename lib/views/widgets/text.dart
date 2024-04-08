@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/widgets/up_text/up_text_example.dart';
 import 'package:flutter_up_docs/codes/widgets/up_text/up_text_types_example.dart';
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
 class UpTextView extends StatelessWidget {
   const UpTextView({Key? key}) : super(key: key);
@@ -22,8 +23,14 @@ class UpTextView extends StatelessWidget {
               height: 10,
             ),
             UpText(
-              "Flutter Up Text",
+              "UpText",
               style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const UpText(
+              "UpText makes it easier to use default theme based text in your app. You need to pass text as a parameter in the UpText widget.",
             ),
             const SizedBox(
               height: 10,
@@ -35,7 +42,7 @@ class UpTextView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/up_text_example.dart',
+                  assetCode: WidgetsAssest.text,
                 ),
               ],
             ),
@@ -56,7 +63,7 @@ class UpTextView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/up_text_types_example.dart',
+                  assetCode: WidgetsAssest.textTypes,
                 ),
               ],
             ),

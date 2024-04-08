@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/widgets/radio/custom_radio_example.dart';
 import 'package:flutter_up_docs/codes/widgets/radio/radio_example.dart';
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
 class RadioView extends StatelessWidget {
   const RadioView({Key? key}) : super(key: key);
@@ -42,7 +43,7 @@ class RadioView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/radio_example.dart',
+                  assetCode: WidgetsAssest.radio,
                   height: 1100,
                 ),
               ],
@@ -64,7 +65,7 @@ class RadioView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/custom_radio_example.dart',
+                  assetCode: WidgetsAssest.customRadio,
                   height: 1300,
                 ),
               ],

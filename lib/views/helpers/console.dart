@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 
-class ConsoleView extends StatelessWidget {
-  const ConsoleView({Key? key}) : super(key: key);
+class ConsoleHelperView extends StatelessWidget {
+  const ConsoleHelperView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +24,10 @@ class ConsoleView extends StatelessWidget {
               style: UpStyle(textSize: 25),
             ),
             const SizedBox(
-              height: 10,
+              height: 30,
             ),
             const UpCode(
-              assetCode: 'assets/console_example.dart',
+              assetCode: HelperAssest.console,
               height: 270,
             ),
           ],

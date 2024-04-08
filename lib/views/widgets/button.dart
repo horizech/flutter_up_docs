@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/elevated_button_example.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/floating_button_example.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/icon_button_example.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/image_button_example.dart';
 import 'package:flutter_up_docs/codes/widgets/buttons/loading_button_example.dart';
 
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
 class ButtonView extends StatelessWidget {
   const ButtonView({Key? key}) : super(key: key);
@@ -53,7 +54,7 @@ class ButtonView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/elevated_button_example.dart',
+                  assetCode: WidgetsAssest.elevatedButton,
                   height: 1550,
                 ),
               ],
@@ -75,7 +76,7 @@ class ButtonView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/image_button_example.dart',
+                  assetCode: WidgetsAssest.imageButton,
                 ),
               ],
             ),
@@ -96,7 +97,7 @@ class ButtonView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/icon_button_example.dart',
+                  assetCode: WidgetsAssest.iconButton,
                 ),
               ],
             ),
@@ -117,7 +118,7 @@ class ButtonView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/floating_button_example.dart',
+                  assetCode: WidgetsAssest.floatingButton,
                   height: 1400,
                 ),
               ],
@@ -135,10 +136,11 @@ class ButtonView extends StatelessWidget {
             widgetBox(
               widgets: [
                 loadingButton(),
-               const SizedBox(
+                const SizedBox(
                   height: 10,
-                ),   const UpCode(
-                  assetCode: 'assets/loading_button_example.dart',
+                ),
+                const UpCode(
+                  assetCode: WidgetsAssest.loadingButton,
                   height: 1000,
                 ),
               ],

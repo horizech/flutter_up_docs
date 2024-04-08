@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/widgets/circular_progress/circular_progress_example.dart';
 import 'package:flutter_up_docs/codes/widgets/circular_progress/custom_circular_progress_example.dart';
 
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
 class CircularProgressView extends StatelessWidget {
   const CircularProgressView({Key? key}) : super(key: key);
@@ -36,7 +37,7 @@ class CircularProgressView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/circular_progress_example.dart',
+                  assetCode: WidgetsAssest.circularProgress,
                   height: 200,
                 ),
               ],
@@ -58,7 +59,7 @@ class CircularProgressView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/custom_circular_progress_example.dart',
+                  assetCode: WidgetsAssest.customCircularProgress,
                   height: 550,
                 ),
               ],

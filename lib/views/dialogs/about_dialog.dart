@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/dialogs/about_dialog_example.dart';
 
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
 class AboutDialogView extends StatelessWidget {
   const AboutDialogView({Key? key}) : super(key: key);
@@ -22,8 +23,14 @@ class AboutDialogView extends StatelessWidget {
               height: 10,
             ),
             UpText(
-              "About Dialog",
+              "UpAboutAppDialog",
               style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const UpText(
+              "The About dialog box is used to present version and other information about your application.You need to pass context, UpAboutAppDialog() and data in show dialog method. In data you can pass title which will show as dialog title and text which will show as dialog content. If you use \\n in your text, it will take your remaining text on next line.",
             ),
             const SizedBox(
               height: 10,
@@ -35,7 +42,7 @@ class AboutDialogView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/about_dialog_example.dart',
+                  assetCode: DialogAssest.about,
                   height: 350,
                 ),
               ],

@@ -3,6 +3,7 @@ import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/themes/up_theme_data.dart';
 
 final UpThemeData lightpurple = UpThemeData(
+  isDark: false,
   baseColor: Colors.pink,
   primaryColor: Colors.purple,
   primaryStyle: UpStyle(

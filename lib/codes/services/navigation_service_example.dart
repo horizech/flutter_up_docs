@@ -1,21 +1,25 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_up/locator.dart';
 import 'package:flutter_up/services/up_navigation.dart';
+import 'package:flutter_up/widgets/up_button.dart';
+import 'package:flutter_up_docs/constants.dart';
 
-navigationServiceExample() async {
-  /// Go back
-  ServiceManager<UpNavigationService>().goBack();
+class NavigationServiceExample extends StatelessWidget {
+  const NavigationServiceExample({super.key});
 
-  /// Navigate to route
-  ServiceManager<UpNavigationService>().navigateToNamed("HOME");
-
-  /// Navigate to route replacing current route and also can send param and queryparams
-  ServiceManager<UpNavigationService>().navigateToNamed(
-    "HOME",
-    replace: true,
-    params: {},
-    queryParams: {},
-  );
-
-  /// Navigate to route  path
-  ServiceManager<UpNavigationService>().navigateTo(path: "HOME");
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+      child: UpButton(
+        onPressed: () async {
+          ServiceManager<UpNavigationService>().navigate(
+            path: Routes.test,
+            replace: true,
+          );
+        },
+        text: "Navigate",
+      ),
+    );
+  }
 }

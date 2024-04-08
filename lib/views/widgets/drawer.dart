@@ -4,7 +4,7 @@ import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/codes/drawer/app_example.dart';
 
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
 class DrawerItemCardView extends StatelessWidget {
   const DrawerItemCardView({Key? key}) : super(key: key);

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/widgets/drop_down_menu/custom_drop_down_menu_example.dart';
 import 'package:flutter_up_docs/codes/widgets/drop_down_menu/drop_down_menu_example.dart';
 import 'package:flutter_up_docs/codes/widgets/drop_down_menu/multiple_selection_drop_down_menu_example.dart';
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
 class DropDownMenuView extends StatelessWidget {
   const DropDownMenuView({Key? key}) : super(key: key);
@@ -57,7 +58,7 @@ class DropDownMenuView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/drop_down_menu_example.dart',
+                  assetCode: WidgetsAssest.dropdown,
                   height: 700,
                 ),
               ],
@@ -79,8 +80,7 @@ class DropDownMenuView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode:
-                      'assets/multiple_selection_drop_down_menu_example.dart',
+                  assetCode: WidgetsAssest.multiDropdown,
                   height: 1150,
                 ),
               ],
@@ -102,7 +102,7 @@ class DropDownMenuView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/custom_drop_down_menu_example.dart',
+                  assetCode: WidgetsAssest.customDropdown,
                   height: 1150,
                 ),
               ],

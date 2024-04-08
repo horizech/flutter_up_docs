@@ -12,5 +12,5 @@ List<UpLabelValuePair> fruitItems = [
   UpLabelValuePair(
     label: 'Grapes',
     value: 'Grapes',
-  ),
+  )
 ];

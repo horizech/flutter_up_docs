@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/dialogs/custom_dialog_example.dart';
 
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
 class CustomDialogView extends StatelessWidget {
   const CustomDialogView({Key? key}) : super(key: key);
@@ -29,8 +30,7 @@ class CustomDialogView extends StatelessWidget {
               height: 30,
             ),
             const UpText(
-              "Create your custom dialog widget",
-              // style: UpStyle(textSize: 20),
+              "Create your custom dialog widget using UpAlretDialog, pass completerId in this widget. After dialog action completition, call completeDialog method by passing context, completerId and result you want to return from dialog widget.",
             ),
             const SizedBox(
               height: 10,
@@ -38,7 +38,7 @@ class CustomDialogView extends StatelessWidget {
             widgetBox(
               widgets: [
                 const UpCode(
-                  assetCode: 'assets/custom_dialog_widget.dart',
+                  assetCode: DialogAssest.customDialogWidget,
                   height: 400,
                 ),
               ],
@@ -47,8 +47,7 @@ class CustomDialogView extends StatelessWidget {
               height: 30,
             ),
             const UpText(
-              "Now extends it from base dialog class",
-              // style: UpStyle(textSize: 20),
+              "Now create custom dialog component and extends it from UpBaseDialog class. Override show method it it, call show dialog, pass context and your previously created dialog widget in it.",
             ),
             const SizedBox(
               height: 10,
@@ -56,7 +55,7 @@ class CustomDialogView extends StatelessWidget {
             widgetBox(
               widgets: [
                 const UpCode(
-                  assetCode: 'assets/custom_dialog.dart',
+                  assetCode: DialogAssest.customDialog,
                   height: 300,
                 ),
               ],
@@ -65,8 +64,7 @@ class CustomDialogView extends StatelessWidget {
               height: 30,
             ),
             const UpText(
-              "Now use it",
-              // style: UpStyle(textSize: 20),
+              "Now call show dialog method on button click.It will return completerId.Pass this completerId to onDialogComplete method which will return result returned by our dilog widget.",
             ),
             const SizedBox(
               height: 10,
@@ -78,7 +76,7 @@ class CustomDialogView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/custom_dialog_example.dart',
+                  assetCode: DialogAssest.customDialogExample,
                   height: 400,
                 ),
               ],

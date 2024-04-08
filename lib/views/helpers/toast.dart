@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/helpers/helper_toast_example.dart';
 
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
-class HelperToastView extends StatelessWidget {
-  const HelperToastView({Key? key}) : super(key: key);
+class ToastHelperView extends StatelessWidget {
+  const ToastHelperView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +23,14 @@ class HelperToastView extends StatelessWidget {
               height: 10,
             ),
             UpText(
-              "Toast",
+              "FlutterUp Toast",
               style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const UpText(
+              "UpToast is also called a Toast Notification message. showtoast method use to show small message which mainly popup at the bottom of the device screen.This method takes context and text.",
             ),
             const SizedBox(
               height: 10,
@@ -35,7 +42,7 @@ class HelperToastView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/helper_toast_example.dart',
+                  assetCode: HelperAssest.toast,
                   height: 500,
                 ),
               ],

@@ -1,0 +1,19 @@
+enum Widget {
+  button,
+  textfield,
+  radio,
+  dropDownMenu,
+  checkbox,
+  orientationalColumnRow,
+  card,
+  toast,
+  circularProgress,
+  appbar,
+  expansionTile,
+  upcode,
+  upText,
+  listtile,
+  icon,
+  scaffold,
+  table
+}

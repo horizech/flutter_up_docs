@@ -4,6 +4,7 @@ import 'package:flutter_up/models/up_route.dart';
 import 'package:flutter_up/models/up_router_state.dart';
 import 'package:flutter_up/themes/up_themes.dart';
 import 'package:flutter_up/up_app.dart';
+import 'package:flutter_up_docs/constants.dart';
 import 'package:flutter_up_docs/pages/docs/docs.dart';
 
 import 'package:flutter_up_docs/pages/home/home.dart';
@@ -26,13 +27,13 @@ class MyApp extends StatelessWidget {
         warnColor: Colors.red,
       ),
       title: 'FlutterUp docs',
-      initialRoute: HomePage.routeName,
+      initialRoute: Routes.home,
 
       //initailize upRoutes
       upRoutes: [
         UpRoute(
-          path: HomePage.routeName,
-          name: HomePage.routeName,
+          path: Routes.home,
+          name: Routes.home,
           pageBuilder: (BuildContext context, UpRouterState state) {
             //If you want to use query params pass it to your page
             return const HomePage();

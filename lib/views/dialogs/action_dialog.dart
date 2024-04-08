@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/dialogs/action_dialog_example.dart';
 
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
 class ActionDialogView extends StatelessWidget {
   const ActionDialogView({Key? key}) : super(key: key);
@@ -22,8 +23,14 @@ class ActionDialogView extends StatelessWidget {
               height: 10,
             ),
             UpText(
-              "Action dialog",
+              "UpActionDialog",
               style: UpStyle(textSize: 25),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const UpText(
+              "You need to pass context, UpActionsDialog() and data in show dialog method. In data you can pass title which will show as dialog title and text which will show as dialog content.You can pass list of actions which will show as dialog action buttons.One action button contains text and onPressed method.",
             ),
             const SizedBox(
               height: 10,
@@ -35,7 +42,7 @@ class ActionDialogView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/action_dialog_example.dart',
+                  assetCode: DialogAssest.action,
                   height: 600,
                 ),
               ],

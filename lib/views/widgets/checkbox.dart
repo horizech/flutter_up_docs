@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/widgets/checkboxes/checkbox_example.dart';
 import 'package:flutter_up_docs/codes/widgets/checkboxes/custom_checkbox_example.dart';
 import 'package:flutter_up_docs/codes/widgets/checkboxes/rounded_checkbox_example.dart';
 
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
 class CheckboxView extends StatelessWidget {
   const CheckboxView({Key? key}) : super(key: key);
@@ -44,7 +45,7 @@ class CheckboxView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/checkbox_example.dart',
+                  assetCode: WidgetsAssest.checkbox,
                   height: 1100,
                 ),
               ],
@@ -66,7 +67,7 @@ class CheckboxView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/custom_checkbox_example.dart',
+                  assetCode: WidgetsAssest.customCheckbox,
                   height: 800,
                 ),
               ],
@@ -90,7 +91,7 @@ class CheckboxView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/rounded_checkbox_example.dart',
+                  assetCode: WidgetsAssest.roundedCheckbox,
                   height: 600,
                 ),
               ],

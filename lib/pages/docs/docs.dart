@@ -1,46 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_up/config/up_config.dart';
-import 'package:flutter_up/themes/up_style.dart';
-import 'package:flutter_up/themes/up_themes.dart';
+import 'package:flutter_up/helpers/up_routes_helper.dart';
 import 'package:flutter_up/widgets/up_app_bar.dart';
-import 'package:flutter_up/widgets/up_expansion_tile.dart';
 import 'package:flutter_up/widgets/up_scaffold.dart';
-import 'package:flutter_up/widgets/up_text.dart';
 import 'package:flutter_up_docs/enum/menu_option.dart';
-import 'package:flutter_up_docs/views/dialogs/about_dialog.dart';
-import 'package:flutter_up_docs/views/dialogs/action_dialog.dart';
-import 'package:flutter_up_docs/views/dialogs/custom_dialog.dart';
-import 'package:flutter_up_docs/views/dialogs/info_dialog.dart';
-import 'package:flutter_up_docs/views/helpers/console.dart';
-import 'package:flutter_up_docs/views/helpers/copy_to_clipboard.dart';
-import 'package:flutter_up_docs/views/helpers/date_time.dart';
-import 'package:flutter_up_docs/views/helpers/layout.dart';
-import 'package:flutter_up_docs/views/helpers/security.dart';
-import 'package:flutter_up_docs/views/helpers/toast.dart';
-import 'package:flutter_up_docs/views/services/dialog.dart';
-import 'package:flutter_up_docs/views/services/navigation.dart';
-import 'package:flutter_up_docs/views/services/search.dart';
-import 'package:flutter_up_docs/views/services/url.dart';
-import 'package:flutter_up_docs/views/widgets/app_bar.dart';
-import 'package:flutter_up_docs/views/widgets/button.dart';
-import 'package:flutter_up_docs/views/widgets/card.dart';
-import 'package:flutter_up_docs/views/widgets/checkbox.dart';
-import 'package:flutter_up_docs/views/widgets/circular_progress.dart';
-import 'package:flutter_up_docs/views/widgets/drop_down_menu.dart';
-import 'package:flutter_up_docs/views/widgets/expansion_tile.dart';
-import 'package:flutter_up_docs/views/widgets/icon.dart';
-import 'package:flutter_up_docs/views/widgets/list_tile.dart';
-import 'package:flutter_up_docs/views/widgets/orientational_column_row.dart';
-import 'package:flutter_up_docs/views/starting/starting.dart';
-import 'package:flutter_up_docs/views/theme/theme.dart';
-import 'package:flutter_up_docs/views/widgets/drawer.dart';
-import 'package:flutter_up_docs/views/widgets/radio.dart';
-import 'package:flutter_up_docs/views/widgets/scaffold.dart';
-import 'package:flutter_up_docs/views/widgets/table.dart';
-import 'package:flutter_up_docs/views/widgets/text.dart';
-import 'package:flutter_up_docs/views/widgets/textfield.dart';
-import 'package:flutter_up_docs/views/widgets/toast.dart';
-import 'package:flutter_up_docs/views/widgets/up_code.dart';
+import 'package:flutter_up_docs/widgets/left_side_nav.dart';
+import 'package:flutter_up_docs/views/views.dart';
 
 class DocsPage extends StatefulWidget {
   static const routeName = '/docs';
@@ -56,11 +20,88 @@ class _DocsPageState extends State<DocsPage> {
     setState(() {});
   }
 
-  Color? secondaryColor;
-  Color? primaryColor;
-  Color? baseColor;
-  MenuOption currentSelection = MenuOption.start;
-  _selectView(currentSelection) {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  checkCurrentSelection() {
+    String path = UpRoutesHelper.getCurrentNamedPath(context);
+    if (path.contains("/") && path.contains("docs")) {
+      currentSelection = MenuOption.start;
+    }
+    if (path.contains("theme")) {
+      setState(() {
+        currentSelection = MenuOption.theme;
+      });
+    }
+    if (path.contains("/") && path.contains("widgets")) {
+      currentMenu = "widgets";
+      List<String> splitString = path.split("/");
+      if (splitString.length > 2) {
+        String checkValue = splitString[2];
+        if (MenuOption.values
+            .any((e) => e.toString() == "MenuOption.$checkValue")) {
+          setState(() {
+            currentSelection = MenuOption.values
+                .firstWhere((e) => e.toString() == "MenuOption.$checkValue");
+          });
+          debugPrint(path.toString());
+        }
+      }
+    }
+    if (path.contains("/") && path.contains("dialogs")) {
+      currentMenu = "dialogs";
+      List<String> splitString = path.split("/");
+      if (splitString.length > 2) {
+        String checkValue = splitString[2];
+        if (MenuOption.values
+            .any((e) => e.toString() == "MenuOption.$checkValue")) {
+          setState(() {
+            currentSelection = MenuOption.values
+                .firstWhere((e) => e.toString() == "MenuOption.$checkValue");
+          });
+          debugPrint(path.toString());
+        }
+      }
+    }
+    if (path.contains("/") && path.contains("services")) {
+      currentMenu = "services";
+      List<String> splitString = path.split("/");
+      if (splitString.length > 2) {
+        String checkValue = splitString[2];
+        if (MenuOption.values
+            .any((e) => e.toString() == "MenuOption.${checkValue}Service")) {
+          setState(() {
+            currentSelection = MenuOption.values.firstWhere(
+                (e) => e.toString() == "MenuOption.${checkValue}Service");
+          });
+          debugPrint(path.toString());
+        }
+      }
+    }
+    if (path.contains("/") && path.contains("helpers")) {
+      currentMenu = "helpers";
+      List<String> splitString = path.split("/");
+      if (splitString.length > 2) {
+        String checkValue = splitString[2];
+        if (MenuOption.values
+            .any((e) => e.toString() == "MenuOption.${checkValue}Helper")) {
+          setState(() {
+            currentSelection = MenuOption.values.firstWhere(
+                (e) => e.toString() == "MenuOption.${checkValue}Helper");
+          });
+          debugPrint(path.toString());
+        }
+      }
+    }
+  }
+
+  MenuOption? currentSelection;
+  String currentMenu = "";
+  selectView(currentSelection) {
     switch (currentSelection) {
       //Theme view
       case MenuOption.theme:
@@ -73,10 +114,10 @@ class _DocsPageState extends State<DocsPage> {
         return const TextFieldView();
       case MenuOption.checkbox:
         return const CheckboxView();
-      case MenuOption.radio:
+      case MenuOption.radioButton:
         return const RadioView();
       case MenuOption.card:
-        return const CardView();
+        return const UpCardView();
       case MenuOption.dropDownMenu:
         return const DropDownMenuView();
       case MenuOption.circularProgress:
@@ -88,35 +129,41 @@ class _DocsPageState extends State<DocsPage> {
       case MenuOption.orientationalColumnRow:
         return const OrientationalColumnRowView();
       case MenuOption.appbar:
-        return const AppbarView();
+        return const UpAppbarView();
       case MenuOption.expansionTile:
-        return const ExpansionTileView();
-      case MenuOption.upText:
+        return const UpExpansionTileView();
+      case MenuOption.text:
         return const UpTextView();
       case MenuOption.icon:
         return const UpIconView();
-      case MenuOption.upcode:
+      case MenuOption.code:
         return const UpCodeView();
       case MenuOption.listtile:
-        return const ListTileView();
+        return const UpListTileView();
       case MenuOption.scaffold:
-        return const ScaffoldView();
+        return const UpScaffoldView();
       case MenuOption.table:
         return const TableView();
 
       //helpers view
-      case MenuOption.copyToClipboard:
-        return const CopyToClipboardView();
-      case MenuOption.console:
-        return const ConsoleView();
-      case MenuOption.toastH:
-        return const HelperToastView();
-      case MenuOption.dateTime:
-        return const DateTimeView();
-      case MenuOption.security:
-        return const SecurityView();
-      case MenuOption.layout:
-        return const LayoutView();
+      case MenuOption.copyToClipboardHelper:
+        return const CopyToClipboardHelperView();
+      case MenuOption.consoleHelper:
+        return const ConsoleHelperView();
+      case MenuOption.toastHelper:
+        return const ToastHelperView();
+      case MenuOption.dateTimeHelper:
+        return const DateTimeHelperView();
+      case MenuOption.securityHelper:
+        return const SecurityHelperView();
+      case MenuOption.layoutHelper:
+        return const LayoutHelperView();
+      case MenuOption.upScaffoldHelper:
+        return const ScaffoldHelperView();
+      case MenuOption.routesHelper:
+        return const RoutesHelperView();
+      case MenuOption.imageHelper:
+        return const ImageHelperView();
 
       //Dialog views
       case MenuOption.customDialog:
@@ -127,10 +174,14 @@ class _DocsPageState extends State<DocsPage> {
         return const AboutDialogView();
       case MenuOption.infoDialog:
         return const InfoDialogView();
+      case MenuOption.loadingDialog:
+        return const LoadingDialogView();
 
       //service view
       case MenuOption.navigationService:
         return const NavigationServiceView();
+      case MenuOption.layoutService:
+        return const LayoutServiceView();
       case MenuOption.urlService:
         return const UrlServiceView();
       case MenuOption.searchService:
@@ -143,468 +194,32 @@ class _DocsPageState extends State<DocsPage> {
     }
   }
 
-  Widget _listTileContainer({
-    required MenuOption menuOption,
-    IconData? iconData,
-    required String text,
-    required Function onTap,
-  }) {
-    // return UpListTile(
-    //   title: text,
-    //   listTileTitleAlignment: ListTileTitleAlignment.center,
-    //   leading: Icon(
-    //     iconData,
-    //     color: currentSelection == menuOption
-    //         ? secondaryColor
-    //         : UpConfig.of(context).theme.baseColor.shade900,
-    //   ),
-    //   style: UpStyle(
-    //     listTileTextColor: currentSelection == menuOption
-    //         ? secondaryColor
-    //         : UpConfig.of(context).theme.baseColor.shade900,
-    //     listTileColor: currentSelection == menuOption
-    //         ? primaryColor
-    //         : UpConfig.of(context).theme.baseColor.shade50,
-    //     listTileHoveredColor: currentSelection == menuOption
-    //         ? primaryColor
-    //         : UpConfig.of(context).theme.baseColor.shade100,
-    //     listTileFocusedColor:
-    //         currentSelection == menuOption ? primaryColor : Colors.transparent,
-    //     // currentSelection == menuOption ? primaryColor : Colors.transparent,
-    //   ),
-    //   onTap: () {
-    //     onTap();
-    //   },
-    // );
-    return Container(
-      color: currentSelection == menuOption
-          ? primaryColor
-          : UpConfig.of(context).theme.baseColor.shade50,
-      child: ListTile(
-        leading: Icon(
-          iconData,
-          color: currentSelection == menuOption
-              ? secondaryColor
-              : UpConfig.of(context).theme.baseColor.shade900,
-        ),
-        hoverColor: currentSelection == menuOption
-            ? primaryColor
-            : UpConfig.of(context).theme.baseColor.shade100,
-        focusColor:
-            currentSelection == menuOption ? primaryColor : Colors.transparent,
-        title: UpText(
-          text,
-          style: UpStyle(
-            textColor: currentSelection == menuOption
-                ? secondaryColor
-                : UpConfig.of(context).theme.baseColor.shade900,
-          ),
-        ),
-        onTap: () {
-          onTap();
-        },
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    secondaryColor =
-        UpThemes.getContrastColor(UpConfig.of(context).theme.primaryColor);
-    primaryColor = UpConfig.of(context).theme.primaryColor;
-
-    return UpScaffold(
-      appBar: const UpAppBar(
-        // backgroundColor: primaryColor,
-        title: "FlutterUp Documentation",
-      ),
-      body: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          //left side
-          SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Container(
-              color: UpConfig.of(context).theme.baseColor.shade50,
-              width: 300,
-              height: MediaQuery.of(context).size.height - 10,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Column(
-                  children: [
-                    _listTileContainer(
-                      menuOption: MenuOption.start,
-                      iconData: Icons.start_outlined,
-                      text: "Getting Started",
-                      onTap: () {
-                        setState(
-                          () {
-                            currentSelection = MenuOption.start;
-                          },
-                        );
-                      },
-                    ),
-                    _listTileContainer(
-                      menuOption: MenuOption.theme,
-                      iconData: Icons.color_lens,
-                      text: "Theme",
-                      onTap: () {
-                        setState(
-                          () {
-                            currentSelection = MenuOption.theme;
-                          },
-                        );
-                      },
-                    ),
-                    UpExpansionTile(
-                      leading: const Icon(
-                        Icons.design_services,
-                      ),
-                      title: "Services",
-                      children: [
-                        _listTileContainer(
-                          menuOption: MenuOption.navigationService,
-                          text: "Navigation",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.navigationService;
-                              },
-                            );
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.dialogService,
-                          text: "Dialog",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.dialogService;
-                              },
-                            );
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.searchService,
-                          text: "Search",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.searchService;
-                              },
-                            );
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.urlService,
-                          text: "Url",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.urlService;
-                              },
-                            );
-                          },
-                        ),
-                      ],
-                    ),
-                    UpExpansionTile(
-                      leading: const Icon(
-                        Icons.widgets,
-                      ),
-                      title: "Widgets",
-                      children: [
-                        _listTileContainer(
-                          menuOption: MenuOption.button,
-                          text: "Buttons",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.button;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.textfield,
-                          text: "Textfields",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.textfield;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.checkbox,
-                          text: "Checkboxes",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.checkbox;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.dropDownMenu,
-                          text: "Dropdown Menu",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.dropDownMenu;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.circularProgress,
-                          text: "Circular Progress",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.circularProgress;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.radio,
-                          text: "Radio Buttons",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.radio;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.card,
-                          text: "Cards",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.card;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.table,
-                          text: "Table",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.table;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.orientationalColumnRow,
-                          text: "Orientational column row",
-                          onTap: () {
-                            setState(() {
-                              currentSelection =
-                                  MenuOption.orientationalColumnRow;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.toast,
-                          text: "Toast",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.toast;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.appbar,
-                          text: "AppBar",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.appbar;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.listtile,
-                          text: "List Tile",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.listtile;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.expansionTile,
-                          text: "Expansion Tile",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.expansionTile;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.upText,
-                          text: "Text",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.upText;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.icon,
-                          text: "Icon",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.icon;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.upcode,
-                          text: "Code",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.upcode;
-                            });
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.scaffold,
-                          text: "Scaffold",
-                          onTap: () {
-                            setState(() {
-                              currentSelection = MenuOption.scaffold;
-                            });
-                          },
-                        ),
-                      ],
-                    ),
-                    UpExpansionTile(
-                      leading: const Icon(Icons.smart_screen),
-                      title: "Dialogs",
-                      children: [
-                        _listTileContainer(
-                          menuOption: MenuOption.aboutDialog,
-                          text: "About",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.aboutDialog;
-                              },
-                            );
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.infoDialog,
-                          text: "Information",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.infoDialog;
-                              },
-                            );
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.actionDialog,
-                          text: "Action",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.actionDialog;
-                              },
-                            );
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.customDialog,
-                          text: "Custom",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.customDialog;
-                              },
-                            );
-                          },
-                        ),
-                      ],
-                    ),
-                    UpExpansionTile(
-                      leading: const Icon(Icons.help_outline),
-                      title: "Helpers",
-                      children: [
-                        _listTileContainer(
-                          menuOption: MenuOption.copyToClipboard,
-                          text: "Copy to clipboard",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.copyToClipboard;
-                              },
-                            );
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.console,
-                          text: "Console",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.console;
-                              },
-                            );
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.toastH,
-                          text: "Toast",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.toastH;
-                              },
-                            );
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.dateTime,
-                          text: "Date Time",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.dateTime;
-                              },
-                            );
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.security,
-                          text: "Security",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.security;
-                              },
-                            );
-                          },
-                        ),
-                        _listTileContainer(
-                          menuOption: MenuOption.layout,
-                          text: "Layout",
-                          onTap: () {
-                            setState(
-                              () {
-                                currentSelection = MenuOption.layout;
-                              },
-                            );
-                          },
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          //right side
-          Expanded(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: _selectView(currentSelection),
-            ),
-          ),
-        ],
+    if (currentSelection == null) {
+      checkCurrentSelection();
+    }
+    return SelectionArea(
+      child: UpScaffold(
+        scaffoldKey: _scaffoldKey,
+        appBar: UpAppBar(
+          title: "FlutterUp Documentation",
+          showToggleButton: true,
+          scaffoldKey: _scaffoldKey,
+        ),
+        // style: UpStyle(
+        //   bod
+        //   appBackgroundColor: UpConfig.of(context).theme.baseColor.shade900,
+        // ),
+        fixedDrawer: true,
+        drawer: LeftDrawer(
+          currentMenu: currentMenu,
+          currentSelection: currentSelection!,
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: selectView(currentSelection),
+        ),
       ),
     );
   }

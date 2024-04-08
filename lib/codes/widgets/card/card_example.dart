@@ -6,14 +6,14 @@ import 'package:flutter_up/widgets/up_card.dart';
 
 import 'package:flutter_up/widgets/up_text.dart';
 
-class CardExample extends StatefulWidget {
-  const CardExample({Key? key}) : super(key: key);
+class UpCardExample extends StatefulWidget {
+  const UpCardExample({Key? key}) : super(key: key);
 
   @override
-  State<CardExample> createState() => _CardExampleState();
+  State<UpCardExample> createState() => _UpCardExampleState();
 }
 
-class _CardExampleState extends State<CardExample> {
+class _UpCardExampleState extends State<UpCardExample> {
   UpRadioController controller = UpRadioController(value: 1);
   @override
   Widget build(BuildContext context) {

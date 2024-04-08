@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/helpers/layout_example.dart';
 
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
-class LayoutView extends StatelessWidget {
-  const LayoutView({Key? key}) : super(key: key);
+class LayoutHelperView extends StatelessWidget {
+  const LayoutHelperView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class LayoutView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/layout_example.dart',
+                  assetCode: HelperAssest.layout,
                   height: 800,
                 ),
               ],

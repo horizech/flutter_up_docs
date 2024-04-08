@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/helpers/copy_to_clipboard_example.dart';
 
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
-class CopyToClipboardView extends StatelessWidget {
-  const CopyToClipboardView({Key? key}) : super(key: key);
+class CopyToClipboardHelperView extends StatelessWidget {
+  const CopyToClipboardHelperView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,12 @@ class CopyToClipboardView extends StatelessWidget {
               style: UpStyle(textSize: 25),
             ),
             const SizedBox(
+              height: 30,
+            ),
+            const UpText(
+              "Click on the button to copy the text to clipboard.",
+            ),
+            const SizedBox(
               height: 10,
             ),
             widgetBox(
@@ -35,7 +42,7 @@ class CopyToClipboardView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/copy_to_clipboard_example.dart',
+                  assetCode: HelperAssest.copyToClipboard,
                   height: 400,
                 ),
               ],

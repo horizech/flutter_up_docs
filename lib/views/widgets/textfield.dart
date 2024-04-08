@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_up/themes/up_style.dart';
 import 'package:flutter_up/widgets/up_code.dart';
 import 'package:flutter_up/widgets/up_text.dart';
+import 'package:flutter_up_docs/assets.dart';
 import 'package:flutter_up_docs/codes/widgets/textfields/custom_textfield_example.dart';
 import 'package:flutter_up_docs/codes/widgets/textfields/key_textfield_example.dart';
 import 'package:flutter_up_docs/codes/widgets/textfields/search_textfield_example.dart';
 import 'package:flutter_up_docs/codes/widgets/textfields/textfield_example.dart';
-import 'package:flutter_up_docs/widgets/widget_box.dart';
+import 'package:flutter_up_docs/widgets/view/widget_box.dart';
 
 class TextFieldView extends StatelessWidget {
   const TextFieldView({Key? key}) : super(key: key);
@@ -44,7 +45,7 @@ class TextFieldView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/textfield_example.dart',
+                  assetCode: WidgetsAssest.textfield,
                   height: 930,
                 ),
               ],
@@ -66,7 +67,7 @@ class TextFieldView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/key_textfield_example.dart',
+                  assetCode: WidgetsAssest.keyTextfield,
                   height: 800,
                 ),
               ],
@@ -88,7 +89,7 @@ class TextFieldView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/search_textfield_example.dart',
+                  assetCode: WidgetsAssest.searchTextfield,
                   height: 420,
                 ),
               ],
@@ -110,7 +111,7 @@ class TextFieldView extends StatelessWidget {
                   height: 10,
                 ),
                 const UpCode(
-                  assetCode: 'assets/custom_textfield_example.dart',
+                  assetCode: WidgetsAssest.customTextfield,
                   height: 900,
                 ),
               ],
